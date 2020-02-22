@@ -18,6 +18,9 @@
 		name:"getUp",
 		components:{
 			detailBase
+		},
+		methods:{
+			
 		}
 	}
 </script>
