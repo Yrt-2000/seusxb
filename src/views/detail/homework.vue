@@ -4,7 +4,6 @@
 		<img slot="img" src="../../assets/img/homework.jpg"></img>
 		<div slot="title2"></div>
 		<div slot="text">
-			<p>打卡规则：</p>
 			<p>请自觉完成当日作业（作弊遭雷劈）</p>
 			<p>分数：3分</p>
 			<p>打卡方式：直接点击打卡按钮</p>
