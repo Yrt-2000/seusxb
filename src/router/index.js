@@ -13,7 +13,7 @@ const answerQuestion = () => import('../views/detail/answerQuestion.vue')
 const homework = () => import('../views/detail/homework.vue')
 const housework = () => import('../views/detail/housework.vue')
 const program = () => import('../views/detail/program.vue')
-
+const extraLearning = () => import('../views/detail/extraLearning')
 
 // 重写路由push方法,阻止重复点击报错
 const originalPush = VueRouter.prototype.push;
@@ -41,6 +41,7 @@ const routes = [
 	{ path:'/detail/homework',component:homework},
 	{ path:'/detail/housework',component:housework},
 	{ path:'/detail/program',component:program},
+	{ path:'/detail/extraLearning',component:extraLearning},
 	{ path:'/profile/team',component:team},
 	{ path:'/profile/recordList',component:recordList}
 ]

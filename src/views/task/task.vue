@@ -7,9 +7,9 @@
 		<div slot="large">6:30早起</div>
 		<div slot="small">每天起床第一句，先给自己打个气~ 现在打卡，开启美好一天</div>
 	</taskitem>
-  <taskitem taskName="breakfast">
-		<div slot="large">任务2</div>
-		<div slot="small">任务描述</div>
+  <taskitem taskName="extraLearning">
+		<div slot="large">额外专业知识学习</div>
+		<div slot="small">在课程之间，学有余力的你可以学西额外的专业知识</div>
 	</taskitem>
 	<taskitem taskName="program">
 		<div slot="large">每日编程</div>
