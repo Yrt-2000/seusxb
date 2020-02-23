@@ -11,21 +11,25 @@
 		<div slot="large">任务2</div>
 		<div slot="small">任务描述</div>
 	</taskitem>
-	<taskitem taskName="">
-		<div slot="large">任务3</div>
-		<div slot="small">任务描述</div>
+	<taskitem taskName="program">
+		<div slot="large">每日编程</div>
+		<div slot="small">每日一编程，稳步提高自身编程能力</div>
 	</taskitem>
-	<taskitem taskName="">
-		<div slot="large">任务4</div>
-		<div slot="small">任务描述</div>
+	<taskitem taskName="housework">
+		<div slot="large">帮做家务</div>
+		<div slot="small">帮助家人，分担家务</div>
 	</taskitem>
-	<taskitem taskName="">
-		<div slot="large">任务5</div>
-		<div slot="small">任务描述</div>
+	<taskitem taskName="homework">
+		<div slot="large">完成当日作业</div>
+		<div slot="small">今日事，今日毕，保证生活稳定有序</div>
 	</taskitem>
-	<taskitem taskName="">
-		<div slot="large">任务6</div>
-		<div slot="small">任务描述</div>
+	<taskitem taskName="answerQuestion">
+		<div slot="large">线上答疑</div>
+		<div slot="small">帮助同学解决问题，让你在成为大佬的路途上更进一步</div>
+	</taskitem>
+		<taskitem taskName="review">
+		<div slot="large">整理当天学习内容</div>
+		<div slot="small">善于复习能让你更好的掌握知识哟(＾Ｕ＾)ノ~ＹＯ</div>
 	</taskitem>
 	</div>
 </template>

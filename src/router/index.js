@@ -8,7 +8,11 @@ const nameChange = () => import('../views/profile/nameChange.vue')
 const team = () => import('../views/profile/team.vue')
 const recordList = () => import('../views/profile/recordList.vue')
 const getUp = () => import('../views/detail/getUp.vue')
-
+const review = () => import('../views/detail/review.vue')
+const answerQuestion = () => import('../views/detail/answerQuestion.vue')
+const homework = () => import('../views/detail/homework.vue')
+const housework = () => import('../views/detail/housework.vue')
+const program = () => import('../views/detail/program.vue')
 
 
 // 重写路由push方法,阻止重复点击报错
@@ -32,6 +36,11 @@ const routes = [
 	{ path:'/profile',component:profile},
 	{ path:'/profile/namechange',component:nameChange},
 	{ path:'/detail/getUp',component:getUp },
+	{ path:'/detail/review',component:review},
+	{ path:'/detail/answerQuestion',component:answerQuestion},
+	{ path:'/detail/homework',component:homework},
+	{ path:'/detail/housework',component:housework},
+	{ path:'/detail/program',component:program},
 	{ path:'/profile/team',component:team},
 	{ path:'/profile/recordList',component:recordList}
 ]
