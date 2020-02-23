@@ -10,7 +10,9 @@ export default function axios(option) {
 
 		// 配置请求和响应拦截
 		instance.interceptors.request.use(config => {
-			
+			if (localStorage.getItem('Authorization')) {   //如果有的话(即不是登录界面)就传上去
+			      config.headers.Authorization = localStorage.getItem('Authorization');
+			    }
 			return config
 		}, err => {
 			return err

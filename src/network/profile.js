@@ -1,6 +1,6 @@
 import axios from './axios'
 
-export function getdata(){//不知道token 怎么用?
+export function getdata(){
 	return axios({
 		method:"get",
 		url:'/user/get/basic',
@@ -26,6 +26,16 @@ export function taskCompleted(){
 		url:'',
 		params:{
 			
+		}
+	})
+}
+
+export function joininteam(teamname){
+	return axios({
+		method:"get",
+		url:'',
+		params:{
+			teamname
 		}
 	})
 }
