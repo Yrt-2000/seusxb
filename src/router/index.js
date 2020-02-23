@@ -20,6 +20,11 @@ const readEnglish = () => import('../views/detail/readEnglish.vue')
 const listenAndSpeakEng = () => import('../views/detail/listenAndSpeakEng.vue')
 const words = () => import('../views/detail/words.vue')
 const health = () => import('../views/detail/health.vue')
+const breakfast = () => import('../views/detail/breakfast.vue')
+const sport = () => import('../views/detail/sport.vue')
+const news = () => import('../views/detail/news.vue')
+const sleep = () => import('../views/detail/sleep.vue')
+const seuxg = () => import('../views/detail/seuxg.vue')
 
 
 // 重写路由push方法,阻止重复点击报错
@@ -55,6 +60,11 @@ const routes = [
 	{ path:'/detail/listenAndSpeakEng',component:listenAndSpeakEng},
 	{ path:'/detail/words',component:words},
 	{ path:'/detail/health',component:health},
+	{ path:'/detail/breakfast',component:breakfast},
+	{ path:'/detail/sport',component:sport},
+	{ path:'/detail/news',component:news},
+	{ path:'/detail/sleep',component:sleep},
+	{ path:'/detail/seuxg',component:seuxg},
 	{ path:'/profile/team',component:team},
 	{ path:'/profile/recordList',component:recordList}
 ]

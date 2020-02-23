@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="2">
+	<detail-base :taskid="12">
 		<div slot="title1">阅读课外书籍</div>
 		<img slot="img" src="../../assets/img/reading.jpeg"></img>
 		<div slot="title2">阅读课外书籍</div>

@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="2">
+	<detail-base :taskid="5">
 		<div slot="title1">帮做家务</div>
 		<img slot="img" src="../../assets/img/housework.jpg"></img>
 		<div slot="title2">帮做家务</div>

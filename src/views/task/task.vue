@@ -7,13 +7,17 @@
 		<div slot="large">6:30早起</div>
 		<div slot="small">每天起床第一句，先给自己打个气~ 现在打卡，开启美好一天</div>
 	</taskitem>
-  <taskitem taskName="extraLearning">
-		<div slot="large">额外专业知识学习</div>
-		<div slot="small">在课程之间，学有余力的你可以学西额外的专业知识</div>
+	<taskitem taskName="seuxg">
+		<div slot="large">东南学工</div>
+		<div slot="small">别总让导员、班长催你啦，及时填报信息也可获得积分哦~</div>
 	</taskitem>
-	<taskitem taskName="program">
-		<div slot="large">每日编程</div>
-		<div slot="small">每日一编程，稳步提高自身编程能力</div>
+	<taskitem taskName="breakfast">
+		<div slot="large">按时吃早餐</div>
+		<div slot="small">不要因为课业忙碌就忘记早餐哦~好好享受早餐！一天元气满满！</div>
+	</taskitem>
+	<taskitem taskName="health">
+		<div slot="large">卫生习惯</div>
+		<div slot="small">整洁的环境能让人更专心地学习</div>
 	</taskitem>
 	<taskitem taskName="housework">
 		<div slot="large">帮做家务</div>
@@ -23,13 +27,21 @@
 		<div slot="large">完成当日作业</div>
 		<div slot="small">今日事，今日毕，保证生活稳定有序</div>
 	</taskitem>
+	<taskitem taskName="review">
+		<div slot="large">整理当天学习内容</div>
+		<div slot="small">善于复习能让你更好的掌握知识哟(＾Ｕ＾)ノ~ＹＯ</div>
+	</taskitem>
 	<taskitem taskName="answerQuestion">
 		<div slot="large">线上答疑</div>
 		<div slot="small">帮助同学解决问题，让你在成为大佬的路途上更进一步</div>
 	</taskitem>
-	<taskitem taskName="review">
-		<div slot="large">整理当天学习内容</div>
-		<div slot="small">善于复习能让你更好的掌握知识哟(＾Ｕ＾)ノ~ＹＯ</div>
+	<taskitem taskName="sport">
+		<div slot="large">做运动</div>
+		<div slot="small">待在家里这么久，是不是要长毛了？赶紧动起来吧！</div>
+	</taskitem>
+	<taskitem taskName="news">
+		<div slot="large">关注时事</div>
+		<div slot="small">今天，你又博学了吗？快看看世界在发生什么吧！</div>
 	</taskitem>
 	<taskitem taskName="practice">
 		<div slot="large">每天练字</div>
@@ -51,9 +63,17 @@
 		<div slot="large">背单词</div>
 		<div slot="small">拥有庞大的单词量是英语的基础</div>
 	</taskitem>
-	<taskitem taskName="health">
-		<div slot="large">卫生习惯</div>
-		<div slot="small">整洁的环境能让人更专心地学习</div>
+  	<taskitem taskName="extraLearning">
+		<div slot="large">额外专业知识学习</div>
+		<div slot="small">在课程之间，学有余力的你可以学西额外的专业知识</div>
+	</taskitem>
+	<taskitem taskName="program">
+		<div slot="large">每日编程</div>
+		<div slot="small">每日一编程，稳步提高自身编程能力</div>
+	</taskitem>
+	<taskitem taskName="sleep">
+		<div slot="large">11:00前睡觉</div>
+		<div slot="small">还在做与夜色相伴的“年轻人”吗？快快去休息</div>
 	</taskitem>
 	</div>
 </template>

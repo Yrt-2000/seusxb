@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="2">
+	<detail-base :taskid="4">
 		<div slot="title1">卫生习惯</div>
 		<img slot="img" src="../../assets/img/health.jpeg"></img>
 		<div slot="title2">保持良好的卫生习惯</div>

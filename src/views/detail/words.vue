@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="2">
+	<detail-base :taskid="15">
 		<div slot="title1">背单词</div>
 		<img slot="img" src="../../assets/img/words.jpg"></img>
 		<div slot="title2">背英语单词20个</div>
