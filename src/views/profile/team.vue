@@ -10,6 +10,8 @@
 
 <script>
 	import newbar from '../../components/navbar/newbar.vue'
+	import {joininteam} from '../../network/profile.js'
+	import {Message} from 'element-ui'
 	export default{
 		name:"team",
 	  components:{
@@ -25,7 +27,21 @@
 					this.$router.back()
 				},
 				b1click(){
-				 			 
+				 	joininteam(this.team).then( res => {
+						Message({
+							             showClose: true,
+							             message: res.data.Description,
+							             type: 'success',
+							             duration: 1000
+							     })
+							}).catch( err => {
+								Message({
+								           showClose: true,
+								           message: err.error.Description,
+								           type: 'error',
+								           duration: 1000
+							})	 
+  					})
 				}
 		},
 		}

@@ -5,16 +5,19 @@
 			<img src="../../assets/img/login.jpg" />
 			<div class="box">
 				<h2>欢迎登录</h2>
-				<input v-model="cardnum" placeholder="一卡通号" />
-				<input v-model="qq" placeholder="QQ账号" />
-				<div class="click" @click="signup" >登录（首次登录将自动创建账户）</div>
+				<input v-model="loginForm.cardnum" placeholder="一卡通号" />
+				<input v-model="loginForm.qq" placeholder="QQ账号" />
+				<div class="click" @click="login" >登录（首次登录将自动创建账户）</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import axios from '../../network/axios.js'
+  import { mapMutations } from 'vuex';
 	import navbar from '../../components/navbar/navbar.vue'
+	import {Message} from 'element-ui'
 	export default{
 		name:"login",
 		components:{
@@ -22,8 +25,51 @@
 		},
 		data(){
 			return{
-				qq:"",
-				cardnum:""
+				loginForm:{
+					qq:"",
+					cardnum:""
+				},
+				token:""
+			}
+		},
+		methods:{ 
+			...mapMutations(['changeLogin']),
+			login(){
+				let _this = this;
+				if(this.loginForm.qq ==='' || this.loginForm.cardnum === '' ){
+					Message({
+						           showClose: true,
+						           message: 'qq和一卡通号不能为空',
+						           type: 'error',
+						           duration: 1000
+					})
+				}else{
+					return axios({
+						method:'get',
+						url:'/user/login',
+						props:_this.loginForm
+					}).then(res => {
+						console.log(res.data);   //这些res里面的东西都是乱写的
+						_this.token = 'Bearer' + res.data.body.token;
+						//把token放到vuex里面
+						_this.changeLogin({ Authorization: _this.token});
+						_this.$router.replace('/home');
+						Message({
+							           showClose: true,
+							           message: '登录成功',
+							           type: 'success',
+							           duration: 1000
+						})
+					}).catch(err => {
+						Message({
+							           showClose: true,
+							           message: '登录失败',
+							           type: 'error',
+							           duration: 1000
+						})
+						console.log(err);
+					})
+				}
 			}
 		}
 	}

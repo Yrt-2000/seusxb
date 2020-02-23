@@ -10,6 +10,7 @@
 <script>
 	import newbar from '../../components/navbar/newbar.vue'
 	import {changename} from '../../network/profile.js'
+	import {Message} from 'element-ui'
 	export default{
 		name:"nameChange",
 		components:{
@@ -25,11 +26,23 @@
 				this.$router.back()
 			},
 			b1click(){
-			 	changename(this.name)	.then(
-				  
-				)	 
-			}
-	},
+			 	changename(this.name).then( res => {
+				  Message({
+				             showClose: true,
+				             message: res.data.Description,
+				             type: 'success',
+				             duration: 1000
+				     })
+				}).catch( err => {
+					Message({
+					           showClose: true,
+					           message: err.error.Description,
+					           type: 'error',
+					           duration: 1000
+				})	 
+			})
+	}
+	}
 	}
 </script>
 

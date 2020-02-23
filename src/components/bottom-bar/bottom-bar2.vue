@@ -7,14 +7,25 @@
 
 <script>
 	import {taskCommit} from '../../network/task.js'
+	import {Message} from 'element-ui'
 	export default{
 		name:"bottom-bar",
 		methods:{
 			press(){
 				taskCommit(this.taskNum).then(res => {
-					
+					Message({
+					           showClose: true,
+					           message: res.data.Description,
+					           type: 'success',
+					           duration: 1000
+					   })
 				}).catch(err =>{
-					
+					Message({
+						           showClose: true,
+						           message: err.error.Description,
+						           type: 'error',
+						           duration: 1000
+					})
 				})
 				// console.log(this.taskNum)
 		}
