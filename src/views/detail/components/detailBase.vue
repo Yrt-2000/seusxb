@@ -28,8 +28,9 @@
 		position: relative;
 		z-index: 9;
 		background-color: #f1ffef;
-		height: 150vh;
+		height:calc(100vh - 44px - 49px);
 		margin-top: 44px;
+	  overflow: scroll;
 	}
 	
 	.up img{

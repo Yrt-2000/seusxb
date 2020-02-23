@@ -1,18 +1,14 @@
 <template>
 	<div class="bottom-bar">
 		 <div class="nonbutton"></div>
-		 <div class="button" @click="press">打卡</div>
+		 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1363642441&site=qq&menu=yes">
+		 <div class="button">打卡</div></a>
 	</div>
 </template>
 
 <script>
 	export default{
-		name:"bottom-bar",
-		methods:{
-			press(){
-				
-			}
-		}
+		name:"bottom-bar"
 	}
 </script>
 
@@ -33,8 +29,12 @@
 		background-color: #55AA7F;
 		color: white;
 		font-weight: 550;
+		height: 49px;
 		}
 	.nonbutton{
 		flex: 1;
+	}
+	a{
+		text-decoration: none;
 	}
 </style>

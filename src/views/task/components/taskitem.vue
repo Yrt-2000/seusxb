@@ -25,8 +25,8 @@
 <style>
 	.list{
 		background-color: aliceblue;
-		margin: 5px 3.5px;
-		padding: 5px 3px;
+		margin: 7px 3.5px;
+		padding: 10px 5px;
 		border-radius:5px
 	}
 	.largesize{

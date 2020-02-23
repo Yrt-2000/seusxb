@@ -9,6 +9,7 @@
 
 <script>
 	import newbar from '../../components/navbar/newbar.vue'
+	import {changename} from '../../network/profile.js'
 	export default{
 		name:"nameChange",
 		components:{
@@ -24,7 +25,9 @@
 				this.$router.back()
 			},
 			b1click(){
-			 			 
+			 	changename(this.name)	.then(
+				  
+				)	 
 			}
 	},
 	}
@@ -36,7 +39,8 @@
 			z-index: 9;
 			background-color: white;
 			margin-top: 44px;
-			height: 100vh;
+			height: calc(100vh - 44px);
+			overflow: hidden;
 		}
 		
 	input{
