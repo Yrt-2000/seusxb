@@ -10,6 +10,7 @@ const recordList = () => import('../views/profile/recordList.vue')
 const getUp = () => import('../views/detail/getUp.vue')
 
 
+
 // 重写路由push方法,阻止重复点击报错
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
