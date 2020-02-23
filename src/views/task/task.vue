@@ -27,9 +27,33 @@
 		<div slot="large">线上答疑</div>
 		<div slot="small">帮助同学解决问题，让你在成为大佬的路途上更进一步</div>
 	</taskitem>
-		<taskitem taskName="review">
+	<taskitem taskName="review">
 		<div slot="large">整理当天学习内容</div>
 		<div slot="small">善于复习能让你更好的掌握知识哟(＾Ｕ＾)ノ~ＹＯ</div>
+	</taskitem>
+	<taskitem taskName="practice">
+		<div slot="large">每天练字</div>
+		<div slot="small">练字能陶冶情操,磨练人的意志，让你更加优秀</div>
+	</taskitem> 
+	<taskitem taskName="reading">
+		<div slot="large">阅读课外书籍</div>
+		<div slot="small">都更多的书，了解更多的知识</div>
+	</taskitem>
+	<taskitem taskName="readEnglish">
+		<div slot="large">阅读英语美文</div>
+		<div slot="small">英语学习少不了英语阅读</div>
+	</taskitem>
+	<taskitem taskName="listenAndSpeakEng">
+		<div slot="large">英语听力、口语训练</div>
+		<div slot="small">每天练习听力与口语，英语水平将更上一层楼</div>
+	</taskitem>
+	<taskitem taskName="words">
+		<div slot="large">背单词</div>
+		<div slot="small">拥有庞大的单词量是英语的基础</div>
+	</taskitem>
+	<taskitem taskName="health">
+		<div slot="large">卫生习惯</div>
+		<div slot="small">整洁的环境能让人更专心地学习</div>
 	</taskitem>
 	</div>
 </template>

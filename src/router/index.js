@@ -13,7 +13,14 @@ const answerQuestion = () => import('../views/detail/answerQuestion.vue')
 const homework = () => import('../views/detail/homework.vue')
 const housework = () => import('../views/detail/housework.vue')
 const program = () => import('../views/detail/program.vue')
-const extraLearning = () => import('../views/detail/extraLearning')
+const extraLearning = () => import('../views/detail/extraLearning.vue')
+const practice = () => import('../views/detail/practice.vue')
+const reading = () => import('../views/detail/reading.vue')
+const readEnglish = () => import('../views/detail/readEnglish.vue')
+const listenAndSpeakEng = () => import('../views/detail/listenAndSpeakEng.vue')
+const words = () => import('../views/detail/words.vue')
+const health = () => import('../views/detail/health.vue')
+
 
 // 重写路由push方法,阻止重复点击报错
 const originalPush = VueRouter.prototype.push;
@@ -42,6 +49,12 @@ const routes = [
 	{ path:'/detail/housework',component:housework},
 	{ path:'/detail/program',component:program},
 	{ path:'/detail/extraLearning',component:extraLearning},
+	{ path:'/detail/practice',component:practice},
+	{ path:'/detail/reading',component:reading},
+	{ path:'/detail/readEnglish',component:readEnglish},
+	{ path:'/detail/listenAndSpeakEng',component:listenAndSpeakEng},
+	{ path:'/detail/words',component:words},
+	{ path:'/detail/health',component:health},
 	{ path:'/profile/team',component:team},
 	{ path:'/profile/recordList',component:recordList}
 ]
