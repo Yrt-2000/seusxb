@@ -87,7 +87,7 @@
 			navbar,
 			taskitem
 		}
-	}
+	}				
 </script>
 
 <style>
