@@ -71,8 +71,9 @@ const routes = [
 
 
 const router = new VueRouter({
-  routes,
+  	routes,
 	mode:'history'
+	
 })
 
 // 导航守卫

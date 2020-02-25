@@ -7,7 +7,7 @@
 			<p>打卡规则</p>
 			<p><slot name="text"></slot></p>
 		</div>
-		<bottomBar></bottomBar>
+		<bottomBar :taskid='taskid'></bottomBar>
 	</div>
 </template>
 
@@ -19,6 +19,9 @@
 		components:{
 			newbar,
 			bottomBar
+		},
+		props:{
+			taskid:String
 		}
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<detail-base2 :taskid="2">
+	<detail-base taskid="2">
 		<div slot="title1">信息填报</div>
 		<img slot="img" src="../../assets/img/seuxg.jpg">
 		<div slot="title2">及时汇报疫情信息</div>
@@ -9,16 +9,16 @@
             <p>打卡方式：请在打卡时上传图片以及打卡任务序号来完成打卡</p>
 			<p>由于服务器原因，可能遇到反应时间稍长的情况，请耐心等待。活动最终解释权归计软智学生会所有。</p>
 		</div>
-	</detail-base2>
+	</detail-base>
 </template>
 
 <script>
-	import detailBase2 from "./components/detailBase2.vue"
+	import detailBase from "./components/detailBase.vue"
 	
 	export default{
 		name:"seuxg",
 		components:{
-			detailBase2
+			detailBase
 		}
 	}
 </script>

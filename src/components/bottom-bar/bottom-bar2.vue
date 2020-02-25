@@ -12,26 +12,36 @@
 		name:"bottom-bar",
 		methods:{
 			press(){
-				taskCommit(this.taskNum).then(res => {
+				taskCommit(this.taskNum).then( res => {
+					if(res.success){
+				  Message({
+				             showClose: true,
+				             message: '打卡成功',
+				             type: 'success',
+				             duration: 1500
+				     })
+					}
+				else{
 					Message({
 					           showClose: true,
-					           message: res.data.Description,
-					           type: 'success',
-					           duration: 1000
+					           message: res.reason,
+					           type: 'warning',
+					           duration: 1500
 					   })
-				}).catch(err =>{
+				}
+				}).catch( err => {
 					Message({
-						           showClose: true,
-						           message: err.error.Description,
-						           type: 'error',
-						           duration: 1000
-					})
-				})
+					           showClose: true,
+					           message:'操作失败',
+					           type: 'error',
+					           duration: 1500
+				})	 
+			})
 				// console.log(this.taskNum)
 		}
 	},
 	props:{
-		taskNum:Number
+		taskNum:String
 	}
 	}
 </script>

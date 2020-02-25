@@ -2,9 +2,13 @@
 	<div id="team">
 		<newbar>加入团队</newbar>
 		<input v-model="team" placeholder="请输入要加入或创建团队的名称" />
-		<div class="b1" @click="b1click">加入/创建团队</div>
-		<div class="b2" @click="b2click">返回个人页面</div>
-		<p>说明：xxx</p>    <!-- 大概意思：若该团队名已存在，则直接加入该团队；若不存在，则创建团队。团队有人数限制 -->
+		<div class="b1" @click="b1click">加入团队</div>
+		<div class="b2" @click="b2click">创建团队</div>
+		<p>说明：每团队上限为5人；如需创建团队，可在输入框内填写要创建团队的名称，点击灰色“创建团队按钮”即可。其它成员想加入时，只需在输入框内
+		输入您创建团队的名称，点击绿色“加入团队”按钮，当团队人数在5人以下时，可以成功加入；如需加入团队，请输入想要加入团队的名称，点击绿色按钮，
+		若该团队未满员则可以加入。每天各团队有机会获得若干团队分，活动结束时团队积分前4名的团队可领取多肉盆栽套装一份。由于活动准备时间仓促，
+		可能存在平台卡慢、活动规则不周全等问题，敬请理解。活动最终解释权归计软智学生会所有。</p>    
+		<!-- 大概意思：若该团队名已存在，则直接加入该团队；若不存在，则创建团队。团队有人数限制 -->
 	</div>
 </template>
 
@@ -12,6 +16,7 @@
 	import newbar from '../../components/navbar/newbar.vue'
 	import {joininteam} from '../../network/profile.js'
 	import {Message} from 'element-ui'
+	import {createteam} from '../../network/profile.js'
 	export default{
 		name:"team",
 	  components:{
@@ -24,24 +29,58 @@
 			},
 			methods:{
 				b2click(){
-					this.$router.back()
-				},
-				b1click(){
-				 	joininteam(this.team).then( res => {
-						Message({
+				 	createteam(this.team).then( res => {
+						if(res.success){
+							  Message({
 							             showClose: true,
-							             message: res.data.Description,
+							             message: '操作成功',
 							             type: 'success',
 							             duration: 1000
 							     })
+								}
+							else{
+								Message({
+								           showClose: true,
+								           message: res.reason,
+								           type: 'warning',
+								           duration: 1000
+								   })
+							}
 							}).catch( err => {
 								Message({
 								           showClose: true,
-								           message: err.error.Description,
+								           message:'操作失败',
 								           type: 'error',
 								           duration: 1000
 							})	 
-  					})
+						})					
+				},
+				b1click(){
+				 	joininteam(this.team).then( res => {
+						if(res.success){
+							  Message({
+							             showClose: true,
+							             message: '操作成功',
+							             type: 'success',
+							             duration: 1500
+							     })
+								}
+							else{
+								Message({
+								           showClose: true,
+								           message: res.reason,
+								           type: 'warning',
+								           duration: 1500
+								   })
+							}
+							}).catch( err => {
+								Message({
+								           showClose: true,
+								           message:'操作失败',
+								           type: 'error',
+								           duration: 1500
+							})	 
+						})
 				}
 		},
 		}

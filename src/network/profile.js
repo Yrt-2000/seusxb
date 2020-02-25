@@ -10,12 +10,12 @@ export function getdata(){
 	})
 }
 
-export function changename(name){
+export function changename(newname){
 	return axios({
 		method:"get",
-		url:'/user/sumbit/update',
+		url:'/user/sumbit/updateName',
 		params:{
-			name 
+			newname 
 		}
 	})
 }
@@ -23,19 +23,29 @@ export function changename(name){
 export function taskCompleted(){
 	return axios({
 		method:'get',
-		url:'',
+		url:'/user/get/doneList',
 		params:{
 			
 		}
 	})
 }
 
-export function joininteam(teamname){
+export function joininteam(newteamname){
 	return axios({
 		method:"get",
-		url:'',
+		url:'/user/submit/joinTeam',
 		params:{
-			teamname
+			newteamname
+		}
+	})
+}
+
+export function createteam(newteamname){
+	return axios({
+		method:"get",
+		url:"/user/submit/createTeam",
+		params:{
+			newteamname
 		}
 	})
 }

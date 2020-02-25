@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="7">
+	<detail-base taskid="7">
 		<div slot="title1">整理当天学习内容</div>
 		<img slot="img" src="../../assets/img/review.jpg"></img>
 		<div slot="title2">整理当天学习内容</div>

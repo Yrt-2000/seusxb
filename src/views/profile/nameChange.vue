@@ -27,18 +27,28 @@
 			},
 			b1click(){
 			 	changename(this.name).then( res => {
+					if(res.success){
 				  Message({
 				             showClose: true,
-				             message: res.data.Description,
+				             message: '操作成功',
 				             type: 'success',
-				             duration: 1000
+				             duration: 1500
 				     })
+					}
+				else{
+					Message({
+					           showClose: true,
+					           message: res.reason,
+					           type: 'warning',
+					           duration: 1500
+					   })
+				}
 				}).catch( err => {
 					Message({
 					           showClose: true,
-					           message: err.error.Description,
+					           message:'操作失败',
 					           type: 'error',
-					           duration: 1000
+					           duration: 1500
 				})	 
 			})
 	}

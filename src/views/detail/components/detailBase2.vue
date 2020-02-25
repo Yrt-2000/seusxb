@@ -21,7 +21,7 @@
 			bottomBar2
 		},
 		props:{
-			taskid:Number
+			taskid:String
 		}
 	}
 </script>

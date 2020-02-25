@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="16">
+	<detail-base taskid="16">
 		<div slot="title1">额外专业内容学习</div>
 		<img slot="img" src="../../assets/img/extraLearning.jpg"></img>
 		<div slot="title2">额外专业内容学习</div>

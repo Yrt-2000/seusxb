@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="11">
+	<detail-base taskid="11">
 		<div slot="title1">每天练字</div>
 		<img slot="img" src="../../assets/img/practice.jpg"></img>
 		<div slot="title2">练字</div>
@@ -14,6 +14,7 @@
 
 <script>
 	import detailBase from "./components/detailBase.vue"
+	
 	
 	export default{
 		name:"practice",

@@ -1,5 +1,5 @@
 <template>
-	<detail-base :taskid="10">
+	<detail-base taskid="10">
 		<div slot="title1">阅读新闻</div>
 		<img slot="img" src="../../assets/img/news.jpg">
 		<div slot="title2">每天看一篇新闻</div>

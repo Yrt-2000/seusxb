@@ -49,23 +49,33 @@
 						url:'/user/login',
 						props:_this.loginForm
 					}).then(res => {
-						console.log(res.data);   //这些res里面的东西都是乱写的
-						_this.token = 'Bearer' + res.data.body.token;
+						if(res.success){
+						console.log(res.result.token);   //这些res里面的东西都是乱写的
+						_this.token = 'Bearer' + res.result.token;
 						//把token放到vuex里面
 						_this.changeLogin({ Authorization: _this.token});
 						_this.$router.replace('/home');
 						Message({
 							           showClose: true,
-							           message: '登录成功',
+							           message:res.result.message,
 							           type: 'success',
-							           duration: 1000
+							           duration: 1500
 						})
+						}
+						else{
+							Message({
+								           showClose: true,
+								           message: res.reason,
+								           type: 'warning',
+								           duration: 1500
+							})
+						}
 					}).catch(err => {
 						Message({
 							           showClose: true,
 							           message: '登录失败',
 							           type: 'error',
-							           duration: 1000
+							           duration: 1500
 						})
 						console.log(err);
 					})

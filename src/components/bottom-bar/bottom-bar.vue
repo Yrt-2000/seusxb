@@ -1,6 +1,6 @@
 <template>
 	<div class="bottom-bar">
-		 <div class="nonbutton"></div>
+		 <div class="nonbutton"><div class='xx'>上传图片后请告知菌菌任务编号,本任务为{{taskid}}</div></div>
 		 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1363642441&site=qq&menu=yes">
 		 <div class="button">打卡</div></a>
 	</div>
@@ -8,7 +8,13 @@
 
 <script>
 	export default{
-		name:"bottom-bar"
+		name:"bottom-bar",
+		props:{
+			taskid:{
+				type:String,
+				default:"此处出错 无法显示"
+			}
+			}
 	}
 </script>
 
@@ -33,6 +39,11 @@
 		}
 	.nonbutton{
 		flex: 1;
+		}
+	.xx{
+		text-align: center;
+		font-size: 13px;
+		margin-top: 10px
 	}
 	a{
 		text-decoration: none;

@@ -1,12 +1,11 @@
 <template>
-	<detail-base2 :taskid="1">
+	<detail-base2 taskid="1">
 		<div slot="title1">早起打卡</div>
 		<img slot="img" src="../../assets/img/getUp.jpg"></img>
 		<div slot="title2">6:30早起打卡</div>
 		<div slot="text">
 			<p>具体时间范围：6:30-7:00</p>
 			<dl>
-				<dt>个人：</dt>
 				<dd>6:30之前：4分</dd>
 				<dd>6:30-7:00：3分</dd>
 			</dl>
