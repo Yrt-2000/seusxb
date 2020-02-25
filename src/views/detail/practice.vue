@@ -15,12 +15,11 @@
 <script>
 	import detailBase from "./components/detailBase.vue"
 	
-	
 	export default{
 		name:"practice",
 		components:{
 			detailBase
-		},
+		}
 	}
 </script>
 

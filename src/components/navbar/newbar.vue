@@ -14,7 +14,7 @@
 		},
 		methods:{
 			back(){
-				history.back()
+				this.$router.back()
 			}
 		}
 	}
