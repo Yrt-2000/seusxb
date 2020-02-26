@@ -27,13 +27,13 @@
 		 </div>
 		 <div class="notice1">
 			 <div class="notice2">个人前十</div>
-			 <p v-for="(item,index) in array">
+			 <p v-for="(item,index) in array" :key="item">
 				 <span class="a">{{index+1}}</span>   <span class="b">昵称：{{item.name}}</span>    <span class="c">积分：{{item.point}}</span>
 			 </p>
 		 </div>
 		 <div class="notice1">
 			 <div class="notice2">团队前五</div>
-			 <p v-for="(item,index) in teamarray">
+			 <p v-for="(item,index) in teamarray" :key="item">
 			 	 <span class="a">{{index+1}}</span>   <span class="b">团队名：{{item.teamname}}</span> <span class="c">积分：{{item.teampoint}}</span>
 			 </p>
 		 </div>

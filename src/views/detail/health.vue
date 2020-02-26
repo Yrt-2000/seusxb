@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="4">
 		<div slot="title1">卫生习惯</div>
-		<img slot="img" src="../../assets/img/health.jpeg"></img>
+		<img slot="img" src="../../assets/img/health.jpeg"/>
 		<div slot="title2">保持良好的卫生习惯</div>
 		<div slot="text">
             <p>保持自己的房间、书桌等整洁，并通过上传图片的方式证明(比如拍摄书桌图片)</p>

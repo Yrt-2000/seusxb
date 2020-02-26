@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="16">
 		<div slot="title1">额外专业内容学习</div>
-		<img slot="img" src="../../assets/img/extraLearning.jpg"></img>
+		<img slot="img" src="../../assets/img/extraLearning.jpg"/>
 		<div slot="title2">额外专业内容学习</div>
 		<div slot="text">
 			<p>学习额外专业知识，可以拍摄书本图片、截图电子资料或者用其他图片自证</p>

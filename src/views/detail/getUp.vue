@@ -1,7 +1,7 @@
 <template>
 	<detail-base2 taskid="1">
 		<div slot="title1">早起打卡</div>
-		<img slot="img" src="../../assets/img/getUp.jpg"></img>
+		<img slot="img" src="../../assets/img/getUp.jpg"/>
 		<div slot="title2">6:30早起打卡</div>
 		<div slot="text">
 			<p>具体时间范围：6:30-7:00</p>
