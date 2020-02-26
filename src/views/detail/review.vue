@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="7">
 		<div slot="title1">整理当天学习内容</div>
-		<img slot="img" src="../../assets/img/review.jpg"></img>
+		<img slot="img" src="../../assets/img/review.jpg"/>
 		<div slot="title2">整理当天学习内容</div>
 		<div slot="text">
 			<p>记录当天课堂内容，并整理复习</p>

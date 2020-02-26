@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="12">
 		<div slot="title1">阅读课外书籍</div>
-		<img slot="img" src="../../assets/img/reading.jpeg"></img>
+		<img slot="img" src="../../assets/img/reading.jpeg"/>
 		<div slot="title2">阅读课外书籍</div>
 		<div slot="text">
             <p>阅读课外书籍，并通过上传图片的方式证明(比如拍摄书的封面、电子书截屏等)</p>

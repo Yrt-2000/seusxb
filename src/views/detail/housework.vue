@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="5">
 		<div slot="title1">帮做家务</div>
-		<img slot="img" src="../../assets/img/housework.jpg"></img>
+		<img slot="img" src="../../assets/img/housework.jpg"/>
 		<div slot="title2">帮做家务</div>
 		<div slot="text">
 			<p>做部分家务，并通过上传图片的方式证明(比如拍摄自己做家务的图片或者做完后的成果)</p>

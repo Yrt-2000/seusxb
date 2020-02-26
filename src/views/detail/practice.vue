@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="11">
 		<div slot="title1">每天练字</div>
-		<img slot="img" src="../../assets/img/practice.jpg"></img>
+		<img slot="img" src="../../assets/img/practice.jpg"/>
 		<div slot="title2">练字</div>
 		<div slot="text">
             <p>请在练字后拍摄字的图片</p>

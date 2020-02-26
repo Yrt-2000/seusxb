@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="3">
 		<div slot="title1">按时吃早餐</div>
-		<img slot="img" src="../../assets/img/breakfast.jpg">
+		<img slot="img" src="../../assets/img/breakfast.jpg"/>
 		<div slot="title2">按时吃早餐</div>
 		<div slot="text">
 			<p>请在8:00前(周末8:30)吃完早餐，并通过上传图片的方式证明（建议：可拍摄早餐图片）</p>

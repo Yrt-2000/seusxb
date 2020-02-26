@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="17">
 		<div slot="title1">每日编程</div>
-		<img slot="img" src="../../assets/img/program.jpeg"></img>
+		<img slot="img" src="../../assets/img/program.jpeg"/>
 		<div slot="title2">每日一编程</div>
 		<div slot="text">
 			<p>请至少完成一道编程题，并通过上传图片的方式证明(比如将编程题目、代码、结果截图)</p>

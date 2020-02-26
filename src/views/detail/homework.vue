@@ -1,7 +1,7 @@
 <template>
 	<detail-base2 taskid="6">
 		<div slot="title1">完成当日作业</div>
-		<img slot="img" src="../../assets/img/homework.jpg"></img>
+		<img slot="img" src="../../assets/img/homework.jpg"/>
 		<div slot="title2"></div>
 		<div slot="text">
 			<p>请自觉完成当日作业，若已完成则可点击打卡按钮，不用上传图片，纯靠自觉哟~（作弊遭雷劈）</p>

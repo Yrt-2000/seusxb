@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="13">
 		<div slot="title1">阅读英语美文</div>
-		<img slot="img" src="../../assets/img/readEnglish.jpeg"></img>
+		<img slot="img" src="../../assets/img/readEnglish.jpeg"/>
 		<div slot="title2">阅读英语美文</div>
 		<div slot="text">
             <p>阅读至少一篇英语文章，并通过上传图片的方式证明(比如拍摄文章的图片或者手机截屏)</p>
