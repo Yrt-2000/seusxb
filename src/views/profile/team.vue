@@ -15,8 +15,8 @@
 <script>
 	import newbar from '../../components/navbar/newbar.vue'
 	import {joininteam} from '../../network/profile.js'
-	import {Message} from 'element-ui'
 	import {createteam} from '../../network/profile.js'
+	import {Message} from 'element-ui'
 	export default{
 		name:"team",
 	  components:{
@@ -86,7 +86,7 @@
 		}
 	</script>
 	
-	<style>
+	<style scoped>
 		#team{
 				position: relative;
 				z-index: 9;

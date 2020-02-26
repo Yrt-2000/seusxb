@@ -10,7 +10,7 @@
 	    </div>
 	    <div class="account-info">团队积分</div>
 	  </div>
-	  <div class="account-item">
+		  <div class="account-item">
 	    <div class="number">
 	      <span class="balance">{{point}}</span>分
 	    </div>
@@ -28,7 +28,7 @@
 		<div class="qq"><i class="el-icon-link"></i> 我绑定的QQ号：{{qq}}</div>
 	  <div class="name" @click="buttonclick"><i class="el-icon-lollipop"></i> 我在活动中的昵称：{{name}},点击此处改名</div>
 		<div class="record" @click="buttonclick3"><i class="el-icon-document-checked"></i> 打卡审核通过记录</div>
-		<div class="tree">
+		<div class="tree"><i class="el-icon-picture-outline"></i>
 			我的积分树 <div>
 		<img v-if="point >=0 && point <70" src="../../assets/img/tree/tree1.png" />
 		<img v-else-if="point >=70 && point <150" src="../../assets/img/tree/tree2.gif"/>
@@ -48,7 +48,7 @@
 	export default{
 		name:"profile",
 		created(){
-			this.getdatanow()
+		 	this.getdatanow()
 		},
 		data(){
 			return{
@@ -159,16 +159,21 @@
 		height: 30px;
 	}
 	
-	.name i,.qq i,.team i,.record i{
+	.name i,.qq i,.team i,.record i,.tree i{
 		color: #55AA7F;
 		font-size: 25px;
 	}
 	
 	.tree{
-		background-color: #FFFFFF;
-		padding: 5px;
-		text-align: center;
+		margin: 3px 0;
+		padding:10px 5px;
+		background-color:white;
 		overflow: hidden;
+		font-size: 14px;
+		}
+		
+	.tree img{
+		padding: 20px  50px;
 	}
 	
 

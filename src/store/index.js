@@ -10,7 +10,7 @@ export default new Vuex.Store({
 		  },
   mutations: {
 		//修改token,并存入本地
-		ChangeLogin (state,user) {
+		changeLogin (state,user) {
 			state.Authorization = user.Authorization;
 			      localStorage.setItem('Authorization', user.Authorization);
 					}

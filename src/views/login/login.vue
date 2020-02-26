@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<navbar><div slot="center">“播种季”计软智学生会线上打卡</div></navbar>
+		<navbar><div slot="center">“播种季”计软智学生会线上打卡</div></navbar> 
 		<div class="signin">
 			<img src="../../assets/img/login.jpg" />
 			<div class="box">
 				<h2>欢迎登录</h2>
-				<input v-model="loginForm.cardnum" placeholder="一卡通号" />
-				<input v-model="loginForm.qq" placeholder="QQ账号" />
+				<input v-model="loginForm.num" placeholder="一卡通号" />
+				<input v-model="loginForm.QQ" placeholder="QQ账号" />
 				<div class="click" @click="login" >登录（首次登录将自动创建账户）</div>
 			</div>
 		</div>
@@ -26,8 +26,8 @@
 		data(){
 			return{
 				loginForm:{
-					qq:"",
-					cardnum:""
+					QQ:"",
+					num:""
 				},
 				token:""
 			}
@@ -36,7 +36,7 @@
 			...mapMutations(['changeLogin']),
 			login(){
 				let _this = this;
-				if(this.loginForm.qq ==='' || this.loginForm.cardnum === '' ){
+				if(this.loginForm.QQ ==='' || this.loginForm.num === '' ){
 					Message({
 						           showClose: true,
 						           message: 'qq和一卡通号不能为空',
@@ -47,11 +47,11 @@
 					return axios({
 						method:'get',
 						url:'/user/login',
-						props:_this.loginForm
+						params:_this.loginForm
 					}).then(res => {
 						if(res.success){
-						console.log(res.result.token);   //这些res里面的东西都是乱写的
-						_this.token = 'Bearer' + res.result.token;
+						console.log(res.result.token);   //token打印
+						_this.token = res.result.token;
 						//把token放到vuex里面
 						_this.changeLogin({ Authorization: _this.token});
 						_this.$router.replace('/home');

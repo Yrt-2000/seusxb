@@ -13,7 +13,7 @@ export function getdata(){
 export function changename(newname){
 	return axios({
 		method:"get",
-		url:'/user/sumbit/updateName',
+		url:'/user/submit/updateName',
 		params:{
 			newname 
 		}

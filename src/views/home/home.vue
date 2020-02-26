@@ -2,7 +2,7 @@
   <div class="home">
      <navbar>
 			 <div slot='center'>首页</div>
-		 </navbar>
+		</navbar>
 		 <div class="notice1">
 			 <div class="notice2">通知</div>
 			 <p>各位同学大家好，欢迎参与“播种季”计软智学生会线上打卡活动！
@@ -43,6 +43,7 @@
 <script>
 import {getRank} from '../../network/home.js'
 import navbar from '../../components/navbar/navbar.vue'
+import {Message} from 'element-ui'
 export default {
   name: 'home',
   components: {
