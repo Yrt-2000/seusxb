@@ -174,6 +174,8 @@
 		
 	.tree img{
 		padding: 20px  50px;
+		width: 40%;
+		height: auto;
 	}
 	
 
