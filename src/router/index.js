@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index.js'
+const adminlogin = () => import('../views/admin/admin-login.vue')
+const admincheck = () => import('../views/admin/admin-check.vue')
+const admingetUser = () => import('../views/admin/admin-getUser.vue')
+const admingetTeam = () => import('../views/admin/admin-getTeam.vue')
 const home = () => import('../views/home/home.vue') 
 const login = () => import('../views/login/login.vue')
 const task = () => import('../views/task/task.vue')
@@ -66,7 +71,11 @@ const routes = [
 	{ path:'/detail/sleep',component:sleep},
 	{ path:'/detail/seuxg',component:seuxg},
 	{ path:'/profile/team',component:team},
-	{ path:'/profile/recordList',component:recordList}
+	{ path:'/profile/recordList',component:recordList},
+	{ path:'/admin',component:adminlogin},
+	{ path:'/admin/check',component:admincheck},
+	{ path:'/admin/getUser',component:admingetUser},
+	{ path:'/admin/getTeam',component:admingetTeam}
 ]
 
 
@@ -78,24 +87,38 @@ const router = new VueRouter({
 
 // 导航守卫
 // 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
-// router.beforeEach((to, from, next) => {
-//   if (to.path === '/login') {
-// 	  let token = localStorage.getItem('Authorization');
-// 		if (token != null && token != ''){
-// 			next('/home');
-// 		}else{
-//     next();
-// 		}
-//   } else {
-//     let token = localStorage.getItem('Authorization');
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+	  let token = localStorage.getItem('Authorization');
+		if (token != null && token != ''){
+			next('/home');
+		}else{
+    next();
+		}
+  } else {
+		  if( to.path === '/admin' || to.path === '/admin/check' || to.path === '/admin/getUser' || to.path === '/admin/getTeam'){
+				 if (to.path === '/admin'){
+					 next()
+				 } else{
+    let isAdmin = store.state.isAdmin
  
-//     if (token === null || token === '') {
-//       next('/login');
-//     } else {
-//       next();
-//     }
-//   }
-// });
+    if (isAdmin === false ) {
+      next('/admin');
+    } else {
+      next();
+    }
+  }
+			} else {
+    let token = localStorage.getItem('Authorization');
+ 
+    if (token === null || token === '') {
+      next('/login');
+    } else {
+      next();
+    }
+		}
+  }
+});
 
 
 export default router

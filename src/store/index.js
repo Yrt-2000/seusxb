@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+		isAdmin:false,
 		//存储token
 		Authorization: localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : '',
 		  },

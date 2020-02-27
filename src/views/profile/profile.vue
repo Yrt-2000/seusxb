@@ -47,9 +47,9 @@
 	import {Message} from 'element-ui'
 	export default{
 		name:"profile",
-		// created(){
-		// 	this.getdatanow()
-		// },
+		created(){
+			this.getdatanow()
+		},
 		data(){
 			return{
 				qq:"",
