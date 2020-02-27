@@ -15,13 +15,13 @@
 		<el-main height=auto>
 			<el-tabs v-model="activeName" type="border-card"  @tab-click="handleClick" stretch="true" >
 				<el-tab-pane label="任务规则" name="first" >
-						<el-collapse v-model="activeNames" @change="handleChange" >
+						<el-collapse v-model="activeNames" @change="handleChange" accordion>
 							<el-collapse-item title="任务分值" name="1">
 								<div class="tes">不同任务，基础分值不同，且同一任务<strong>每天坚持完成能额外加分</strong>（加分力度随连续天数递增，<strong>中断清零</strong>）</div>
 							</el-collapse-item>
 							<el-collapse-item title="任务提交" name="2">
 								<div class="tes"> 
-									1.对于<strong>无需图片证明</strong>任务,点击“打卡”按钮即可，<br>
+									1.对于<strong>无需图片证明</strong>任务,点击“打卡”按钮即可。<br>
 									2.对于<strong>需图片证明</strong>任务,点击按钮后将发起和“计软智学生会菌菌”的QQ对话，将<strong>图片和任务编号</strong>一起发送给“菌菌”即可。
 								</div>
 							</el-collapse-item>
@@ -32,12 +32,8 @@
 
 				</el-tab-pane>
 				<el-tab-pane label="团队规则" name="second">
-					<el-collapse v-model="activeNames" @change="handleChange" >
-							<el-collapse-item title="加入/创建团队" name="1">
-								<div class="tes">输入队伍名称即可加入/创建队伍(<strong>加入队伍任何队伍都不需要通过审核</strong>)</div>
-								<div class="tes">每个人<strong>有且仅有一次</strong>加入/创建队伍的机会，加入队伍后无法退出</div>
-							</el-collapse-item>
-							<el-collapse-item title="队伍积分" name="2">
+					<el-collapse v-model="activeNamess" @change="handleChange" accordion>
+							<el-collapse-item title="队伍积分" name="1">
 								<div class="tes"> 
 									每日我们会以<strong>团队所有成员积分总和</strong>排序
 								</div>
@@ -50,21 +46,22 @@
 								<div class="tes"> 
 									所以多拉一些朋友一起来吧！！
 								</div>
-							</el-collapse-item>
-						<el-collapse-item title="队伍人数" name="3">
-							<div class="tes">每支队伍最多只能有<strong>5</strong>个人哦！</div>
+						</el-collapse-item>
+						<el-collapse-item title="加入/创建团队" name="2">
+								<div class="tes">输入队伍名称即可加入/创建队伍(<strong>加入队伍任何队伍都不需要通过审核</strong>)
+								，不过每支队伍最多只能有<strong>5</strong>个人，<strong>且加入队伍后无法退出哦！</strong></div>
 						</el-collapse-item>
 					</el-collapse>	
 				</el-tab-pane>
 					
-				<el-tab-pane label="积分规则" name="third">角色管理</el-tab-pane>
+				
 			</el-tabs>	
 		</el-main>
 		
 
 		<!-- 排行榜 -->
 		<el-main height=auto>
-			<el-carousel trigger="click" height="700px" interval="10000">
+			<el-carousel trigger="click" height="700px" interval="5000">
 				<el-carousel-item v-for="id in 2 " :key="id">
 					<div v-show="id==1">
 						<div class="rank_title">
@@ -110,7 +107,8 @@ export default {
       screenWidth: document.body.clientWidth,
       array: [],
 			teamarray: [],
-			activeNames: ['1']
+			activeNames: [],
+			activeNamess: []
     };
   },
   mounted() {
@@ -128,7 +126,7 @@ export default {
   methods: {
 		handleChange(val) {
         console.log(val);
-    },
+		},
     handleClick(tab, event) {
       console.log(tab, event);
     },
