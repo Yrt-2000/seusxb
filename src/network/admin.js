@@ -3,7 +3,7 @@ import axios from './axios'
 export function record(QQ,taskNum){
 	return axios({
 		method:'get',
-		url:'/admin/task/checkTask',
+		url:'/admin/user/checkTask',
 		params:{
 			QQ,taskNum
 		}
