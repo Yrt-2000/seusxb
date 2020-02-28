@@ -10,6 +10,12 @@ export function record(QQ,taskNum){
 	})
 }
 
+export function teamupdate(){
+	return axios({
+		method:'get',
+		url:'/admin/team/update'
+	})
+}
 
 export function update(){
 	return axios({

@@ -35,15 +35,15 @@
 		<img v-else-if="point >=150 && point <210" src="../../assets/img/tree/tree3.gif" />
 		<img v-else src="../../assets/img/tree/tree4.gif" />
 		</div>
-
-		
 	</div>
+		<el-button @click="logout(),out()">退出</el-button>
 	</div>
 </template>
 
 <script>
+	import { mapMutations } from "vuex";
 	import navbar from '../../components/navbar/navbar.vue'
-  import {getdata} from '../../network/profile.js'
+  	import {getdata} from '../../network/profile.js'
 	import {Message} from 'element-ui'
 	export default{
 		name:"profile",
@@ -65,6 +65,10 @@
 		navbar
 		},
 		methods:{
+			...mapMutations(["logout"]),
+			out(){
+				this.$router.replace("/login")
+			},
 			buttonclick(){
 				this.$router.push(`/profile/nameChange`)
 			},

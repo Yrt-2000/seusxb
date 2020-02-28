@@ -5,7 +5,7 @@ const adminlogin = () => import('../views/admin/admin-login.vue')
 const admincheck = () => import('../views/admin/admin-check.vue')
 const admingetUser = () => import('../views/admin/admin-getUser.vue')
 const admingetTeam = () => import('../views/admin/admin-getTeam.vue')
-const home = () => import('../views/home/home.vue') 
+const home = () => import('../views/home/home.vue')
 const login = () => import('../views/login/login.vue')
 const task = () => import('../views/task/task.vue')
 const profile = () => import('../views/profile/profile.vue')
@@ -35,89 +35,89 @@ const seuxg = () => import('../views/detail/seuxg.vue')
 // 重写路由push方法,阻止重复点击报错
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err);
+	return originalPush.call(this, location).catch(err => err);
 };
 
 // 重写路由replace方法,阻止重复点击报错
 const originalReplace = VueRouter.prototype.replace;
 VueRouter.prototype.replace = function replace(location) {
-  return originalReplace.call(this, location).catch(err => err);
+	return originalReplace.call(this, location).catch(err => err);
 };
 
 Vue.use(VueRouter)
 const routes = [
-	{ path:'',redirect:'/login'},
-	{ path:'/home',component:home},
-	{ path:'/task',component:task},
-	{ path:'/login',component:login},
-	{ path:'/profile',component:profile},
-	{ path:'/profile/namechange',component:nameChange},
-	{ path:'/detail/getUp',component:getUp },
-	{ path:'/detail/review',component:review},
-	{ path:'/detail/answerQuestion',component:answerQuestion},
-	{ path:'/detail/homework',component:homework},
-	{ path:'/detail/housework',component:housework},
-	{ path:'/detail/program',component:program},
-	{ path:'/detail/extraLearning',component:extraLearning},
-	{ path:'/detail/practice',component:practice},
-	{ path:'/detail/reading',component:reading},
-	{ path:'/detail/readEnglish',component:readEnglish},
-	{ path:'/detail/listenAndSpeakEng',component:listenAndSpeakEng},
-	{ path:'/detail/words',component:words},
-	{ path:'/detail/health',component:health},
-	{ path:'/detail/breakfast',component:breakfast},
-	{ path:'/detail/sport',component:sport},
-	{ path:'/detail/news',component:news},
-	{ path:'/detail/sleep',component:sleep},
-	{ path:'/detail/seuxg',component:seuxg},
-	{ path:'/profile/team',component:team},
-	{ path:'/profile/recordList',component:recordList},
-	{ path:'/admin',component:adminlogin},
-	{ path:'/admin/check',component:admincheck},
-	{ path:'/admin/getUser',component:admingetUser},
-	{ path:'/admin/getTeam',component:admingetTeam}
+	{ path: '', redirect: '/login' },
+	{ path: '/home', component: home },
+	{ path: '/task', component: task },
+	{ path: '/login', component: login },
+	{ path: '/profile', component: profile },
+	{ path: '/profile/namechange', component: nameChange },
+	{ path: '/detail/getUp', component: getUp },
+	{ path: '/detail/review', component: review },
+	{ path: '/detail/answerQuestion', component: answerQuestion },
+	{ path: '/detail/homework', component: homework },
+	{ path: '/detail/housework', component: housework },
+	{ path: '/detail/program', component: program },
+	{ path: '/detail/extraLearning', component: extraLearning },
+	{ path: '/detail/practice', component: practice },
+	{ path: '/detail/reading', component: reading },
+	{ path: '/detail/readEnglish', component: readEnglish },
+	{ path: '/detail/listenAndSpeakEng', component: listenAndSpeakEng },
+	{ path: '/detail/words', component: words },
+	{ path: '/detail/health', component: health },
+	{ path: '/detail/breakfast', component: breakfast },
+	{ path: '/detail/sport', component: sport },
+	{ path: '/detail/news', component: news },
+	{ path: '/detail/sleep', component: sleep },
+	{ path: '/detail/seuxg', component: seuxg },
+	{ path: '/profile/team', component: team },
+	{ path: '/profile/recordList', component: recordList },
+	{ path: '/admin', component: adminlogin },
+	{ path: '/admin/check', component: admincheck },
+	{ path: '/admin/getUser', component: admingetUser },
+	{ path: '/admin/getTeam', component: admingetTeam }
 ]
 
 
 const router = new VueRouter({
-  	routes,
-	mode:'history'
-	
+	routes,
+	mode: 'history'
+
 })
 
 // 导航守卫
 // 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
 router.beforeEach((to, from, next) => {
-  if (to.path === '/login') {
-	  let token = localStorage.getItem('Authorization');
-		if (token != null && token != ''){
+	if (to.path === '/login') {
+		let token = localStorage.getItem('Authorization');
+		if (token ) {
 			next('/home');
-		}else{
-    next();
+		} else {
+			next();
 		}
-  } else {
-		  if( to.path === '/admin' || to.path === '/admin/check' || to.path === '/admin/getUser' || to.path === '/admin/getTeam'){
-				 if (to.path === '/admin'){
-					 next()
-				 } else{
-    let isAdmin = store.state.isAdmin
- 
-    if (isAdmin === false ) {
-      next('/admin');
-    } else {
-      next();
-    }
-  }
+	} else {
+		if (to.path === '/admin' || to.path === '/admin/check' || to.path === '/admin/getUser' || to.path === '/admin/getTeam') {
+			if (to.path === '/admin') {
+				next()
 			} else {
-    let token = localStorage.getItem('Authorization');
- 
-    if (token === null || token === '') {
-      next('/login');
-    } else {
-      next();
-    }
+				let isAdmin = store.state.isAdmin
+
+				if (isAdmin === false) {
+					next('/admin');
+				} else {
+					next();
+				}
+			}
+		} else {
+			let token = localStorage.getItem('Authorization');
+
+			if (token === null || token === '') {
+				next('/login');
+			} else {
+				next();
+			}
 		}
-  }
+	}
 });
 
 
