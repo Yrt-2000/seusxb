@@ -38,6 +38,11 @@
 <<<<<<< HEAD
     </div>
 		</div>
+=======
+	</div>
+		<el-button @click="logout(),out()">退出</el-button>
+	</div>
+>>>>>>> d4d38e37acd4a6868441751e8b26c654f7d13234
 </template>
 
 <script>
