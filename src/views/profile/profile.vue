@@ -35,6 +35,7 @@
 		<img v-else-if="point >=150 && point <210" src="../../assets/img/tree/tree3.gif" />
 		<img v-else src="../../assets/img/tree/tree4.gif" />
 		</div>
+<<<<<<< HEAD
     </div>
 		</div>
 </template>
