@@ -19,7 +19,7 @@
 	<taskitem taskName="breakfast">
 		<div slot="imga"><img src="../../assets/img/树/3.jpg"/></div>
 		<div slot="large">按时吃早餐</div>
-		<div slot="small">不要因为课业忙碌就忘记早餐哦~好好享受早餐！一天元气满满！</div>
+		<div slot="small">不要因为课业忙碌就忘记早餐哦~好好享受早餐！</div>
 	</taskitem>
 	<el-divider></el-divider>
 	<taskitem taskName="health">
