@@ -44,6 +44,7 @@
 		font-size: 0.7em;
 		margin-top: 3px;
 		color:#adafb0;
+		padding-top: 4px;
 	}
 
 	

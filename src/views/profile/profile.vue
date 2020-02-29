@@ -35,14 +35,8 @@
 		<img v-else-if="point >=150 && point <210" src="../../assets/img/tree/tree3.gif" />
 		<img v-else src="../../assets/img/tree/tree4.gif" />
 		</div>
-<<<<<<< HEAD
     </div>
 		</div>
-=======
-	</div>
-		<el-button @click="logout(),out()">退出</el-button>
-	</div>
->>>>>>> d4d38e37acd4a6868441751e8b26c654f7d13234
 </template>
 
 <script>
