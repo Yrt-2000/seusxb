@@ -1,7 +1,15 @@
 <template>
 	<div class="list" @click="click(taskName)">
-		<div class="largesize"><slot name="large"></slot></div>
-		<div class="smallsize"><slot name="small"></slot></div>
+		
+		<el-container>
+		  <el-aside width="55px">
+				<div class="imga"><slot name="imga"></slot></div>
+			</el-aside>
+		  <el-main>
+				<div class="largesize"><slot name="large"></slot></div>
+				<div class="smallsize"><slot name="small"></slot></div>
+			</el-main>
+		</el-container>
 	</div>
 </template>
 
@@ -24,10 +32,9 @@
 
 <style>
 	.list{
-		background-color: aliceblue;
 		margin: 7px 3.5px;
 		padding: 10px 5px;
-		border-radius:5px
+		
 	}
 	.largesize{
 		font-size: 1em;
@@ -36,5 +43,20 @@
 	.smallsize{
 		font-size: 0.7em;
 		margin-top: 3px;
+		color:#adafb0;
 	}
+
+	
+	.el-aside,.el-main{
+		 padding: 0 ;
+		 margin: 0;
+		 background: 0 0;
+		 min-height:40px;
+	}
+	
+	.el-container{
+		padding: 0;
+	}
+	
+	
 </style>

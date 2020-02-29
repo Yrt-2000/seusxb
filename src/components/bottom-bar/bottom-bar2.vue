@@ -38,6 +38,9 @@
 				})	 
 			})
 				// console.log(this.taskNum)
+				if(this.taskNum == 2){
+					window.open('https://xgbxscwx.seu.edu.cn/#/')
+				}
 		}
 	},
 	props:{

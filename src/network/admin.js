@@ -3,13 +3,19 @@ import axios from './axios'
 export function record(QQ,taskNum){
 	return axios({
 		method:'get',
-		url:'/admin/task/checkTask',
+		url:'/admin/user/checkTask',
 		params:{
 			QQ,taskNum
 		}
 	})
 }
 
+export function teamupdate(){
+	return axios({
+		method:'get',
+		url:'/admin/team/update'
+	})
+}
 
 export function update(){
 	return axios({
