@@ -1,8 +1,9 @@
 <template>
-	<div class="task">
+	<div>
 	<navbar>
 		<div slot="center">任务列表</div>
 	</navbar>
+	<div class="task">
 	<el-divider></el-divider>
 	<taskitem taskName="getUp">
 		<div slot="imga"><img src="../../assets/img/树/1.jpg"/></div>
@@ -113,31 +114,37 @@
 	</taskitem>
 	<el-divider></el-divider>
 	</div>
+	<maintabbar></maintabbar>
+	</div>
 </template>
 
 <script>
 	import navbar from '../../components/navbar/navbar.vue'
 	import taskitem from './components/taskitem.vue'
+	import maintabbar from '../../components/tab-bar/maintabbar.vue'
 	export default{
 		name:"task",
 		components:{
 			navbar,
-			taskitem
+			taskitem,
+			maintabbar
 		}
 	}				
 </script>
 
 <style>
 	.task{
-		margin-top: 47px;
-		height: calc(90vh - 47px - 49px);
-		overflow: scroll;
+		position: fixed;
+		top:44px;
+		bottom: 49px;
+	  overflow: scroll;
 	}
 	
 	 .el-divider--horizontal{
      margin:  0;
     background: 0 0;
      border-top: 1px solid #e8eaec;
+		 z-index: -1;
  } 
  
  img{

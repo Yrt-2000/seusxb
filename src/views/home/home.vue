@@ -1,9 +1,10 @@
 <template>
-	<div class="home">
-  <el-container direction="vertical">
+	  <div>
       <navbar>
         <div slot="center">首页</div>
       </navbar>
+			<div class="home">
+			<el-container direction="vertical">
       <!-- 活动规则 -->
       <el-header height="auto"></el-header>
       <el-main height="auto">
@@ -122,16 +123,20 @@
       </el-main>
   </el-container>
 	 </div>
+	 <maintabbar></maintabbar>
+	 </div>
 </template>
 
 <script>
 import { getRank } from "../../network/home.js";
 import navbar from "../../components/navbar/navbar.vue";
+import maintabbar from '../../components/tab-bar/maintabbar.vue'
 import { Message } from "element-ui";
 export default {
   name: "home",
   components: {
-    navbar
+    navbar,
+		maintabbar
   },
   data() {
     return {
@@ -233,9 +238,11 @@ export default {
   background-color: #d3dce6;
 }
 .home {
-  margin-top: 44px;
-  overflow: scroll;
-  height: calc(100vh - 44px - 49px);
+		position: fixed;
+		top:44px;
+		bottom: 49px;
+	  overflow: scroll;
+		width: 100%;
 }
 
 .notice1 {

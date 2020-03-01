@@ -1,13 +1,15 @@
 <template>
+	<div>
+	<newbar><slot name="title1"></slot></newbar>
 	<div class="up">
-		<newbar><slot name="title1"></slot></newbar>
 		<slot name="img"></slot>
 		<div class="text">
 			<h3><slot name="title2"></slot></h3>
 			<p>打卡规则</p>
 			<p><slot name="text"></slot></p>
 		</div>
-		<bottomBar :taskid='taskid'></bottomBar>
+	</div>
+	<bottomBar :taskid='taskid'></bottomBar>
 	</div>
 </template>
 
@@ -28,12 +30,11 @@
 
 <style>
 	.up{
-		position: relative;
-		z-index: 9;
-		background-color: #f1ffef;
-		height:calc(100vh - 44px - 49px);
-		margin-top: 44px;
+		position: fixed;
+		top:44px;
+		bottom: 49px;
 	  overflow: scroll;
+		background-color: #f1ffef;
 	}
 	
 	.up img{

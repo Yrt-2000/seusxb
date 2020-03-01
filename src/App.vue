@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 		<router-view></router-view>
-		<maintabbar></maintabbar>
+		
 
   </div>
 </template>
@@ -14,9 +14,7 @@
 				
 			}
 		},
-		components:{
-			maintabbar
-		}
+
 	}
 
 </script>

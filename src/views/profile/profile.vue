@@ -1,8 +1,9 @@
 <template>
+	<div>
+		<navbar>
+		  <div slot="center">我的</div>
+		</navbar>
   <div id="profile">
-    <navbar>
-      <div slot="center">我的</div>
-    </navbar>
     <section class="account">
       <div class="account-item">
         <div class="number">
@@ -51,8 +52,9 @@
         <img v-else src="../../assets/img/tree/tree4.gif" />
       </div>
     </div>
-    <button @click="logout()">退出</button>
   </div>
+	<maintabbar></maintabbar>
+	</div>
 </template>
 
 <script>
@@ -60,6 +62,7 @@ import { mapMutations } from "vuex";
 import navbar from "../../components/navbar/navbar.vue";
 import { getdata } from "../../network/profile.js";
 import { Message } from "element-ui";
+import maintabbar from '../../components/tab-bar/maintabbar.vue'
 export default {
   name: "profile",
   created() {
@@ -77,7 +80,8 @@ export default {
     };
   },
   components: {
-    navbar
+    navbar,
+		maintabbar
   },
   methods: {
     ...mapMutations(["logout"]),
@@ -130,7 +134,11 @@ export default {
 <style>
 #profile {
   background-color: #f2f2f2;
-  margin-top: 44px;
+	position: fixed;
+	top:44px;
+	bottom: 49px;
+	overflow: scroll;
+	width: 100%;
 }
 
 .account {
