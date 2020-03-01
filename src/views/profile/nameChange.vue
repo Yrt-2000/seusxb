@@ -1,9 +1,11 @@
 <template>
+	<div>
+	<newbar>改变昵称</newbar>
 	<div id="nameChange">
-		<newbar>改变昵称</newbar>
 		<input v-model="name" placeholder="请输入要替换的昵称" />
 		<div class="b1" @click="b1click">确认修改</div>
 		<div class="b2" @click="b2click">返回个人页面</div>
+	</div>
 	</div>
 </template>
 
@@ -42,6 +44,10 @@
 					           type: 'warning',
 					           duration: 1500
 					   })
+				if (res.reason === '登录过期，请重新登录'){
+					localStorage.removeItem('Authorization');
+					 this.$router.push('/login');
+				}
 				}
 				}).catch( err => {
 					Message({
@@ -58,12 +64,10 @@
 
 <style>
 	#nameChange{
-			position: relative;
-			z-index: 9;
-			background-color: white;
-			margin-top: 44px;
-			height: calc(100vh - 44px);
-			overflow: hidden;
+		position: fixed;
+		top:44px;
+	  overflow: scroll;
+		width: 100%;
 		}
 		
 	input{

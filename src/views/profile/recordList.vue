@@ -1,12 +1,18 @@
 <template>
-	<div >
+	<div>
 		<newbar>打卡记录</newbar>
 		  <div class="recordPage">
 				<h3>所有审核通过的打卡记录将会显示在这里：</h3>
-				<div v-for="(item,index) in lista" class="h">
-					<span>{{index+1}}</span> <div>任务名称:{{item.taskNum}}，完成时间:
-					{{item.time.prototype.getMonth()}}-{{item.time.prototype.getDate()}}</div>
-				</div>
+				<el-timeline >
+					<el-timeline-item v-for="(item,index) in lista" :timestamp='item.time' placement="top" color='#42B983' :key='index'>
+					      <el-card>
+					        <h4>{{index+1}} {{item.taskNum}}</h4>
+					        <p>审核于{{item.time.prototype.getMonth()}}月{{item.time.prototype.getDate()}}日 
+									{{item.time.prototype.getHours()}}:{{item.time.prototype.getMinutes()}}</p>
+					      </el-card>
+					</el-timeline-item>
+				
+				</el-timeline>
 			</div>
 	</div>
 </template>
@@ -37,6 +43,10 @@
 						           type: 'warning',
 						           duration: 1500
 					})
+					if (res.reason === '登录过期，请重新登录'){
+						localStorage.removeItem('Authorization');
+						 this.$router.push('/login');
+					}
 				}
 			}).catch(err => {
 				Message({
@@ -120,18 +130,28 @@
 
 <style>
 	.recordPage{
-			position: relative;
-			z-index: 9;
-			background-color: white;
-			margin-top: 44px;
-			height: calc(100vh - 44px);
-			overflow: scroll;
+		position: fixed;
+		top:44px;
+		bottom: 49px;
+	  overflow: scroll;
+		width: 100%;
 		}
 		
-	.h{
-		background-color: aliceblue;
-		margin: 7px 3.5px;
-		padding: 10px 5px;
-		border-radius:5px
-		}
+ .el-card{
+	 width: 90%;
+   margin: 0;
+	 padding: 0;
+ }
+ 
+ .el-card h4{
+	 margin: 0;
+	 padding: 0;
+ }
+ 
+ .el-card p{
+	 margin:  0;
+	 padding: 0;
+	 font-size: 13.5px;
+	 color: #C0C0C0;
+ }
 </style>

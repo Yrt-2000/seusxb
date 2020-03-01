@@ -1,6 +1,7 @@
 <template>
+	<div>
+	<newbar>加入团队</newbar>
 	<div id="team">
-		<newbar>加入团队</newbar>
 		<input v-model="team" placeholder="请输入要加入或创建团队的名称" />
 		<div class="b1" @click="b1click">加入团队</div>
 		<div class="b2" @click="b2click">创建团队</div>
@@ -9,6 +10,7 @@
 		若该团队未满员则可以加入。每天各团队有机会获得若干团队分，活动结束时团队积分前4名的团队可领取多肉盆栽套装一份。由于活动准备时间仓促，
 		可能存在平台卡慢、活动规则不周全等问题，敬请理解。活动最终解释权归计软智学生会所有。</p>    
 		<!-- 大概意思：若该团队名已存在，则直接加入该团队；若不存在，则创建团队。团队有人数限制 -->
+	</div>
 	</div>
 </template>
 
@@ -45,6 +47,10 @@
 								           type: 'warning',
 								           duration: 1000
 								   })
+								if (res.reason === '登录过期，请重新登录'){
+									localStorage.removeItem('Authorization');
+									 this.$router.push('/login');
+								}
 							}
 							}).catch( err => {
 								Message({
@@ -88,12 +94,10 @@
 	
 	<style scoped>
 		#team{
-				position: relative;
-				z-index: 9;
-				background-color: white;
-				margin-top: 44px;
-				height: calc(100vh - 44px);
-				overflow: hidden;
+		position: fixed;
+		top:44px;
+	  overflow: scroll;
+		width: 100%;
 			}
 			
 		input{
@@ -124,9 +128,11 @@
 		
 		p{
 			background-color:#F1FFEF;
-			padding: 5px;
-			margin: 5px;
-			height: 55vh;
+			padding: 15px;
+			margin: 18px;
+			border-radius:5px;
+			color: #adafb0;
+			font-size: 13px;
 		}
 	</style>
 	
