@@ -130,7 +130,7 @@
 <style>
 	.task{
 		margin-top: 47px;
-		height: calc(100vh - 47px - 49px);
+		height: calc(90vh - 47px - 49px);
 		overflow: scroll;
 	}
 	
