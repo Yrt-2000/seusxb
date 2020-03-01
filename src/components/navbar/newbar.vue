@@ -16,6 +16,7 @@
 			back(){
 				history.back()
 			}
+			
 		}
 	}
 </script>
