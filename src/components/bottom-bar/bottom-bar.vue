@@ -1,7 +1,7 @@
 <template>
 	<div class="bottom-bar">
 		 <div class="nonbutton"><div class='xx'>上传图片后请告知菌菌任务编号,本任务为{{taskid}}</div></div>
-		 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2835470877&site=qq&menu=yes">
+		 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
 		 <div class="button">打卡</div></a>
 	</div>
 </template>
