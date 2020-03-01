@@ -4,14 +4,8 @@
       <navbar>
         <div slot="center">首页</div>
       </navbar>
-
       <!-- 活动规则 -->
-
-      <el-header height="auto">
-        <!-- <div class="rule_title">
-				活动规则
-        </div>-->
-      </el-header>
+      <el-header height="auto"></el-header>
       <el-main height="auto">
         <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" stretch="true">
           <el-tab-pane label="任务规则" name="first">
@@ -33,7 +27,7 @@
                 </div>
               </el-collapse-item>
               <el-collapse-item title="提交结果" name="3">
-                <div class="tes">任务提交后，次日可在“我的->提交记录"中查看审核后的结果</div>
+                <div class="tes">任务提交后，次日可在“我的->提交记录"中查看审核结果</div>
               </el-collapse-item>
             </el-collapse>
           </el-tab-pane>
@@ -42,7 +36,7 @@
               <el-collapse-item title="队伍积分" name="1">
                 <div class="tes">
                   每日我们会以
-                  <strong>团队所有成员积分总和</strong>排序
+                  <strong>团队所有成员当日积分总和</strong>来排序
                 </div>
                 <div>
                   1~ 3名加10分
@@ -63,12 +57,48 @@
               </el-collapse-item>
             </el-collapse>
           </el-tab-pane>
+          <el-tab-pane label="奖品说明" name="third">
+            <el-collapse v-model="activeNamesss" @change="handleChange" accordion>
+              <el-collapse-item title="达标性奖励" name="1">
+                <div class="tes">
+                  <strong>第一到第十位</strong>达到X分：
+                  <strong>简约电子闹钟</strong>
+                </div>
+                <div class="tes">
+                  <strong>第十一到第三十位</strong>位达到X分：
+                  <strong>LED创意桌面摆件</strong>
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="团队前四名奖品" name="2">
+                <div class="tes">
+                  <strong>24合一超大多肉拼盘</strong>
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="个人前五名奖品" name="3">
+                <div class="tes">
+                  <strong>第一名：音响闹钟夜灯3合1的智能音响</strong>
+                </div>
+                <div class="tes">
+                  <strong>第二名：Redmi airdots 无线蓝牙耳机</strong>
+                </div>
+                <div class="tes">
+                  <strong>第三名：超可爱仓鼠抱枕</strong>
+                </div>
+                <div class="tes">
+                  <strong>第四名：舒适加厚软坐垫</strong>
+                </div>
+                <div class="tes">
+                  <strong>第五名：可变形毛绒公仔的创易U型枕</strong>
+                </div>
+              </el-collapse-item>
+            </el-collapse>
+          </el-tab-pane>
         </el-tabs>
       </el-main>
 
       <!-- 排行榜 -->
       <el-main height="auto">
-        <el-carousel trigger="click" height="700px" interval="5000">
+        <el-carousel trigger="click" height="650px" arrow="always" autoplay="false">
           <el-carousel-item v-for="id in 2 " :key="id">
             <div v-show="id==1">
               <div class="rank_title">个人排名</div>
@@ -78,12 +108,13 @@
                 <el-table-column prop="point" label="积分" align="center"></el-table-column>
               </el-table>
             </div>
+
             <div v-show="id==2">
-              <div class="rank_title">队伍排名</div>
+              <div class="rank_title" >队伍排名</div>
               <el-table :data="teamarray" stripe style="width: 100%" header-align="center">
                 <el-table-column prop="teamrank" label="排名" align="center"></el-table-column>
                 <el-table-column prop="teamname" label="名称" align="center"></el-table-column>
-                <el-table-column prop="teamname" label="积分" align="center"></el-table-column>
+                <el-table-column prop="teampoint" label="积分" align="center"></el-table-column>
               </el-table>
             </div>
           </el-carousel-item>
@@ -109,16 +140,8 @@ export default {
       array: [],
       teamarray: [],
       activeNames: [],
-      activeNamess: []
-    };
-  },
-  mounted() {
-    const that = this;
-    window.onresize = () => {
-      return (() => {
-        window.screenWidth = document.body.clientWidth;
-        that.screenWidth = window.screenWidth;
-      })();
+      activeNamess: [],
+      activeNamesss: []
     };
   },
   created() {
@@ -160,6 +183,24 @@ export default {
 </script>
 
 <style scoped>
+
+ /* .demo-table-expand {
+    font-size: 0;
+    padding: 0;
+  }
+  .demo-table-expand label {
+    width: 90px;
+    color: #99a9bf;
+  }
+  .demo-table-expand .el-form-item {
+    padding: 0;
+    margin-right: 0;
+    margin-left: -0;
+    margin-bottom: -0;
+    margin-top: -0;
+    width: 100%;
+  } */
+
 .el-main {
   font-size: 18px;
   background-color: #e9eef3;
@@ -242,9 +283,6 @@ export default {
 }
 
 .tes {
-  text-align: left;
-}
-.pes div {
   text-align: left;
 }
 </style>
