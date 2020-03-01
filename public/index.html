@@ -8,16 +8,13 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
 		<script>
 			window.οnlοad=function(){
 			    setTimeout(function() {  
 			        window.scrollTo(0, 1)  
 			    }, 0);  
 			};
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+			
 		</script>
     <div id="app"></div>
     <!-- built files will be auto injected -->
