@@ -90,12 +90,12 @@ export default {
 
 <style>
 .signin {
-  position: relative;
   z-index: 9;
   background-color: #ffffff;
-  height: calc(100vh - 44px);
-  overflow: scroll;
-  margin-top: 44px;
+  overflow: fixed;
+	position: fixed;
+	top:44px;
+	width: 100%;
 }
 
 img {
