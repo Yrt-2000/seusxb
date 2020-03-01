@@ -7,13 +7,9 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
+  <body οnlοad="setTimeout(function(){window.scrollTo(0,1)},100);">
 		<script>
-			window.οnlοad=function(){
-			    setTimeout(function() {  
-			        window.scrollTo(0, 1)  
-			    }, 0);  
-			};
+
 			
 		</script>
     <div id="app"></div>
