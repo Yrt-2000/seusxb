@@ -1,6 +1,5 @@
 <template>
 	<div id="tab-bar">
-
 		<slot>默认插槽内容</slot>
 	</div>
 </template>

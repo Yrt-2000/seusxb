@@ -1,6 +1,6 @@
 <template>
+	<div class="home">
   <el-container direction="vertical">
-    <div class="home">
       <navbar>
         <div slot="center">首页</div>
       </navbar>
@@ -89,8 +89,8 @@
           </el-carousel-item>
         </el-carousel>
       </el-main>
-    </div>
   </el-container>
+	 </div>
 </template>
 
 <script>
