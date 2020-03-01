@@ -102,8 +102,10 @@ img {
   width: 100%;
   height: calc(100vh - 44px);
   overflow: hidden;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+	top: 44;
+	left: 0;
+	right: 0;
 }
 
 .box {
