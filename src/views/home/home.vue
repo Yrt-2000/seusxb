@@ -7,8 +7,8 @@
       <el-container direction="vertical">
         <!-- 活动规则 -->
         <el-header height="auto"></el-header>
-        <el-main height="auto">
-          <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" :stretch="true">
+        <div  style="background-color:#eeeeee">
+          <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" :stretch="true" style="margin:20px">
             <el-tab-pane label="任务规则" name="first">
               <div class="rule_text">请仔细阅读规则简介后方可参加活动</div>
               <el-collapse v-model="activeNames" @change="handleChange" accordion>
@@ -59,9 +59,9 @@
                 </el-collapse-item>
               </el-collapse>
             </el-tab-pane>
-            <el-tab-pane label="奖品说明" name="third">
+            <el-tab-pane label="奖品说明" name="third" >
               <div class="rule_text">请仔细阅读规则简介后方可参加活动</div>
-              <el-collapse v-model="activeNamesss" @change="handleChange" accordion>
+              <el-collapse v-model="activeNamesss" @change="handleChange" accordion >
                 <el-collapse-item title="达标性奖励" name="1">
                   <div class="tes">
                     <strong>第一到第十位</strong>达到X分：
@@ -97,10 +97,8 @@
               </el-collapse>
             </el-tab-pane>
           </el-tabs>
-        </el-main>
-        
-        <el-main height="auto" >
-          <el-carousel trigger="click" height="650px" arrow="always" :autoplay="true">
+          <div style="margin-bottom:20px"></div>
+          <el-carousel trigger="click" height="650px" arrow="always" :autoplay="true" style="margin:20px">
             <el-carousel-item v-for="id in 2 " :key="id">
               <div v-show="id==1">
                 <div class="rank_title">个人排行榜</div>
@@ -134,7 +132,7 @@
               </div>
             </el-carousel-item>
           </el-carousel>
-        </el-main>
+        </div>
         <!-- 排行榜 -->
       </el-container>
     </div>
@@ -224,13 +222,6 @@ export default {
     width: 100%;
   } */
 
-.el-main {
-  font-size: 18px;
-  background-color: #e9eef3;
-  color: #333;
-  text-align: center;
-  line-height: auto;
-}
 
 .el-header,
 .el-footer {
@@ -267,7 +258,7 @@ export default {
 .el-tabs__item {
   color: gray !important;
 }
-.el-tabs__item.is-active{
+.el-tabs__item.is-active {
   color: #55aa7f !important;
 }
 .notice1 {
@@ -293,15 +284,17 @@ export default {
 .rule_title {
   font-weight: 900;
   font-size: 20px;
-  padding: 25px 50px;
 }
 .rule_text {
+  text-align: center;
   font-size: 10px;
   color: gray;
   margin-bottom: 10px;
   background-color: white;
+  text-align: center;
 }
 .rank_title {
+  text-align: center;
   font-weight: 900;
   font-size: 20px;
   padding: 15px;
@@ -310,6 +303,7 @@ export default {
 }
 .rank_text {
   font-size: 10px;
+  text-align: center;
   color: gray;
   padding: 10 0;
   background-color: white;
