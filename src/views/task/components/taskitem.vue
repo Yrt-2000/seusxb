@@ -6,14 +6,14 @@
           <slot name="imga"></slot>
         </div>
       </el-aside>
-      <el-main>
+      <div>
         <div class="largesize">
           <slot name="large"></slot>
         </div>
         <div class="smallsize">
           <slot name="small"></slot>
         </div>
-      </el-main>
+      </div>
     </el-container>
   </div>
 </template>
@@ -43,8 +43,9 @@ export default {
 .largesize {
   text-align:left;
   margin-left:10px;
+  margin-top:5px;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 16px;
   color: #42b983;
 }
 .smallsize {
@@ -57,13 +58,6 @@ export default {
 }
 
 .el-aside,
-.el-main {
-  padding: 0;
-  margin: 0;
-  background: 0 0;
-  min-height: 40px;
-}
-
 .el-container {
   padding: 0;
 }
