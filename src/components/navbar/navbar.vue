@@ -2,7 +2,7 @@
 	<div class="nav-bar">
 		<div class="left"><slot name="left"></slot></div>
 		<div class="center"><slot name="center"></slot></div>
-		<div class="right" @click="exit"><i class="el-icon-circle-close" slot="right" ></i></div>
+		<div class="right" @click="exit"><i class="el-icon-circle-close" slot="right"></i></div>
 	</div>
 </template>
 
