@@ -1,17 +1,31 @@
 <template>
   <div>
-    <navbar>
+    <!-- <navbar>
       <div slot="center">“播种季”计软智学生会线上打卡</div>
-    </navbar>
+    </navbar>-->
+    
+    <div class="bg">
+      <img class="bg3" src="../../assets/img/bg/b3.gif" />
+      <img class="bg2" src="../../assets/img/bg/b2.gif" />
+      <img class="bg1" src="../../assets/img/bg/b1.gif" />
+      <img class="bgs" src="../../assets/img/bg/bg.gif" />
+    </div>
+    <div class="logos">
+      <img class="cse-logo" src="../../assets/img/logo/cse.gif"/>
+      <div></div>
+      <!-- <img class="bzj-logo" src="../../assets/img/logo/bzj.png"> -->
+    </div>
     <div class="signin">
-      <img src="../../assets/img/login.jpg" />
-      <div class="box">
+      <div class="box" >
         <h2>欢迎登录</h2>
-        <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px"/>
+        <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px" />
         <el-input v-model="loginForm.QQ" placeholder="QQ账号" />
         <div class="click" @click="login">登录</div>
         <div class="hint">首次登录将自动创建账户</div>
       </div>
+    </div>
+    <div class="copyright">
+      <p>版权所有 © 东南大学"计软智"学生会</p>
     </div>
   </div>
 </template>
@@ -20,7 +34,7 @@
 import axios from "../../network/axios.js";
 import { mapMutations } from "vuex";
 import navbar from "../../components/navbar/navbar.vue";
-import { Message,Input } from "element-ui";
+import { Message, Input } from "element-ui";
 export default {
   name: "login",
   components: {
@@ -90,43 +104,147 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.bg {
+  z-index: -10;
+  position: fixed;
+  width: 100%;
+  .bgs {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    animation: m 3s;
+  }
+  .bgd {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    animation: d 2s;
+  }
+  .bg3 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    animation: m3 1.5s;
+  }
+  .bg2 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    animation: m2 1.5s;
+  }
+  .bg1 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    animation: m1 1.5s;
+  }
+  
+  @keyframes m {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+  @keyframes m1 {
+    from {
+      left:  -1000px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  @keyframes m2 {
+    from {
+      top:  -1000px;
+    }
+    to {
+      top :  0px;
+    }
+  }
+  @keyframes m3 {
+    from {
+      bottom:  -600px;
+    }
+    to {
+      bottom :  0px;
+    }
+  }
+}
+
 .signin {
   z-index: 9;
   background-color: #ffffff;
   overflow: fixed;
-	position: fixed;
-	top:44px;
-	width: 100%;
-}
-
-img {
-  width: 100%;
-  height: calc(100vh - 44px);
-  overflow: hidden;
   position: fixed;
-	top: 44px;
-	left: 0;
-	right: 0;
+  top: 44px;
+  width: 100%;
 }
-.hint{
+.copyright{
+    position: fixed;
+    bottom: 10px;
+    text-align:center;
+    width: 100%;
+    animation: slideIn 2s;
+    p {
+      margin: 3px;
+      font-size:24px;
+    }
+    @keyframes slideIn {
+      from {
+        bottom: -30px;
+        opacity: 0;
+      }
+      to {
+        bottom: 10px;
+        opacity: 100;
+      }
+    }
+  }
+// img {
+//   height: calc(100vh - 44px);
+//   width: auto;
+//   overflow: hidden;
+//   position: fixed;
+//   left: 0;
+//   right: 0;
+// }
+.hint {
   font-size: 15px;
   color: gray;
-  text-align:center;
-  margin-bottom:10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .box {
   background-color: white;
   border-color: #333333;
   opacity: 0.8;
   z-index: 5;
-  padding-left:15px;
- padding-right:15px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: absolute;
-  top: 60px;
+  top: 200px;
   left: 15px;
   right: 15px;
   border-radius: 7px;
+  animation: fad 2s;
+
+  @keyframes fad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.8;
+    }
+  }
 }
 
 h2 {
@@ -148,5 +266,58 @@ input {
   color: white;
   text-align: center;
   padding: 10px;
+}
+.logos {
+  position: fixed;
+  top:5%;
+  width:100%;
+  text-align: center;
+  animation: fadeIn 2s;
+  .bzj-logo {
+    width: 80%;
+    border-radius:30px;
+    background-color:  rgba(243, 236, 135, 0.4);
+    margin-top: 10px;
+    animation: fadeIn 2s;
+  }
+
+  .cse-logo {
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    animation: fadeIn 2s;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+
+}
+
+
+.copyright {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  animation: slideIn 1s;
+  p {
+    margin:3px;
+    font-size:10px;
+  } 
+  @keyframes slideIn {
+    from {
+      bottom: -30px;
+      opacity: 0;
+    }
+    to {
+      bottom: 10px;
+      opacity: 100;
+    }
+  }
 }
 </style>

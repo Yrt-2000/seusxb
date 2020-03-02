@@ -10,12 +10,9 @@
     </div>
 	<br>
 	<br>
-    <button @click="click2">更新排名</button>
-	<br>
-	<br>
     <div class="second">
       <h4>当日所有任务全部审核完成后，点击此按钮</h4>
-      <button @click="click5(),click2(),click2()">结算今天的队伍积分</button>
+      <button @click="click5()">结算今天的队伍积分</button>
       <h5>请注意：上面那个按钮每天只能点击一次！请确认当日任务全部审核完成后再点击此按钮！</h5>
     </div>
     <div class="third">
