@@ -98,7 +98,7 @@
             </el-tab-pane>
           </el-tabs>
           <div style="margin-bottom:20px"></div>
-          <el-carousel trigger="click" height="650px" arrow="always" :autoplay="true" style="margin:20px">
+          <el-carousel trigger="click" height="650px" arrow="always" autoplay="false" style="margin:20px">
             <el-carousel-item v-for="id in 2 " :key="id">
               <div v-show="id==1">
                 <div class="rank_title">个人排行榜</div>
