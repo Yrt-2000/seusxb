@@ -7,8 +7,8 @@
 					<el-timeline-item v-for="(item,index) in lista" :timestamp='item.time' placement="top" color='#42B983' :key='index'>
 					      <el-card>
 					        <h4>{{index+1}} {{item.taskNum}}</h4>
-					        <p>审核于{{item.time.prototype.getMonth()}}月{{item.time.prototype.getDate()}}日 
-									{{item.time.prototype.getHours()}}:{{item.time.prototype.getMinutes()}}</p>
+	<!-- 				        <p>审核于{{item.time.getMonth()}}月{{item.time.getDate()}}日 
+									{{item.time.getHours()}}:{{item.time.getMinutes()}}</p> -->
 					      </el-card>
 					</el-timeline-item>
 				
@@ -26,15 +26,77 @@
 		components:{
 			newbar
 		},
-		created(){
+		activated(){
 			this.getList()
-			this.change()
 		},
 		methods:{
 			getList(){
 				taskCompleted().then(res => {
 					if (res.success){
               this.lista = res.result
+							console.log(this.lista)
+						
+						for(let i=0 ; i<this.lista.length; i++){
+							let str=this.lista[i].time
+									this.lista[i].time=str.substr(0,10)+" "+str.substr(11,15)
+
+							switch(this.lista[i].taskNum){
+							case "1":
+							   this.lista[i].taskNum = '6:30早起';
+								 break;
+							case "2":
+							   this.lista[i].taskNum = '东南学工';
+								 break;
+							case "3":
+								 this.lista[i].taskNum = '按时吃早餐';
+								 break;
+							case "4":
+							   this.lista[i].taskNum = '卫生习惯';
+								 break;
+							case "5":
+							   this.lista[i].taskNum = '帮做家务';
+								 break;
+							case "6":
+							   this.lista[i].taskNum = '完成当日作业';
+								 break;
+							case "7":
+							   this.lista[i].taskNum = '整理当天学习内容';
+								 break;
+							case "8":
+							   this.lista[i].taskNum = '线上答疑';
+								 break;
+							case "9":
+							   this.lista[i].taskNum = '做运动';
+								 break;
+							case "10":
+							   this.lista[i].taskNum = '关注时事';
+								 break;
+							case "11":
+							   this.lista[i].taskNum = '每日练字';
+								 break;
+							case "12":
+							   this.lista[i].taskNum = '阅读课外书籍';
+								 break;
+							case "13":
+							   this.lista[i].taskNum = '阅读英语美文';
+								 break;
+							case "14":
+							   this.lista[i].taskNum = '英语听力口语训练';
+								 break;
+							case "15":
+							   this.lista[i].taskNum = '背单词';
+								 break;
+							case "16":
+							   this.lista[i].taskNum = '额外专业知识学习';
+								 break;
+							case "17":
+							   this.lista[i].taskNum = '每日编程';
+								 break;
+							case "18":
+							   this.lista[i].taskNum = '11点前睡觉';
+								 break;
+						}
+						}
 					}
 					else{
 						Message({
@@ -58,65 +120,7 @@
 			})
 			},
 			change(){
-			
-				for(let i=0 ; i<this.lista.length; i++){
-					switch(this.lista[i].taskNum){
-					case "1":
-					   this.lista[i].taskNum = '6:30早起';
-						 break;
-					case "2":
-					   this.lista[i].taskNum = '东南学工';
-						 break;
-					case "3":
-						 this.lista[i].taskNum = '按时吃早餐';
-						 break;
-					case "4":
-					   this.lista[i].taskNum = '卫生习惯';
-						 break;
-					case "5":
-					   this.lista[i].taskNum = '帮做家务';
-						 break;
-					case "6":
-					   this.lista[i].taskNum = '完成当日作业';
-						 break;
-					case "7":
-					   this.lista[i].taskNum = '整理当天学习内容';
-						 break;
-					case "8":
-					   this.lista[i].taskNum = '线上答疑';
-						 break;
-					case "9":
-					   this.lista[i].taskNum = '做运动';
-						 break;
-					case "10":
-					   this.lista[i].taskNum = '关注时事';
-						 break;
-					case "11":
-					   this.lista[i].taskNum = '每日练字';
-						 break;
-					case "12":
-					   this.lista[i].taskNum = '阅读课外书籍';
-						 break;
-					case "13":
-					   this.lista[i].taskNum = '阅读英语美文';
-						 break;
-					case "14":
-					   this.lista[i].taskNum = '英语听力口语训练';
-						 break;
-					case "15":
-					   this.lista[i].taskNum = '背单词';
-						 break;
-					case "16":
-					   this.lista[i].taskNum = '额外专业知识学习';
-						 break;
-					case "17":
-					   this.lista[i].taskNum = '每日编程';
-						 break;
-					case "18":
-					   this.lista[i].taskNum = '11点前睡觉';
-						 break;
-				}
-				}
+				
 			}
 		},
 		data(){
