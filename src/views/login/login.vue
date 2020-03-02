@@ -8,8 +8,7 @@
       <img class="bg3" src="../../assets/img/bg/b3.gif" />
       <img class="bg2" src="../../assets/img/bg/b2.gif" />
       <img class="bg1" src="../../assets/img/bg/b1.gif" />
-      <img class="bgs" src="../../assets/img/bg/bg.gif">
-      <img class="bgd" src="../../assets/img/bg/bg.gif">
+      <img class="bgs" src="../../assets/img/bg/bg.gif" />
     </div>
     <div class="logos">
       <img class="cse-logo" src="../../assets/img/logo/cse.gif"/>
@@ -146,14 +145,7 @@ export default {
     right: 0;
     animation: m1 1.5s;
   }
-  @keyframes d {
-    from {
-      opacity: 60;
-    }
-    to {
-      opacity: 10;
-    }
-  }
+  
   @keyframes m {
     from {
       opacity: 0;
