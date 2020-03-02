@@ -38,7 +38,9 @@
 							             message: '操作成功',
 							             type: 'success',
 							             duration: 1000
-							     })
+							     }),
+								this.$router.replace('/profile')
+								this.$store.state.isrefresh = true
 								}
 							else{
 								Message({

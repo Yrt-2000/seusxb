@@ -67,8 +67,10 @@ export default {
   name: "profile",
   created() {
     this.getdatanow();
-		window.reload();
   },
+	activated() {
+		this.shuaxin();
+	},
   data() {
     return {
       qq: "",
@@ -130,9 +132,18 @@ export default {
             duration: 1500
           });
         });
-    }
+    },
+		//控制页面刷新
+		shuaxin(){
+			console.log(this.$store.state.isrefresh)
+			if(this.$store.state.isrefresh === true){
+			location.reload()
+			this.$store.state.isrefresh === false
+			}
+			console.log(this.$store.state.isrefresh)
+		}
   }
-};
+}
 </script>
 
 <style scoped>
