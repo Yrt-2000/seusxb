@@ -36,6 +36,8 @@
 				             type: 'success',
 				             duration: 1500
 				     })
+					this.$router.replace('/profile')
+					this.$store.state.isrefresh = true
 					}
 				else{
 					Message({
@@ -44,7 +46,7 @@
 					           type: 'warning',
 					           duration: 1500
 					   })
-				if (res.reason === '登录过期，请重新登录'){
+				if (res.reason === '登陆过期，请重新登陆'){
 					localStorage.removeItem('Authorization');
 					 this.$router.push('/login');
 				}

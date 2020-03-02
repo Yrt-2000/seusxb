@@ -8,6 +8,7 @@ export default new Vuex.Store({
 		isAdmin: false,
 		//存储token
 		Authorization: localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : '',
+		isrefresh: false
 	},
 	mutations: {
 		//修改token,并存入本地

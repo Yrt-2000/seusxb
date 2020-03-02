@@ -68,6 +68,9 @@ export default {
   created() {
     this.getdatanow();
   },
+	activated() {
+		this.shuaxin();
+	},
   data() {
     return {
       qq: "",
@@ -84,7 +87,6 @@ export default {
 		maintabbar
   },
   methods: {
-    ...mapMutations(["logout"]),
     out() {
       this.$router.replace("/login");
     },
@@ -116,7 +118,7 @@ export default {
               type: "warning",
               duration: 1500
             });
-						if (res.reason === '登录过期，请重新登录'){
+						if (res.reason === '登陆过期，请重新登陆'){
 							localStorage.removeItem('Authorization');
 							 this.$router.push('/login');
 						}
@@ -130,12 +132,21 @@ export default {
             duration: 1500
           });
         });
-    }
+    },
+		//控制页面刷新
+		shuaxin(){
+			console.log(this.$store.state.isrefresh)
+			if(this.$store.state.isrefresh === true){
+			location.reload()
+			this.$store.state.isrefresh === false
+			}
+			console.log(this.$store.state.isrefresh)
+		}
   }
-};
+}
 </script>
 
-<style>
+<style scoped>
 #profile {
   background-color: #f2f2f2;
 	position: fixed;
