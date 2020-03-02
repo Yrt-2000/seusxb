@@ -5,13 +5,14 @@
     </navbar>-->
     
     <div class="bg">
-      <img class="bg3" src="../../assets/img/bg/b3.png" />
-      <img class="bg2" src="../../assets/img/bg/b2.png" />
-      <img class="bg1" src="../../assets/img/bg/b1.png" />
-      <img class="bgs" src="../../assets/img/bg/bg.png">
+      <img class="bg3" src="../../assets/img/bg/b3.gif" />
+      <img class="bg2" src="../../assets/img/bg/b2.gif" />
+      <img class="bg1" src="../../assets/img/bg/b1.gif" />
+      <img class="bgs" src="../../assets/img/bg/bg.gif">
+      <img class="bgd" src="../../assets/img/bg/bg.gif">
     </div>
     <div class="logos">
-      <img class="cse-logo" src="../../assets/img/logo/cse.png"/>
+      <img class="cse-logo" src="../../assets/img/logo/cse.gif"/>
       <div></div>
       <!-- <img class="bzj-logo" src="../../assets/img/logo/bzj.png"> -->
     </div>
@@ -23,7 +24,6 @@
         <div class="click" @click="login">登录</div>
         <div class="hint">首次登录将自动创建账户</div>
       </div>
-
     </div>
   </div>
 </template>
@@ -112,7 +112,14 @@ export default {
     height: 100%;
     position: fixed;
     left: 0;
-    animation: m 5s;
+    animation: m 3s;
+  }
+  .bgd {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    animation: d 2s;
   }
   .bg3 {
     width: 100%;
@@ -136,12 +143,20 @@ export default {
     right: 0;
     animation: m1 1.5s;
   }
-  @keyframes m {
+  @keyframes d {
     from {
-      opacity: 80;
+      opacity: 60;
     }
     to {
+      opacity: 10;
+    }
+  }
+  @keyframes m {
+    from {
       opacity: 0;
+    }
+    to {
+      opacity: 100;
     }
   }
   @keyframes m1 {
@@ -198,10 +213,10 @@ export default {
   border-color: #333333;
   opacity: 0.8;
   z-index: 5;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: absolute;
-  top: 270px;
+  top: 200px;
   left: 15px;
   right: 15px;
   border-radius: 7px;
@@ -215,7 +230,6 @@ export default {
       opacity: 0.8;
     }
   }
-
 }
 
 h2 {
@@ -253,9 +267,9 @@ input {
   }
 
   .cse-logo {
-    width: 40%;
-    width: 40%;
-    margin-top: 20px;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 30px;
     animation: fadeIn 2s;
   }
   @keyframes fadeIn {
