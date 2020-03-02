@@ -132,7 +132,7 @@
 	}				
 </script>
 
-<style>
+<style scoped>
 	.task{
 		position: fixed;
 		top:44px;

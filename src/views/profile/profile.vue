@@ -134,7 +134,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #profile {
   background-color: #f2f2f2;
 	position: fixed;

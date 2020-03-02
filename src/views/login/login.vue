@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .signin {
   z-index: 9;
   background-color: #ffffff;
@@ -103,7 +103,7 @@ img {
   height: calc(100vh - 44px);
   overflow: hidden;
   position: fixed;
-	top: 44;
+	top: 44px;
 	left: 0;
 	right: 0;
 }
