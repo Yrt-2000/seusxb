@@ -9,7 +9,7 @@ export default new Vuex.Store({
 		//存储token
 		Authorization: localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : '',
 		//控制profile刷新界面
-		isrefresh: false,
+		// isrefresh: false,
 		teampoint:'',
 		teamrank:'',
 		teamname:''

@@ -82,9 +82,9 @@ export default {
   created() {
     this.getdatanow();
   },
-	activated() {
-		this.shuaxin();
-	},
+	// activated() {
+	// 	this.shuaxin();
+	// },
   data() {
     return {
       qq: "",
