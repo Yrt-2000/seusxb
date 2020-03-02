@@ -43,7 +43,7 @@
 	}
 	
 	.text{
-		color: #c0c0c0;
+		color:#555555;
 		padding: 7px;
 		overflow-x:hidden;
 		overflow-y:scroll ;

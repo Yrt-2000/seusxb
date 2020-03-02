@@ -1,7 +1,7 @@
 <template>
 	<detail-base taskid="8">
 		<div slot="title1">线上答疑</div>
-		<img slot="img" src="../../assets/img/answerQuestion.jpeg"></img>
+		<img slot="img" src="../../assets/img/answerQuestion.jpeg"/>
 		<div slot="title2">线上答疑</div>
 		<div slot="text">
             <p>在线上回答同学提出学习类的问题并通过上传图片的方式证明(建议：可截图)</p>

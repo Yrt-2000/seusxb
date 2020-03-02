@@ -41,14 +41,19 @@ export default {
   padding: 10px 5px;
 }
 .largesize {
-  font-size: 1em;
+  text-align:left;
+  margin-left:10px;
+  font-weight: bold;
+  font-size: 0.9em;
   color: #42b983;
 }
 .smallsize {
+  text-align:left;
   font-size: 0.7em;
+  margin-left:10px;
+  margin-left:10px;
   margin-top: 3px;
   color: #adafb0;
-  padding-top: 8px;
 }
 
 .el-aside,

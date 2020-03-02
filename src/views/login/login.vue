@@ -7,9 +7,10 @@
       <img src="../../assets/img/login.jpg" />
       <div class="box">
         <h2>欢迎登录</h2>
-        <input v-model="loginForm.num" placeholder="一卡通号" />
-        <input v-model="loginForm.QQ" placeholder="QQ账号" />
-        <div class="click" @click="login">登录（首次登录将自动创建账户）</div>
+        <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px"/>
+        <el-input v-model="loginForm.QQ" placeholder="QQ账号" />
+        <div class="click" @click="login">登录</div>
+        <div class="hint">首次登录将自动创建账户</div>
       </div>
     </div>
   </div>
@@ -19,11 +20,12 @@
 import axios from "../../network/axios.js";
 import { mapMutations } from "vuex";
 import navbar from "../../components/navbar/navbar.vue";
-import { Message } from "element-ui";
+import { Message,Input } from "element-ui";
 export default {
   name: "login",
   components: {
-    navbar
+    navbar,
+    "el-input": Input
   },
   data() {
     return {
@@ -107,12 +109,19 @@ img {
 	left: 0;
 	right: 0;
 }
-
+.hint{
+  font-size: 15px;
+  color: gray;
+  text-align:center;
+  margin-bottom:10px;
+}
 .box {
   background-color: white;
   border-color: #333333;
-  opacity: 0.7;
+  opacity: 0.8;
   z-index: 5;
+  padding-left:15px;
+ padding-right:15px;
   position: absolute;
   top: 60px;
   left: 15px;
@@ -132,7 +141,8 @@ input {
 }
 
 .click {
-  margin: 18px;
+  margin: 15px;
+  margin-bottom: 5px;
   border-radius: 5px;
   background-color: #55aa7f;
   color: white;
