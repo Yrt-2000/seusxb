@@ -4,54 +4,68 @@
 		  <div slot="center">我的</div>
 		</navbar>
   <div id="profile">
-    <section class="account">
-      <div class="account-item">
-        <div class="number">
-          <span class="balance">{{teampoint}}</span>分
-        </div>
-        <div class="account-info">团队积分</div>
-      </div>
-      <div class="account-item">
-        <div class="number">
-          <span class="balance">{{point}}</span>分
-        </div>
-        <div class="account-info">我的积分</div>
-      </div>
-      <div class="account-item">
-        <div class="number">
-          <span class="balance">{{rank}}</span>位
-        </div>
-        <div class="account-info">我的排名</div>
-      </div>
-    </section>
-    <div class="team" v-if="teamname">
-      <i class="el-icon-news"></i>
-      团队名称：{{teamname}},团队排名：{{teamrank}}
-    </div>
-    <div class="team" @click="buttonclick2" v-else>
-      <i class="el-icon-news"></i> 现在没有加入团队，点击加入团队
-    </div>
-    <div class="qq">
-      <i class="el-icon-link"></i>
-      我的QQ：{{qq}}
-    </div>
-    <div class="name" @click="buttonclick">
-      <i class="el-icon-lollipop"></i>
-      我的昵称：{{name}},点击此处改名
-    </div>
-    <div class="record" @click="buttonclick3">
-      <i class="el-icon-document-checked"></i> 提交记录
-    </div>
-    <div class="tree">
-      <i class="el-icon-picture-outline"></i>
-      我的积分树
-      <div>
-        <img v-if="point >=0 && point <70" src="../../assets/img/tree/tree1.png" />
-        <img v-else-if="point >=70 && point <150" src="../../assets/img/tree/tree2.gif" />
-        <img v-else-if="point >=150 && point <210" src="../../assets/img/tree/tree3.gif" />
-        <img v-else src="../../assets/img/tree/tree4.gif" />
-      </div>
-    </div>
+		<div class="k">
+		<img src="../../assets/img/树/12.jpg">
+		</div>
+		<div class="a">
+					 <div class="b">
+						  <img v-if="point >=0 && point <70" src="../../assets/img/tree/tree1.png" />
+						  <img v-else-if="point >=70 && point <150" src="../../assets/img/tree/tree2.gif" />
+						  <img v-else-if="point >=150 && point <210" src="../../assets/img/tree/tree3.gif" />
+						  <img v-else src="../../assets/img/tree/tree4.gif" />
+							<div>我的积分树</div>
+					 </div>
+					 <div class="c">
+						   <section class="account">
+						     <div class="account-item">
+						       <div class="number">
+						         <span class="balance">{{point}}</span>分
+						       </div>
+						       <div class="account-info">我的<br>积分</div>
+						     </div>
+						     <div class="account-item">
+						       <div class="number">
+						         <span class="balance">{{rank}}</span>位
+						       </div>
+						       <div class="account-info">我的<br>排名</div>
+						     </div>
+						     <div class="account-item">
+						       <div class="number">
+						         <span class="balance">{{teampoint}}</span>分
+						       </div>
+						       <div class="account-info">团队<br>积分</div>
+						     </div>
+								 <div class="account-item">
+								   <div class="number">
+								     <span class="balance">{{teamrank}}</span>位
+								   </div>
+								   <div class="account-info">团队<br>排名</div>
+								 </div>
+						   </section>
+							 <div class="f"><div class="d">{{name}} </div>
+							 <div class="e">QQ:{{qq}}</div></div>
+					 </div>
+		</div>
+		<div class="name" @click="buttonclick">
+		  <span class="kk"><i class="el-icon-lollipop"></i></span>
+		  <span class="tesm">昵称</span>
+			<span class="jj"><i class="el-icon-arrow-right"></i></span>
+		</div>
+		<div class="team" @click="buttonclickx" v-if="teamname">
+		  <span class="kk"><i class="el-icon-news"></i></span>
+		  <span class="tesm">团队</span>
+			<span class="jj"><i class="el-icon-arrow-right"></i></span>
+		</div>
+		<div class="team" @click="buttonclick2" v-else>
+		  <span class="kk"><i class="el-icon-news"></i></span>
+		  <span class="tesm">团队</span>
+			<span class="jj"><i class="el-icon-arrow-right"></i></span>
+		</div>
+		<div class="record" @click="buttonclick3">
+		  <span class="kk"><i class="el-icon-document-checked"></i></span>
+			<span class="tesm">提交记录</span>
+			<span class="jj"><i class="el-icon-arrow-right"></i></span>
+		</div>
   </div>
 	<maintabbar></maintabbar>
 	</div>
@@ -99,6 +113,9 @@ export default {
     buttonclick3() {
       this.$router.push(`/profile/recordList`);
     },
+		buttonclickx(){
+			this.$router.push(`/profile/newteam`);
+		},
     //发送相关网络请求
     getdatanow() {
       getdata()
@@ -111,6 +128,10 @@ export default {
             this.teamrank = res.result.teamrank;
             this.point = res.result.point;
             this.teampoint = res.result.teampoint;
+						this.$store.state.teamrank = this.teamrank;
+						this.$store.state.teamname = this.teamname;
+						this.$store.state.teampoint = this.teampoint;
+						console.log(this.teamname)
           } else {
             Message({
               showClose: true,
@@ -147,6 +168,64 @@ export default {
 </script>
 
 <style scoped>
+	
+	.a{
+		position: absolute;
+		top: 100px;
+		left: 15px;
+		right: 15px;
+		height: 166px;
+		background-color: #f6fff4;
+		border-radius: 10px;
+		z-index: 10;
+	}
+	.b{
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		bottom: 10px;
+		
+		
+	}
+	
+	.b img{
+		border-radius: 11.5vw;
+		width: 23vw;
+		height: 23vw;
+	}
+	
+	.b div{
+		color: #55AA7F;
+		text-align: center;
+		padding-top: 8px;
+	}
+	.c{
+		position: absolute;
+		top: 10px;
+		left: 30vw;
+		right: 1vw;
+		bottom: 10px;
+		padding-right: 2vw;
+	}
+	.d{
+		font-size: 22px;
+		color: #42B983;
+		padding-left: 10px;
+	}
+	.e{
+		font-size: 13px;
+		padding-left: 10px;
+	}
+	.f{
+		padding: 7px;
+		padding-left: 5px;
+		background-color: white;
+		margin-top: 2.5px;
+	}
+	.k img{
+		width: 100%;
+		height: 300px;
+	}
 #profile {
   background-color: #f2f2f2;
 	position: fixed;
@@ -163,7 +242,7 @@ export default {
 .account-item {
   width: 100%;
   background-color: #fff;
-  margin-right: 1px;
+  margin-right: 2.5px;
   text-align: center;
 }
 
@@ -174,7 +253,7 @@ export default {
 .account-item {
   color: #666;
   font-size: 13px;
-  padding: 18px;
+  padding: 5px;
 }
 
 .account-item .balance {
@@ -192,6 +271,8 @@ export default {
   margin-top: 12px;
 }
 
+
+	
 .name,
 .qq,
 .team,
@@ -200,7 +281,7 @@ export default {
   padding: 10px 5px;
   background-color: white;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 15px;
   height: 30px;
 }
 
@@ -213,17 +294,16 @@ export default {
   font-size: 25px;
 }
 
-.tree {
-  margin: 3px 0;
-  padding: 10px 5px;
-  background-color: white;
-  overflow: hidden;
-  font-size: 14px;
+.kk{
+	padding: 5px;
 }
-
-.tree img {
-  padding: 20px 50px;
-  width: 40%;
-  height: auto;
+.jj{
+	padding-right: 20px;
+	position: absolute;
+	right: 15px;
+}
+.tesm{
+	position: relative;
+	padding-top:5px
 }
 </style>

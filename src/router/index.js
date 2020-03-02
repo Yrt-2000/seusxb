@@ -11,6 +11,7 @@ const task = () => import('../views/task/task.vue')
 const profile = () => import('../views/profile/profile.vue')
 const nameChange = () => import('../views/profile/nameChange.vue')
 const team = () => import('../views/profile/team.vue')
+const newteam = () => import('../views/profile/newteam.vue')
 const recordList = () => import('../views/profile/recordList.vue')
 const getUp = () => import('../views/detail/getUp.vue')
 const review = () => import('../views/detail/review.vue')
@@ -52,6 +53,7 @@ const routes = [
 	{ path: '/login', component: login },
 	{ path: '/profile', component: profile },
 	{ path: '/profile/namechange', component: nameChange },
+	{ path: '/profile/newteam', component: newteam },
 	{ path: '/detail/getUp', component: getUp },
 	{ path: '/detail/review', component: review },
 	{ path: '/detail/answerQuestion', component: answerQuestion },

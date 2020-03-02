@@ -19,7 +19,7 @@
       <h5>请注意：上面那个按钮每天只能点击一次！请确认当日任务全部审核完成后再点击此按钮！</h5>
     </div>
     <div class="third">
-      <h5>以下两个按钮正常审核打卡记录的时候可以不需要使用</h5>
+      <h5>以下三个按钮正常审核打卡记录的时候可以不需要使用</h5>
       <button @click="click3">获取所有队伍数据</button>
       <button @click="click4">获取所有个人数据</button>
     </div>
@@ -42,7 +42,6 @@ export default {
               type: "success",
               duration: 1500
             }),
-              (this.QQ = ""),
               (this.task = "");
           } else {
             Message({

@@ -37,3 +37,13 @@ export function user(){
 		url:'admin/user/get'
 	})
 }
+
+export function team2(teamname){
+	return axios({
+		method:'get',
+		url:'admin/team/members',
+		params:{
+			teamname
+		}
+	})
+}

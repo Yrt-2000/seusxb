@@ -7,8 +7,7 @@
 					<el-timeline-item v-for="(item,index) in lista" :timestamp='item.time' placement="top" color='#42B983' :key='index'>
 					      <el-card>
 					        <h4>{{index+1}} {{item.taskNum}}</h4>
-	<!-- 				        <p>审核于{{item.time.getMonth()}}月{{item.time.getDate()}}日 
-									{{item.time.getHours()}}:{{item.time.getMinutes()}}</p> -->
+                   <p>获得积分：{{item.v}}</p>
 					      </el-card>
 					</el-timeline-item>
 				
