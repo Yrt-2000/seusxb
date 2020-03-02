@@ -33,14 +33,14 @@
     </div>
     <div class="qq">
       <i class="el-icon-link"></i>
-      我绑定的QQ号：{{qq}}
+      我的QQ：{{qq}}
     </div>
     <div class="name" @click="buttonclick">
       <i class="el-icon-lollipop"></i>
-      我在活动中的昵称：{{name}},点击此处改名
+      我的昵称：{{name}},点击此处改名
     </div>
     <div class="record" @click="buttonclick3">
-      <i class="el-icon-document-checked"></i> 打卡审核通过记录
+      <i class="el-icon-document-checked"></i> 提交记录
     </div>
     <div class="tree">
       <i class="el-icon-picture-outline"></i>
