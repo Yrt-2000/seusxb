@@ -67,6 +67,7 @@ export default {
   name: "profile",
   created() {
     this.getdatanow();
+		window.reload();
   },
   data() {
     return {
