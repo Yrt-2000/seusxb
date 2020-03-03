@@ -166,7 +166,7 @@ export default {
 
 <style scoped>
 .bar{
-	z-index: 10
+	z-index: -1
 }
 .info2 {
   margin: 0;
@@ -189,7 +189,7 @@ export default {
 
 #profile {	
   background-color: white;
-  z-index: -1;
+  z-index: -2;
   position: fixed;
   top: 44px;
   bottom: 49px;
@@ -206,21 +206,22 @@ a {
   top: 250px;
   background-color: #eeeeee;
   width: 100%;
+	z-index: 999;
 }
 
 .imgk {
   position: relative;
-  z-index: -999;
+  z-index: -1;
   top: 0;
   left: 0;
   right: 0;
-  height: calc(100vh - 44px -49px);
-  overflow: hidden;
 }
 
 .imgk img {
   width: 100%;
   height: calc(100vh -44px -49px);
+	position: absolute;
+	z-index: -1;
 }
 
 .name,
