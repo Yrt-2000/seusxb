@@ -185,7 +185,7 @@
               trigger="click"
               height="650px"
               arrow="always"
-              autoplay="false"
+              :autoplay="false"
               style="margin:20px"
             >
               <el-carousel-item v-for="id in 2 " :key="id">
@@ -391,8 +391,10 @@ export default {
 
 .z2 img {
   border-radius: 11.5vw;
-  width: 23vw;
-  height: 23vw;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 20vw;
+  height: 20vw;
   border: 1px #eeeeee solid;
 }
 .m3 {

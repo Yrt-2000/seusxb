@@ -3,28 +3,31 @@
     <!-- <navbar>
       <div slot="center">“播种季”计软智学生会线上打卡</div>
     </navbar>-->
-    
     <div class="bg">
-      
-      <img class="bg1" src="../../assets/img/newbg/b1.gif" />
-      <img class="bg1" src="../../assets/img/newbg/b3.gif" />
-      <img class="bg2" src="../../assets/img/newbg/b2.gif" />
-      <img class="bg2" src="../../assets/img/newbg/b4.gif" />
-      <img class="bd"  src="../../assets/img/newbg/bd.gif" />
-      <img class="bgs" src="../../assets/img/newbg/bg-.gif" />
+      <img class="bg1" src="../../assets/img/newbg/b1.gif">
+      <img class="bg1" src="../../assets/img/newbg/b3.gif">
+      <img class="bg2" src="../../assets/img/newbg/b2.gif">
+      <img class="bg2" src="../../assets/img/newbg/b4.gif">
+      <img class="bd" src="../../assets/img/newbg/bd.gif">
+      <img class="bgs" src="../../assets/img/newbg/bg-.gif">
     </div>
     <div class="logos">
-      <img class="cse-logo" src="../../assets/img/logo/logo.gif"/>
+      <img class="cse-logo" src="../../assets/img/logo/logo.gif">
       <div></div>
       <!-- <img class="bzj-logo" src="../../assets/img/logo/bzj.png"> -->
     </div>
     <div class="signin">
-      <div class="box" >
+      <div class="box">
         <h2>欢迎登录</h2>
-        <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px" :disabled="!startTime.getTime()<=nowTime.getTime()"/>
-        <el-input v-model="loginForm.QQ" placeholder="QQ账号(作为得奖唯一联系方式)" :disabled="!startTime.getTime()<=nowTime.getTime()"/>
-        <div class="click" @click="login" v-if="startTime.getTime()<=nowTime.getTime()" >登录</div>
-        <div class="click-disabled"  v-else>距离活动开始还有 {{startTime.getDate() - nowTime.getDate()}} 天</div>
+        <el-input
+          v-model="loginForm.num"
+          placeholder="一卡通号"
+          style="margin-bottom:15px"
+          :disabled="!isStarted()"
+        />
+        <el-input v-model="loginForm.QQ" placeholder="QQ账号(作为得奖唯一联系方式)" :disabled="!isStarted()"/>
+        <div class="click" @click="login" v-if="isStarted()">登录</div>
+        <div class="click-disabled" v-else>距离活动开始还有 {{startTime.getDate() - nowTime.getDate()}} 天</div>
         <div class="hint">首次登录将自动创建账户</div>
       </div>
     </div>
@@ -52,11 +55,14 @@ export default {
         num: ""
       },
       token: "",
-      nowTime:new Date(),
-      startTime:new Date(2020,3,5)
+      nowTime: new Date(),
+      startTime: new Date(2020, 3, 5)
     };
   },
   methods: {
+    isStarted() {
+      return this.startTime.getTime() <= this.nowTime.getTime()||false ; //调试请改这里
+    },
     ...mapMutations(["changeLogin"]),
     login() {
       let _this = this;
@@ -169,7 +175,7 @@ export default {
   }
   @keyframes m1 {
     from {
-      right:  -500px;
+      right: -500px;
       top: 1000px;
     }
     to {
@@ -179,7 +185,7 @@ export default {
   }
   @keyframes m2 {
     from {
-      left:  -500px;
+      left: -500px;
       bottom: 1000px;
     }
     to {
@@ -189,10 +195,10 @@ export default {
   }
   @keyframes m3 {
     from {
-      bottom:  -600px;
+      bottom: -600px;
     }
     to {
-      bottom :  0px;
+      bottom: 0px;
     }
   }
 }
@@ -205,27 +211,27 @@ export default {
   top: 44px;
   width: 100%;
 }
-.copyright{
-    position: fixed;
-    bottom: 10px;
-    text-align:center;
-    width: 100%;
-    animation: slideIn 2s;
-    p {
-      margin: 3px;
-      font-size:24px;
+.copyright {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  animation: slideIn 2s;
+  p {
+    margin: 3px;
+    font-size: 24px;
+  }
+  @keyframes slideIn {
+    from {
+      bottom: -30px;
+      opacity: 0;
     }
-    @keyframes slideIn {
-      from {
-        bottom: -30px;
-        opacity: 0;
-      }
-      to {
-        bottom: 10px;
-        opacity: 100;
-      }
+    to {
+      bottom: 10px;
+      opacity: 100;
     }
   }
+}
 // img {
 //   height: calc(100vh - 44px);
 //   width: auto;
@@ -286,7 +292,7 @@ input {
   text-align: center;
   padding: 10px;
 }
-.click-disabled{
+.click-disabled {
   margin: 15px;
   margin-bottom: 5px;
   border-radius: 5px;
@@ -297,14 +303,14 @@ input {
 }
 .logos {
   position: fixed;
-  top:7%;
-  width:100%;
+  top: 7%;
+  width: 100%;
   text-align: center;
   animation: fadeIn 2s;
   .bzj-logo {
     width: 80%;
-    border-radius:30px;
-    background-color:  rgba(243, 236, 135, 0.4);
+    border-radius: 30px;
+    background-color: rgba(243, 236, 135, 0.4);
     margin-top: 10px;
   }
   .cse-logo {
@@ -322,9 +328,7 @@ input {
       opacity: 100;
     }
   }
-
 }
-
 
 .copyright {
   position: fixed;
@@ -333,9 +337,9 @@ input {
   width: 100%;
   animation: slideIn 1s;
   p {
-    margin:3px;
-    font-size:10px;
-  } 
+    margin: 3px;
+    font-size: 10px;
+  }
   @keyframes slideIn {
     from {
       bottom: -30px;
