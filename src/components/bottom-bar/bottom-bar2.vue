@@ -55,6 +55,7 @@
 
 <style>
 	.bottom-bar{
+		z-index: 10;
 		height: 49px;
 		bottom: 0;
 		left: 0;
