@@ -1,71 +1,73 @@
 <template>
-  <div>
-	  <div class="bar">
-    <navbar>
-      <div slot="center">我的</div>
-    </navbar>
+	<div>
+		<div class="bar">
+			<navbar>
+				<div slot="center">我的</div>
+			</navbar>
+		</div>
+		<div id="profile">
+			<div class="imgk">
+				<background></background>
+				<!-- <img src="../../assets/img/bg/profile.gif" /> -->
+			</div>
+			<div class="qqq">
+				<div class="info2">
+					<div class="fff">{{name}}</div>
+					<div class="kkk">QQ:{{qq}}</div>
+				</div>
+				<div class="name" @click="buttonclick">
+					<span class="kk" >
+						<i class="el-icon-lollipop"></i>
+					</span>
+					<span class="tesm">昵称管理</span>
+					<span class="jj">
+						<i class="el-icon-arrow-right"></i>
+					</span>
+				</div>
+				<div class="team" @click="buttonclickx" v-if="teamname">
+					<span class="kk">
+						<i class="el-icon-news"></i>
+					</span>
+					<span class="tesm">团队信息</span>
+					<span class="jj">
+						<i class="el-icon-arrow-right"></i>
+					</span>
+				</div>
+				<div class="team" @click="buttonclick2" v-else>
+					<span class="kk">
+						<i class="el-icon-news"></i>
+					</span>
+					<span class="tesm">加入团队</span>
+					<span class="jj">
+						<i class="el-icon-arrow-right"></i>
+					</span>
+				</div>
+				<div class="record" @click="buttonclick3">
+					<span class="kk">
+						<i class="el-icon-document-checked"></i>
+					</span>
+					<span class="tesm">审核记录</span>
+					<span class="jj">
+						<i class="el-icon-arrow-right"></i>
+					</span>
+				</div>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
+					<div class="kefu">
+						<span class="kk">
+							<i class="el-icon-user"></i>
+						</span>
+						<span class="tesm">联系客服</span>
+						<span class="jj">
+							<i class="el-icon-arrow-right"></i>
+						</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="bottomBar">
+			<maintabbar></maintabbar>
+		</div>
 	</div>
-    <div id="profile">
-      <div class="imgk">
-        <background>
-        </background>
-      </div>
-      <div class="qqq">
-        <div class="info2">
-          <div class="fff">{{name}}</div>
-          <div class="kkk">QQ:{{qq}}</div>
-        </div>
-        <div class="name" @click="buttonclick">
-          <span class="kk">
-            <i class="el-icon-lollipop"></i>
-          </span>
-          <span class="tesm">昵称管理</span>
-          <span class="jj">
-            <i class="el-icon-arrow-right"></i>
-          </span>
-        </div>
-        <div class="team" @click="buttonclickx" v-if="teamname">
-          <span class="kk">
-            <i class="el-icon-news"></i>
-          </span>
-          <span class="tesm">团队信息</span>
-          <span class="jj">
-            <i class="el-icon-arrow-right"></i>
-          </span>
-        </div>
-        <div class="team" @click="buttonclick2" v-else>
-          <span class="kk">
-            <i class="el-icon-news"></i>
-          </span>
-          <span class="tesm">加入团队</span>
-          <span class="jj">
-            <i class="el-icon-arrow-right"></i>
-          </span>
-        </div>
-        <div class="record" @click="buttonclick3">
-          <span class="kk">
-            <i class="el-icon-document-checked"></i>
-          </span>
-          <span class="tesm">审核记录</span>
-          <span class="jj">
-            <i class="el-icon-arrow-right"></i>
-          </span>
-        </div>
-        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
-          <div class="kefu">
-            <span class="kk">
-              <i class="el-icon-user"></i>
-            </span>
-            <span class="tesm">联系客服</span>
-            <span class="jj">
-              <i class="el-icon-arrow-right"></i>
-            </span>
-          </div>
-        </a>
-      </div>
-    </div>
-    <maintabbar></maintabbar>
-  </div>
 </template>
 
 <script>
@@ -96,8 +98,8 @@ export default {
   },
   components: {
     navbar,
-	maintabbar,
-	background
+    maintabbar,
+    background
   },
   methods: {
     buttonclick() {
@@ -165,8 +167,8 @@ export default {
 </script>
 
 <style scoped>
-.bar{
-	z-index: -1
+.bar {
+  z-index: 10;
 }
 .info2 {
   margin: 0;
@@ -189,7 +191,7 @@ export default {
 
 #profile {	
   background-color: white;
-  z-index: -2;
+  z-index: 8;
   position: fixed;
   top: 44px;
   bottom: 49px;
@@ -200,18 +202,23 @@ export default {
 a {
   text-decoration: none;
 }
-
+.bottomBar{
+	z-index: 8;
+	position:absolute
+}
 .qqq {
   position: fixed;
+
+  margin: 0 auto;
   top: 250px;
+  left: 20px;
+  right: 20px;
   background-color: #eeeeee;
-  width: 100%;
-	z-index: 999;
+  width: 90%;
 }
 
 .imgk {
   position: relative;
-  z-index: -1;
   top: 0;
   left: 0;
   right: 0;
@@ -251,7 +258,7 @@ a {
   padding: 5px;
 }
 .jj {
-  padding-right: 20px;
+  padding-right: 0px;
   position: absolute;
   right: 15px;
 }
