@@ -162,7 +162,7 @@
 								<el-collapse-item title="其它事项" name="3">
 								  <div class="tes">
 								     <div>任何恶意获取积分的行为（如利用平台漏洞篡改数据等），经查实后其所有积分无效，并保留进一步处理的权力</div>
-										 <div>如在使用平台中发现任何问题，或对规则存在疑问，您可以进入“我的”界面，点击<strong>联系客服</strong>按钮</div>
+										 <div>如在使用平台中发现任何问题，或对规则存在疑问，您可以进入“我的”界面，点击<strong>联系客服按钮</strong></div>
 										 <div>活动最终解释权归计软智学生会所有。</div>
 								  </div>
 								</el-collapse-item>
@@ -323,7 +323,7 @@ export default {
 <style >
 	.z3{
 		position: absolute;
-		top: calc(23vw + 20px);
+		top: 110px;
 		left: 10px;
 		right: 10px;
 		background-color: #eeeeee;
@@ -335,7 +335,7 @@ export default {
 		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 5px;
+		bottom: 0;
 	}
 	
 	.z4{
