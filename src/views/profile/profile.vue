@@ -1,61 +1,88 @@
 <template>
-	<div>
-		<navbar>
-		  <div slot="center">我的</div>
-		</navbar>
-  <div id="profile">
-		<div class="imgk"><img src="../../assets/img/bg/profile.gif" /> </div>
-		<div class="qqq">
-			<div class="info2">
-			<div class="fff">{{name}}</div>
-			<div class="kkk">QQ:{{qq}}</div>
-			</div>
-		<div class="name" @click="buttonclick">
-		  <span class="kk"><i class="el-icon-lollipop"></i></span>
-		  <span class="tesm">昵称管理</span>
-			<span class="jj"><i class="el-icon-arrow-right"></i></span>
-		</div>
-		<div class="team" @click="buttonclickx" v-if="teamname">
-		  <span class="kk"><i class="el-icon-news"></i></span>
-		  <span class="tesm">团队信息</span>
-			<span class="jj"><i class="el-icon-arrow-right"></i></span>
-		</div>
-		<div class="team" @click="buttonclick2" v-else>
-		  <span class="kk"><i class="el-icon-news"></i></span>
-		  <span class="tesm">加入团队</span>
-			<span class="jj"><i class="el-icon-arrow-right"></i></span>
-		</div>
-		<div class="record" @click="buttonclick3">
-		  <span class="kk"><i class="el-icon-document-checked"></i></span>
-			<span class="tesm">审核记录</span>
-			<span class="jj"><i class="el-icon-arrow-right"></i></span>
-		</div>
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
-		<div class="kefu" >
-		  <span class="kk"><i class="el-icon-user"></i></span>
-			<span class="tesm">联系客服</span>
-			<span class="jj"><i class="el-icon-arrow-right"></i></span>
-		</div></a>
+  <div>
+    <navbar>
+      <div slot="center">我的</div>
+    </navbar>
+	
+    <div id="profile">
+      <div class="imgk">
+		<background>
+		</background>
+        <!-- <img src="../../assets/img/bg/profile.gif" /> -->
+      </div>
+      <div class="qqq">
+        <div class="info2">
+          <div class="fff">{{name}}</div>
+          <div class="kkk">QQ:{{qq}}</div>
+        </div>
+        <div class="name" @click="buttonclick">
+          <span class="kk">
+            <i class="el-icon-lollipop"></i>
+          </span>
+          <span class="tesm">昵称管理</span>
+          <span class="jj">
+            <i class="el-icon-arrow-right"></i>
+          </span>
+        </div>
+        <div class="team" @click="buttonclickx" v-if="teamname">
+          <span class="kk">
+            <i class="el-icon-news"></i>
+          </span>
+          <span class="tesm">团队信息</span>
+          <span class="jj">
+            <i class="el-icon-arrow-right"></i>
+          </span>
+        </div>
+        <div class="team" @click="buttonclick2" v-else>
+          <span class="kk">
+            <i class="el-icon-news"></i>
+          </span>
+          <span class="tesm">加入团队</span>
+          <span class="jj">
+            <i class="el-icon-arrow-right"></i>
+          </span>
+        </div>
+        <div class="record" @click="buttonclick3">
+          <span class="kk">
+            <i class="el-icon-document-checked"></i>
+          </span>
+          <span class="tesm">审核记录</span>
+          <span class="jj">
+            <i class="el-icon-arrow-right"></i>
+          </span>
+        </div>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
+          <div class="kefu">
+            <span class="kk">
+              <i class="el-icon-user"></i>
+            </span>
+            <span class="tesm">联系客服</span>
+            <span class="jj">
+              <i class="el-icon-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <maintabbar></maintabbar>
   </div>
-	</div>
-	<maintabbar></maintabbar>
-	</div>
 </template>
 
 <script>
+import background from "../../components/background/background.vue";
 import { mapMutations } from "vuex";
 import navbar from "../../components/navbar/navbar.vue";
 import { getdata } from "../../network/profile.js";
 import { Message } from "element-ui";
-import maintabbar from '../../components/tab-bar/maintabbar.vue'
+import maintabbar from "../../components/tab-bar/maintabbar.vue";
 export default {
   name: "profile",
   created() {
     this.getdatanow();
   },
-	activated() {
-		this.shuaxin();
-	},
+  activated() {
+    this.shuaxin();
+  },
   data() {
     return {
       qq: "",
@@ -69,13 +96,13 @@ export default {
   },
   components: {
     navbar,
-		maintabbar
+	maintabbar,
+	background
   },
   methods: {
-
     buttonclick() {
       this.$router.push(`/profile/nameChange`);
-			console.log('dj')
+      console.log("dj");
     },
     buttonclick2() {
       this.$router.push(`/profile/team`);
@@ -83,9 +110,9 @@ export default {
     buttonclick3() {
       this.$router.push(`/profile/recordList`);
     },
-		buttonclickx(){
-			this.$router.push(`/profile/newteam`);
-		},
+    buttonclickx() {
+      this.$router.push(`/profile/newteam`);
+    },
     //发送相关网络请求
     getdatanow() {
       getdata()
@@ -98,10 +125,10 @@ export default {
             this.teamrank = res.result.teamrank;
             this.point = res.result.point;
             this.teampoint = res.result.teampoint;
-						this.$store.state.teamrank = this.teamrank;
-						this.$store.state.teamname = this.teamname;
-						this.$store.state.teampoint = this.teampoint;
-						console.log(this.teamname)
+            this.$store.state.teamrank = this.teamrank;
+            this.$store.state.teamname = this.teamname;
+            this.$store.state.teampoint = this.teampoint;
+            console.log(this.teamname);
           } else {
             Message({
               showClose: true,
@@ -109,10 +136,10 @@ export default {
               type: "warning",
               duration: 1500
             });
-						if (res.reason === '登陆过期，请重新登陆'){
-							localStorage.removeItem('Authorization');
-							 this.$router.push('/login');
-						}
+            if (res.reason === "登陆过期，请重新登陆") {
+              localStorage.removeItem("Authorization");
+              this.$router.push("/login");
+            }
           }
         })
         .catch(err => {
@@ -124,79 +151,78 @@ export default {
           });
         });
     },
-		//控制页面刷新
-		shuaxin(){
-			console.log(this.$store.state.isrefresh)
-			if(this.$store.state.isrefresh === true){
-			location.reload()
-			this.$store.state.isrefresh === false
-			}
-			console.log(this.$store.state.isrefresh)
-		}
+    //控制页面刷新
+    shuaxin() {
+      console.log(this.$store.state.isrefresh);
+      if (this.$store.state.isrefresh === true) {
+        location.reload();
+        this.$store.state.isrefresh === false;
+      }
+      console.log(this.$store.state.isrefresh);
+    }
   }
-}
+};
 </script>
 
 <style scoped>
-.info2	{
-  margin:  0;
+.info2 {
+  margin: 0;
   padding: 10px 5px;
   background-color: white;
   overflow: hidden;
   font-size: 15px;
   height: 60px;
-	padding-left: 10px;
-	}
-	
-.fff{
-	color: #55AA7F;
-	font-size: 27px;
+  padding-left: 10px;
 }
 
-.kkk{
-	padding-top: 5px;
+.fff {
+  color: #55aa7f;
+  font-size: 27px;
+}
+
+.kkk {
+  padding-top: 5px;
 }
 
 #profile {
   background-color: white;
-	position: fixed;
-	top:44px;
-	bottom: 49px;
-	overflow: fixed;
-	width: 100%;
+  position: fixed;
+  top: 44px;
+  bottom: 49px;
+  overflow: fixed;
+  width: 100%;
 }
 
-a{
-		text-decoration: none;
-	}
-
-.qqq{
-	position: fixed;
-	top:250px;
-	background-color: #EEEEEE;
-	width: 100%;
+a {
+  text-decoration: none;
 }
 
-.imgk{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: calc(100vh - 44px -49px);
-	overflow: hidden;
+.qqq {
+  position: fixed;
+  top: 250px;
+  background-color: #eeeeee;
+  width: 100%;
 }
 
+.imgk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 44px -49px);
+  overflow: hidden;
+}
 
-.imgk img{
-	width: 100%;
-	height: calc(100vh -44px -49px);
+.imgk img {
+  width: 100%;
+  height: calc(100vh -44px -49px);
 }
 
 .name,
 .qq,
 .team,
 .record,
-.kefu{
+.kefu {
   margin: 3px 0;
   padding: 10px 5px;
   background-color: white;
@@ -210,22 +236,22 @@ a{
 .team i,
 .record i,
 .tree i,
-.kefu i{
+.kefu i {
   color: #55aa7f;
   font-size: 25px;
 }
 
-.kk{
-	padding: 5px;
+.kk {
+  padding: 5px;
 }
-.jj{
-	padding-right: 20px;
-	position: absolute;
-	right: 15px;
+.jj {
+  padding-right: 20px;
+  position: absolute;
+  right: 15px;
 }
-.tesm{
-	position: relative;
-	padding-top:5px;
-	color: black;
+.tesm {
+  position: relative;
+  padding-top: 5px;
+  color: black;
 }
 </style>
