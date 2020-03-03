@@ -8,28 +8,28 @@
 		<div class="qqq">
 		<div class="name" @click="buttonclick">
 		  <span class="kk"><i class="el-icon-lollipop"></i></span>
-		  <span class="tesm">改名</span>
+		  <span class="tesm">昵称管理</span>
 			<span class="jj"><i class="el-icon-arrow-right"></i></span>
 		</div>
 		<div class="team" @click="buttonclickx" v-if="teamname">
 		  <span class="kk"><i class="el-icon-news"></i></span>
-		  <span class="tesm">团队</span>
+		  <span class="tesm">团队信息</span>
 			<span class="jj"><i class="el-icon-arrow-right"></i></span>
 		</div>
 		<div class="team" @click="buttonclick2" v-else>
 		  <span class="kk"><i class="el-icon-news"></i></span>
-		  <span class="tesm">团队</span>
+		  <span class="tesm">加入团队</span>
 			<span class="jj"><i class="el-icon-arrow-right"></i></span>
 		</div>
 		<div class="record" @click="buttonclick3">
 		  <span class="kk"><i class="el-icon-document-checked"></i></span>
-			<span class="tesm">记录</span>
+			<span class="tesm">审核记录</span>
 			<span class="jj"><i class="el-icon-arrow-right"></i></span>
 		</div>
 		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
 		<div class="kefu" >
 		  <span class="kk"><i class="el-icon-user"></i></span>
-			<span class="tesm">客服</span>
+			<span class="tesm">联系客服</span>
 			<span class="jj"><i class="el-icon-arrow-right"></i></span>
 		</div></a>
   </div>
@@ -49,9 +49,9 @@ export default {
   created() {
     this.getdatanow();
   },
-	// activated() {
-	// 	this.shuaxin();
-	// },
+	activated() {
+		this.shuaxin();
+	},
   data() {
     return {
       qq: "",
@@ -119,16 +119,16 @@ export default {
             duration: 1500
           });
         });
-    }
+    },
 		//控制页面刷新
-		// shuaxin(){
-		// 	console.log(this.$store.state.isrefresh)
-		// 	if(this.$store.state.isrefresh === true){
-		// 	location.reload()
-		// 	this.$store.state.isrefresh === false
-		// 	}
-		// 	console.log(this.$store.state.isrefresh)
-		// }
+		shuaxin(){
+			console.log(this.$store.state.isrefresh)
+			if(this.$store.state.isrefresh === true){
+			location.reload()
+			this.$store.state.isrefresh === false
+			}
+			console.log(this.$store.state.isrefresh)
+		}
   }
 }
 </script>
@@ -162,7 +162,6 @@ a{
 	right: 0;
 	height: calc(100vh - 44px -49px);
 	overflow: hidden;
-	z-index: 3;
 }
 
 

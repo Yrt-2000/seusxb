@@ -3,7 +3,7 @@
 		<newbar>我的团队</newbar>
 		<div id="newteam">
 			<div class="lala">
-				<img src="../../assets/img/树/12.jpg" />
+				<img src='../../assets/img/bg/bg.gif' />
 			</div>
 		<div class="great">
 			 <div class="ki">
@@ -31,9 +31,9 @@
 		  <el-collapse-item :title="item.name" >
 		    <div>积分：{{item.point}}</div>
 		    <div>最近3条完成任务记录：</div>
-				<div>{{item.doneList[0]}}</div>
-				<div>{{item.doneList[1]}}</div>
-				<div>{{item.doneList[2]}}</div>
+				<div>{{item.doneList[0].taskNum}}</div>
+				<div>{{item.doneList[1].taskNum}}</div>
+				<div>{{item.doneList[2].taskNum}}</div>
 		  </el-collapse-item>
 		</el-collapse>
 		</div>
