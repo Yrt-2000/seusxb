@@ -226,13 +226,13 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: calc(100vh - 44px -49px);
-  overflow: hidden;
 }
 
 .imgk img {
   width: 100%;
   height: calc(100vh -44px -49px);
+	position: absolute;
+	z-index: -1;
 }
 
 .name,

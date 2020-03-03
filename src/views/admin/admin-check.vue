@@ -19,6 +19,7 @@
       <h5>以下三个按钮正常审核打卡记录的时候可以不需要使用</h5>
       <button @click="click3">获取所有队伍数据</button>
       <button @click="click4">获取所有个人数据</button>
+			<button @click="click6">搜索团队信息</button>
     </div>
   </div>
 </template>
@@ -91,7 +92,7 @@ export default {
     },
     click4() {
       this.$router.push("/admin/getUser");
-	},
+	  },
 	click5() {
       teamupdate()
         .then(res => {
@@ -120,6 +121,9 @@ export default {
           });
         });
     },
+		 click6(){
+			 this.$router.push("/admin/searchTeam");
+		 }
   },
   data() {
     return {

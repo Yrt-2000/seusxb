@@ -31,11 +31,10 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  /* position: fixed; */
+  position: fixed;
   background-color: white;
   display: flex;
   text-align: center;
-  position: absolute;
 }
 .button {
   width: 6.25rem;
