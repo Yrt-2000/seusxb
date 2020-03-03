@@ -21,12 +21,13 @@
     <div class="signin">
       <div class="box" >
         <h2>欢迎登录</h2>
-        <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px" />
-        <el-input v-model="loginForm.QQ" placeholder="QQ账号(唯一联系方式,请仔细填写)" />
-        <div class="click" @click="login">登录</div>
+        <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px" :disabled="!startTime.getTime()<=nowTime.getTime()"/>
+        <el-input v-model="loginForm.QQ" placeholder="QQ账号(作为得奖唯一联系方式)" :disabled="!startTime.getTime()<=nowTime.getTime()"/>
+        <div class="click" @click="login" v-if="startTime.getTime()<=nowTime.getTime()" >登录</div>
+        <div class="click-disabled"  v-else>距离活动开始还有 {{startTime.getDate() - nowTime.getDate()}} 天</div>
         <div class="hint">首次登录将自动创建账户</div>
-      </div>
-    </div>
+      </template>
+    </template>
     <div class="copyright">
       <p>版权所有 © 东南大学"计软智"学生会</p>
     </div>
@@ -50,7 +51,9 @@ export default {
         QQ: "",
         num: ""
       },
-      token: ""
+      token: "",
+      nowTime:new Date(),
+      startTime:new Date(2020,3,5)
     };
   },
   methods: {
@@ -280,6 +283,15 @@ input {
   border-radius: 5px;
   background-color: #55aa7f;
   color: white;
+  text-align: center;
+  padding: 10px;
+}
+.click-disabled{
+  margin: 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #62c795;
+  color: gray;
   text-align: center;
   padding: 10px;
 }

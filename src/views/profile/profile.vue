@@ -75,7 +75,7 @@ import background from "../../components/background/background.vue";
 import { mapMutations } from "vuex";
 import navbar from "../../components/navbar/navbar.vue";
 import { getdata } from "../../network/profile.js";
-import { Message } from "element-ui";
+import { Message,Card,Divider } from "element-ui";
 import maintabbar from "../../components/tab-bar/maintabbar.vue";
 export default {
   name: "profile",
@@ -99,7 +99,9 @@ export default {
   components: {
     navbar,
     maintabbar,
-    background
+	background,
+	"el-card":Card,
+	"ek-divider":Divider,
   },
   methods: {
     buttonclick() {
@@ -168,6 +170,7 @@ export default {
 
 <style scoped>
 .bar {
+	  position: relative;
   z-index: 10;
 }
 .info2 {
@@ -187,12 +190,13 @@ export default {
 
 .kkk {
   padding-top: 5px;
+  color:gray;
 }
 
 #profile {	
   background-color: white;
-  z-index: 8;
-  position: fixed;
+  z-index: 1;
+  position: relative;
   top: 44px;
   bottom: 49px;
   overflow: fixed;
@@ -208,9 +212,8 @@ a {
 }
 .qqq {
   position: fixed;
-
   margin: 0 auto;
-  top: 250px;
+  top: 210px;
   left: 20px;
   right: 20px;
   background-color: #eeeeee;
@@ -219,7 +222,7 @@ a {
 
 .imgk {
   position: relative;
-
+	z-index: -1;
   top: 0;
   left: 0;
   right: 0;
@@ -264,8 +267,7 @@ a {
   right: 15px;
 }
 .tesm {
-  position: relative;
-  padding-top: 5px;
+  margin-left:5px;
   color: black;
 }
 </style>
