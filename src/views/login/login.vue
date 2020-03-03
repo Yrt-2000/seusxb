@@ -22,7 +22,7 @@
       <div class="box" >
         <h2>欢迎登录</h2>
         <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px" />
-        <el-input v-model="loginForm.QQ" placeholder="QQ账号" />
+        <el-input v-model="loginForm.QQ" placeholder="QQ账号(唯一联系方式,请仔细填写)" />
         <div class="click" @click="login">登录</div>
         <div class="hint">首次登录将自动创建账户</div>
       </div>
@@ -245,9 +245,9 @@ export default {
   padding-left: 30px;
   padding-right: 30px;
   position: absolute;
-  top: 200px;
-  left: 15px;
-  right: 15px;
+  top: 180px;
+  left: 6.5%;
+  right: 6.5%;
   border-radius: 7px;
   animation: fad 2s;
 
@@ -258,7 +258,7 @@ export default {
     }
     to {
       opacity: 0.8;
-      top: 200px;
+      top: 180px;
     }
   }
 }
