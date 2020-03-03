@@ -115,11 +115,11 @@
                 <el-collapse v-model="activeNamesss" @change="handleChange" accordion>
                   <el-collapse-item title="达标性奖励" name="1">
                     <div class="tes">
-                      <strong>第一到第十位</strong>达到X分：
+                      <strong>第一到第十位</strong>达到180分：
                       <strong>简约电子闹钟</strong>
                     </div>
                     <div class="tes">
-                      <strong>第十一到第三十位</strong>位达到X分：
+                      <strong>第十一到第三十位</strong>位达到180分：
                       <strong>LED创意桌面摆件</strong>
                     </div>
                   </el-collapse-item>
@@ -283,7 +283,7 @@ export default {
               type: "warning",
               duration: 1500
             });
-            if (res.reason === "登陆过期，请重新登陆") {
+            if (res.reason == "登陆过期,请重新登陆") {
               localStorage.removeItem("Authorization");
               this.$router.push("/login");
             }
@@ -339,7 +339,7 @@ export default {
 <style >
 .z3 {
   position: absolute;
-  top: calc(23vw + 20px);
+  top: 110px;
   left: 10px;
   right: 10px;
   background-color: #eeeeee;

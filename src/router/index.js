@@ -51,7 +51,7 @@ const routes = [
 	{ path: '', redirect: '/login' ,meta: {keepAlive: false }},
 	{ path: '/home', component: home ,meta: {keepAlive: false }},
 	{ path: '/task', component: task ,meta: {keepAlive: true }},
-	{ path: '/login', component: login ,meta: {keepAlive: true }},
+	{ path: '/login', component: login ,meta: {keepAlive: false }},
 	{ path: '/profile', component: profile ,meta: {keepAlive: true }},
 	{ path: '/profile/namechange', component: nameChange ,meta: {keepAlive: false }},
 	{ path: '/profile/newteam', component: newteam ,meta: {keepAlive: false }},

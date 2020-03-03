@@ -140,7 +140,7 @@ export default {
               type: "warning",
               duration: 1500
             });
-            if (res.reason === "登陆过期，请重新登陆") {
+            if (res.reason == "登陆过期,请重新登陆") {
               localStorage.removeItem("Authorization");
               this.$router.push("/login");
             }
@@ -156,14 +156,14 @@ export default {
         });
     },
     //控制页面刷新
-    shuaxin() {
-      console.log(this.$store.state.isrefresh);
-      if (this.$store.state.isrefresh === true) {
-        location.reload();
-        this.$store.state.isrefresh === false;
-      }
-      console.log(this.$store.state.isrefresh);
-    }
+    // shuaxin() {
+    //   console.log(this.$store.state.isrefresh);
+    //   if (this.$store.state.isrefresh === true) {
+    //     location.reload();
+    //     this.$store.state.isrefresh === false;
+    //   }
+    //   console.log(this.$store.state.isrefresh);
+    // }
   }
 };
 </script>
