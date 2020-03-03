@@ -5,13 +5,16 @@
     </navbar>-->
     
     <div class="bg">
-      <img class="bg3" src="../../assets/img/bg/b3.gif" />
-      <img class="bg2" src="../../assets/img/bg/b2.gif" />
-      <img class="bg1" src="../../assets/img/bg/b1.gif" />
-      <img class="bgs" src="../../assets/img/bg/bg.gif" />
+      
+      <img class="bg1" src="../../assets/img/newbg/b1.gif" />
+      <img class="bg1" src="../../assets/img/newbg/b3.gif" />
+      <img class="bg2" src="../../assets/img/newbg/b2.gif" />
+      <img class="bg2" src="../../assets/img/newbg/b4.gif" />
+      <img class="bd"  src="../../assets/img/newbg/bd.gif" />
+      <img class="bgs" src="../../assets/img/newbg/bg-.gif" />
     </div>
     <div class="logos">
-      <img class="cse-logo" src="../../assets/img/logo/cse.gif"/>
+      <img class="cse-logo" src="../../assets/img/logo/logo.gif"/>
       <div></div>
       <!-- <img class="bzj-logo" src="../../assets/img/logo/bzj.png"> -->
     </div>
@@ -19,7 +22,7 @@
       <div class="box" >
         <h2>欢迎登录</h2>
         <el-input v-model="loginForm.num" placeholder="一卡通号" style="margin-bottom:15px" />
-        <el-input v-model="loginForm.QQ" placeholder="QQ账号" />
+        <el-input v-model="loginForm.QQ" placeholder="QQ账号(唯一联系方式,请仔细填写)" />
         <div class="click" @click="login">登录</div>
         <div class="hint">首次登录将自动创建账户</div>
       </div>
@@ -116,12 +119,12 @@ export default {
     left: 0;
     animation: m 3s;
   }
-  .bgd {
+  .bd {
     width: 100%;
     height: 100%;
     position: fixed;
     left: 0;
-    animation: d 2s;
+    animation: d 4s;
   }
   .bg3 {
     width: 100%;
@@ -145,7 +148,14 @@ export default {
     right: 0;
     animation: m1 1.5s;
   }
-  
+  @keyframes d {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
   @keyframes m {
     from {
       opacity: 0;
@@ -156,18 +166,22 @@ export default {
   }
   @keyframes m1 {
     from {
-      left:  -1000px;
+      right:  -500px;
+      top: 1000px;
     }
     to {
-      left: 0px;
+      right: 0px;
+      top: 0px;
     }
   }
   @keyframes m2 {
     from {
-      top:  -1000px;
+      left:  -500px;
+      bottom: 1000px;
     }
     to {
-      top :  0px;
+      left: 0px;
+      bottom: 0px;
     }
   }
   @keyframes m3 {
@@ -231,18 +245,20 @@ export default {
   padding-left: 30px;
   padding-right: 30px;
   position: absolute;
-  top: 200px;
-  left: 15px;
-  right: 15px;
+  top: 180px;
+  left: 6.5%;
+  right: 6.5%;
   border-radius: 7px;
   animation: fad 2s;
 
   @keyframes fad {
     from {
       opacity: 0;
+      top: 700px;
     }
     to {
       opacity: 0.8;
+      top: 180px;
     }
   }
 }
@@ -269,7 +285,7 @@ input {
 }
 .logos {
   position: fixed;
-  top:5%;
+  top:7%;
   width:100%;
   text-align: center;
   animation: fadeIn 2s;
@@ -278,20 +294,19 @@ input {
     border-radius:30px;
     background-color:  rgba(243, 236, 135, 0.4);
     margin-top: 10px;
-    animation: fadeIn 2s;
   }
-
   .cse-logo {
-    width: 60%;
+    width: 80%;
     margin-top: 30px;
     margin-bottom: 30px;
-    animation: fadeIn 2s;
   }
   @keyframes fadeIn {
     from {
+      top: -100px;
       opacity: 0;
     }
     to {
+      top: 7%;
       opacity: 100;
     }
   }
