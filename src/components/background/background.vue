@@ -18,7 +18,7 @@
   z-index: -300;
   width: 100%;
   top: 40px;
-  position: fixed;
+  position: relative;
   overflow: hidden;
   @media screen and (min-width: 600px) {
     .block-mobile {
