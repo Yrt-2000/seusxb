@@ -35,7 +35,6 @@ export default {
   background-color: white;
   display: flex;
   text-align: center;
-  position: absolute;
 }
 .button {
   width: 6.25rem;
