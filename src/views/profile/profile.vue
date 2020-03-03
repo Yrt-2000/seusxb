@@ -6,6 +6,10 @@
   <div id="profile">
 		<div class="imgk"><img src="../../assets/img/bg/profile.gif" /> </div>
 		<div class="qqq">
+			<div class="info2">
+			<div class="fff">{{name}}</div>
+			<div class="kkk">QQ:{{qq}}</div>
+			</div>
 		<div class="name" @click="buttonclick">
 		  <span class="kk"><i class="el-icon-lollipop"></i></span>
 		  <span class="tesm">昵称管理</span>
@@ -134,6 +138,24 @@ export default {
 </script>
 
 <style scoped>
+.info2	{
+  margin:  0;
+  padding: 10px 5px;
+  background-color: white;
+  overflow: hidden;
+  font-size: 15px;
+  height: 60px;
+	padding-left: 10px;
+	}
+	
+.fff{
+	color: #55AA7F;
+	font-size: 27px;
+}
+
+.kkk{
+	padding-top: 5px;
+}
 
 #profile {
   background-color: white;

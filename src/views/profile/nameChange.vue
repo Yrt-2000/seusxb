@@ -37,7 +37,7 @@
 				             duration: 1500
 				     })
 					this.$router.replace('/profile')
-					// this.$store.state.isrefresh = true
+					this.$store.state.isrefresh = true
 					}
 				else{
 					Message({

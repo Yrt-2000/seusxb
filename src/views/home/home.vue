@@ -60,7 +60,7 @@
               <el-collapse v-model="activeNames" @change="handleChange" accordion>
                 <el-collapse-item title="任务分值" name="1">
                   <div class="tes">
-                    不同任务，基础分值不同，且同一任务
+                    不同任务，基础分值不同，且部分任务
                     <strong>每天坚持完成能额外加分</strong>（加分力度随连续天数递增，
                     <strong>中断清零</strong>）
                   </div>
@@ -142,6 +142,32 @@
                 </el-collapse-item>
               </el-collapse>
             </el-tab-pane>
+						<el-tab-pane label="注意事项" name="fourth">
+						  <div class="rule_text">请仔细阅读规则简介后方可参加活动</div>
+						  <el-collapse v-model="activeNamess" @change="handleChange" accordion>
+						    <el-collapse-item title="活动时长" name="1">
+						      <div class="tes">
+						        本线上打卡活动预计持续至<strong>3月27日</strong>。由于正式开学时间的不确定性，
+										若在3月27日之前返校，则打卡活动将提前结束，我们可能会<strong>适当调整</strong>达标性奖励中要求的积分，
+										以确保有30位同学可以拿到该奖励。
+						      </div>
+						    </el-collapse-item>
+						    <el-collapse-item title="关于打卡" name="2">
+						      <div class="tes">
+						         <div>请在参与活动之前先添加“计软智学生会菌菌”为好友，否则部分打卡链接可能无法正常跳转</div>
+										 <div>部分浏览器（如Chrome等）上链接可能无法跳转，请切换浏览器</div>
+										 <div>每项任务一天最多打卡<strong>一次</strong>，重复打卡不计入积分</div>
+						      </div>
+						    </el-collapse-item>
+								<el-collapse-item title="其它事项" name="3">
+								  <div class="tes">
+								     <div>任何恶意获取积分的行为（如利用平台漏洞篡改数据等），经查实后其所有积分无效，并保留进一步处理的权力</div>
+										 <div>如在使用平台中发现任何问题，或对规则存在疑问，您可以进入“我的”界面，点击<strong>联系客服</strong>按钮</div>
+										 <div>活动最终解释权归计软智学生会所有。</div>
+								  </div>
+								</el-collapse-item>
+						  </el-collapse>
+						</el-tab-pane>
           </el-tabs>
           <div style="margin-bottom:20px"></div>
           <el-carousel trigger="click" height="650px" arrow="always" autoplay="false" style="margin:20px">
@@ -309,7 +335,7 @@ export default {
 		top: 0;
 		left: 0;
 		right: 0;
-		bottom: 0;
+		bottom: 5px;
 	}
 	
 	.z4{
