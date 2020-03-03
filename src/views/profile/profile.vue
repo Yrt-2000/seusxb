@@ -1,12 +1,15 @@
 <template>
   <div>
+	  <div class="bar">
     <navbar>
       <div slot="center">我的</div>
     </navbar>
-	
-	<background></background>
-
+	</div>
     <div id="profile">
+      <div class="imgk">
+        <background>
+        </background>
+      </div>
       <div class="qqq">
         <div class="info2">
           <div class="fff">{{name}}</div>
@@ -162,6 +165,9 @@ export default {
 </script>
 
 <style scoped>
+.bar{
+	z-index: 10
+}
 .info2 {
   margin: 0;
   padding: 10px 5px;
@@ -183,6 +189,7 @@ export default {
 
 #profile {	
   background-color: white;
+  z-index: -1;
   position: fixed;
   top: 44px;
   bottom: 49px;
@@ -202,7 +209,8 @@ a {
 }
 
 .imgk {
-  position: absolute;
+  position: relative;
+  z-index: -999;
   top: 0;
   left: 0;
   right: 0;
