@@ -210,7 +210,6 @@
                   <el-table
                     :data="teamarray"
                     stripe
-                    style="width: 100%"
                     header-align="center"
                     :default-sort="{prop: 'teamrank', order: 'ascending'}"
                   >
