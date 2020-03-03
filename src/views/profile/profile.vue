@@ -4,12 +4,9 @@
       <div slot="center">我的</div>
     </navbar>
 	
+	<background></background>
+
     <div id="profile">
-      <div class="imgk">
-		<background>
-		</background>
-        <!-- <img src="../../assets/img/bg/profile.gif" /> -->
-      </div>
       <div class="qqq">
         <div class="info2">
           <div class="fff">{{name}}</div>
@@ -184,7 +181,7 @@ export default {
   padding-top: 5px;
 }
 
-#profile {
+#profile {	
   background-color: white;
   position: fixed;
   top: 44px;
