@@ -27,14 +27,14 @@
 		components:{
 			newbar
 		},
-		activated(){
+		created(){
 			this.getList()
 		},
 		methods:{
 			getList(){
 				taskCompleted().then(res => {
 					if (res.success){
-              			this.lista = res.result
+             this.lista = res.result
 						for(let i=0 ; i<this.lista.length; i++){
 							let str=this.lista[i].time
 							this.lista[i].time=str.substr(0,10)+" "

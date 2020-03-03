@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .list {
   margin: 7px 3.5px;
   padding: 10px 5px;

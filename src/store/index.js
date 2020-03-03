@@ -8,7 +8,11 @@ export default new Vuex.Store({
 		isAdmin: false,
 		//存储token
 		Authorization: localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : '',
-		isrefresh: false
+		//控制profile刷新界面
+		// isrefresh: false,
+		teampoint:'',
+		teamrank:'',
+		teamname:''
 	},
 	mutations: {
 		//修改token,并存入本地

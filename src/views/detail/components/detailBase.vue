@@ -41,8 +41,8 @@ export default {
 <style>
 .up {
   position: fixed;
-  top:40px;
-  bottom: 0px;
+  top:44px;
+  bottom: 49px;
   overflow: scroll;
   background-color: #f1ffef;
 }

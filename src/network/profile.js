@@ -49,3 +49,10 @@ export function createteam(newteamname){
 		}
 	})
 }
+
+export function getteam(){
+	return axios({
+		method:"get",
+		url:"/user/get/team"
+	})
+}
