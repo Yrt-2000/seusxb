@@ -189,7 +189,7 @@ export default {
   padding-top: 5px;
 }
 
-#profile {
+#profile {	
   background-color: white;
   z-index: 8;
   position: fixed;
