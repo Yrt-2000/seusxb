@@ -26,8 +26,8 @@
         <div class="click" @click="login" v-if="startTime.getTime()<=nowTime.getTime()" >登录</div>
         <div class="click-disabled"  v-else>距离活动开始还有 {{startTime.getDate() - nowTime.getDate()}} 天</div>
         <div class="hint">首次登录将自动创建账户</div>
-      </template>
-    </template>
+      </div>
+    </div>
     <div class="copyright">
       <p>版权所有 © 东南大学"计软智"学生会</p>
     </div>
