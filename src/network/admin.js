@@ -38,7 +38,7 @@ export function user(){
 	})
 }
 
-export function team2(teamname){
+export function searchTeam(teamname){
 	return axios({
 		method:'get',
 		url:'admin/team/members',

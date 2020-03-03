@@ -5,6 +5,7 @@ const adminlogin = () => import('../views/admin/admin-login.vue')
 const admincheck = () => import('../views/admin/admin-check.vue')
 const admingetUser = () => import('../views/admin/admin-getUser.vue')
 const admingetTeam = () => import('../views/admin/admin-getTeam.vue')
+const adminsearchTeam = () => import('../views/admin/admin-searchTeam.vue')
 const home = () => import('../views/home/home.vue')
 const login = () => import('../views/login/login.vue')
 const task = () => import('../views/task/task.vue')
@@ -77,7 +78,8 @@ const routes = [
 	{ path: '/admin', component: adminlogin },
 	{ path: '/admin/check', component: admincheck },
 	{ path: '/admin/getUser', component: admingetUser },
-	{ path: '/admin/getTeam', component: admingetTeam }
+	{ path: '/admin/getTeam', component: admingetTeam },
+	{ path: '/admin/searchTeam', component: adminsearchTeam }
 ]
 
 
@@ -98,7 +100,7 @@ router.beforeEach((to, from, next) => {
 			next();
 		}
 	} else {
-		if (to.path === '/admin' || to.path === '/admin/check' || to.path === '/admin/getUser' || to.path === '/admin/getTeam') {
+		if (to.path === '/admin' || to.path === '/admin/check' || to.path === '/admin/getUser' || to.path === '/admin/getTeam' || to.path === '/admin/searchTeam') {
 			if (to.path === '/admin') {
 				next()
 			} else {

@@ -4,6 +4,52 @@
       <div slot="center">首页</div>
     </navbar>
     <div class="home">
+			<div class="z1h">
+				<div class="m1h">
+					<div class="z2">
+							  <img v-if="point >=0 && point <70" src='../../assets/img/树/13.jpg' />
+							  <img v-else-if="point >=70 && point <150" src='../../assets/img/树/12.jpg' />
+							  <img v-else-if="point >=150 && point <210" src='../../assets/img/树/11.jpg' />
+							  <img v-else src='../../assets/img/树/10.jpg' />
+					</div>
+						 
+							<div class="m3">
+								 <div class="z4">{{name}}</div>
+								 <div class="z5">QQ:{{qq}}</div>
+						 </div>
+					<div class="z3">
+						<div class="fy">
+												   <section class="account">
+												     <div class="account-item">
+												       <div class="number">
+												         <span class="balance">{{point}}</span>分
+												       </div>
+												       <div class="account-info">我的积分</div>
+												     </div>
+												     <div class="account-item">
+												       <div class="number">
+												         <span class="balance">{{rank}}</span>位
+												       </div>
+												       <div class="account-info">我的排名</div>
+												     </div>
+												     <div class="account-item">
+												       <div class="number">
+												         <span class="balance">{{teampoint}}</span>分
+												       </div>
+												       <div class="account-info">团队积分</div>
+												     </div>
+														 <div class="account-item">
+														   <div class="number">
+														     <span class="balance">{{teamrank}}</span>位
+														   </div>
+														   <div class="account-info">团队排名</div>
+														 </div>
+												   </section>
+													 </div>
+									</div>
+				</div>
+			</div>
+			<div class="others">
       <el-container direction="vertical">
         <!-- 活动规则 -->
         <el-header height="auto"></el-header>
@@ -136,6 +182,7 @@
         <!-- 排行榜 -->
       </el-container>
     </div>
+		</div>
     <maintabbar></maintabbar>
   </div>
 </template>
@@ -145,6 +192,7 @@ import { getRank } from "../../network/home.js";
 import navbar from "../../components/navbar/navbar.vue";
 import maintabbar from "../../components/tab-bar/maintabbar.vue";
 import { Message } from "element-ui";
+import { getdata} from '../../network/profile.js'
 export default {
   name: "home",
   components: {
@@ -159,11 +207,19 @@ export default {
       teamarray: [],
       activeNames: [],
       activeNamess: [],
-      activeNamesss: []
+      activeNamesss: [],
+			qq:'',
+			name:'',
+			teamname:'',
+			point:'',
+			teampoint:'',
+			rank:'',
+			teamrank:''
     };
   },
   created() {
     this.getRanknow();
+		this.getdatanow()
   },
   methods: {
     handleChange(val) {
@@ -199,30 +255,144 @@ export default {
             duration: 1500
           });
         });
-    }
+    },
+		getdatanow() {
+		  getdata()
+		    .then(res => {
+		      if (res.success) {
+		        this.qq = res.result.QQ;
+		        this.name = res.result.name;
+		        this.teamname = res.result.teamname;
+		        this.rank = res.result.rank;
+		        this.teamrank = res.result.teamrank;
+		        this.point = res.result.point;
+		        this.teampoint = res.result.teampoint;
+						console.log(this.teamname)
+		      } else {
+		        Message({
+		          showClose: true,
+		          message: res.reason,
+		          type: "warning",
+		          duration: 1500
+		        });
+						if (res.reason === '登陆过期，请重新登陆'){
+							localStorage.removeItem('Authorization');
+							 this.$router.push('/login');
+						}
+		      }
+		    })
+		    .catch(err => {
+		      Message({
+		        showClose: true,
+		        message: "数据获取失败",
+		        type: "error",
+		        duration: 1500
+		      });
+		    });
+		}
   }
 };
 </script>
 
 <style >
-/* .demo-table-expand {
-    font-size: 0;
-    padding: 0;
-  }
-  .demo-table-expand label {
-    width: 90px;
-    color: #99a9bf;
-  }
-  .demo-table-expand .el-form-item {
-    padding: 0;
-    margin-right: 0;
-    margin-left: -0;
-    margin-bottom: -0;
-    margin-top: -0;
-    width: 100%;
-  } */
+	.z3{
+		position: absolute;
+		top: calc(23vw + 20px);
+		left: 10px;
+		right: 10px;
+		background-color: #eeeeee;
+		bottom: 10px;
+	}
+	
+	.fy{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+	.z4{
+		font-size: 25px;
+		color: #42B983;
+		padding-top: 15px;
+	}
+	
+	.z5{
+		font-size: 13px;
+		color: gray;
+		padding-top: 5px;
+	}
+	
+ .z1h{
+	 position: absolute;
+	 top: 0;
+	 width: 100%;
+	 height: 200px;
+	 background-color:#eeeeee;
+ }
+ 
+ .m1h{
+	 position: absolute;
+	 top:20px;
+	 left: 20px;
+	 right: 20px;
+	 background-color: #FFFFFF;
+	 height: 180px;
+ }
+  
+ .z2{
+	 position: absolute;
+	 top: 10px;
+	 left: 10px;
+ }
 
-
+ .z2 img{
+	 	border-radius: 11.5vw;
+	 	width: 23vw;
+	 	height: 23vw;
+		border: 1px #eeeeee solid;
+	 }
+  .m3{
+		width: 55vw;
+		height: 23vw;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+	
+	.account {
+	  display: flex;
+	}
+	
+	.account-item {
+	  width: 100%;
+	  background-color: #fff;
+	  margin-right: 1px;
+	  text-align: center;
+	}
+	
+	.account-item:last-of-type {
+	  margin-right: 0;
+	}
+	
+	.account-item {
+	  color: #666;
+	  font-size: 13px;
+	  padding: 5px;
+	}
+	
+	.account-item .balance {
+	  font-size: 24px;
+	  font-weight: 700;
+	  color: #42b983;
+	}
+	
+	.account-info {
+	  margin-top: 6px;
+	}
+	
+	
 .el-header,
 .el-footer {
   background-color: #ffffff;
@@ -254,6 +424,9 @@ export default {
   bottom: 49px;
   overflow: scroll;
   width: 100%;
+}
+.others{
+	padding-top: 200px;
 }
 .el-tabs__item {
   color: gray !important;
