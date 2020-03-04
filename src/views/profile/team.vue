@@ -3,7 +3,7 @@
     <newbar>加入团队</newbar>
     <background></background>
     <div id="team">
-      <input v-model="team" placeholder="请输入要加入或创建团队的名称" />
+      <input v-model="team" placeholder="请输入要加入或创建团队的名称"  maxlength="15"/>
       <div class="b1" @click="b1click">加入团队</div>
       <div class="b2" @click="b2click">创建团队</div>
       <p>

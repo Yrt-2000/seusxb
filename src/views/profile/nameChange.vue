@@ -3,7 +3,7 @@
     <newbar>改变昵称</newbar>
 	<background></background>
     <div id="nameChange">
-      <input v-model="name" placeholder="请输入要替换的昵称" />
+      <input v-model="name" placeholder="请输入要替换的昵称" maxlength="15"/>
       <div class="b1" @click="b1click">确认修改</div>
       <div class="b2" @click="b2click">返回个人页面</div>
     </div>
