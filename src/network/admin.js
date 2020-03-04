@@ -31,10 +31,13 @@ export function team(){
 	})
 }
 
-export function user(){
+export function user(limit){
 	return axios({
 		method:'get',
-		url:'admin/user/get'
+		url:'admin/user/get',
+		params:{
+			limit
+		}
 	})
 }
 
@@ -47,3 +50,14 @@ export function searchTeam(teamname){
 		}
 	})
 }
+
+export function searchUser(limit){
+	return axios({
+		method:'get',
+		url:'admin/user/taskget',
+		params:{
+			limit
+		}
+	})
+}
+

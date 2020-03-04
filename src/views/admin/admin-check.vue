@@ -19,7 +19,9 @@
       <h5>以下三个按钮正常审核打卡记录的时候可以不需要使用</h5>
       <button @click="click3">获取所有队伍数据</button>
       <button @click="click4">获取所有个人数据</button>
-			<button @click="click6">搜索团队信息</button>
+			<button @click="click6">搜索团队信息</button><br>
+			<button @click="click7">今天完成过某任务的个人</button>
+			<button @click="click8">超过某积分的个人</button>
     </div>
   </div>
 </template>
@@ -123,6 +125,12 @@ export default {
     },
 		 click6(){
 			 this.$router.push("/admin/searchTeam");
+		 },
+		 click7(){
+			 this.$router.push("/admin/searchUser");
+		 },
+		 click8(){
+			 this.$router.push("/admin/searchUser2");
 		 }
   },
   data() {
