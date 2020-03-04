@@ -76,7 +76,7 @@
                       <strong>无需图片证明</strong>任务,点击“打卡”按钮即可。
                       <br>2.对于
                       <strong>需图片证明</strong>任务,点击按钮后将发起和“计软智学生会菌菌”的QQ对话，将
-                      <strong>图片和任务编号</strong>一起发送给“菌菌”即可。
+                      <strong>图片和任务编号</strong>一起发送给“菌菌”即可。（<strong>务必在10.30前哦！</strong>）
                     </div>
                   </el-collapse-item>
                   <el-collapse-item title="提交结果" name="3">
