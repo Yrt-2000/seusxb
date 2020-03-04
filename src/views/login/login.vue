@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- <navbar>
-      <div slot="center">“播种季”计软智学生会线上打卡</div>
-    </navbar>-->
     <div class="bg">
       <img class="bg1" src="../../assets/img/newbg/b1.gif">
       <img class="bg1" src="../../assets/img/newbg/b3.gif">
@@ -14,7 +11,6 @@
     <div class="logos">
       <img class="cse-logo" src="../../assets/img/logo/logo.gif">
       <div></div>
-      <!-- <img class="bzj-logo" src="../../assets/img/logo/bzj.png"> -->
     </div>
     <div class="signin">
       <div class="box">
