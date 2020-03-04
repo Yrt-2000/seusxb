@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     isStarted() {
-      return this.startTime.getTime() <= this.nowTime.getTime()||true ; //调试请改这里
+      return this.startTime.getTime() <= this.nowTime.getTime()||false ; //调试请改这里
     },
     ...mapMutations(["changeLogin"]),
     login() {
