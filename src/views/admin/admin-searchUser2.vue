@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div>这里是searchUser2界面！</div>
-		<input placeholder="输入积分下限" v-model="limit"/>
+		<input placeholder="输入积分下限" v-model="limt"/>
 		<button @click="go">查找</button>
 		<p>{{result}}</p>
 	</div>
@@ -14,13 +14,13 @@
 		name:'admin-searchUser2',
 		data(){
 			return{
-				limit:'',
+				limt:'',
 				result:''
 			}
 		},
 		methods:{
 			go(){
-				user(this.limit).then(res => {
+				user(this.limt).then(res => {
 		      if (res.success) {
 		        this.result = res.result
 		      } else {
