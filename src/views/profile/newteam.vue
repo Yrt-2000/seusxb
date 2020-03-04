@@ -1,31 +1,10 @@
 <template>
-  <div>
+  <div class="sss">
     <newbar>我的团队</newbar>
     <background></background> 
-	<!-- <div>{{teamname}}</div>
-    <div id="newteam">
-      <div class="great">
-      <div></div>
-      <div>{{teamname}}</div>
-      <!-- <div class="ko">
-          <section class="account">
-            <div class="account-item">
-              <div class="number">
-                <span class="balance">{{teampoint}}</span>分
-              </div>
-              <div class="account-info">团队积分</div>
-            </div>
-            <div class="account-item">
-              <div class="number">
-                <span class="balance">{{teamrank}}</span>名
-              </div>
-              <div class="account-info">团队排名</div>
-            </div>
-          </section>
-      </div>-->
-      <!-- </div> -->
-
-      <!-- <div class="other">
+		<div class="lll">
+			<div class="heightlight">{{teamname}}</div>
+			<span class="jifen">团队积分:{{teampoint}}  </span>   <span class="paiming">团队排名:{{teamrank}}</span>
         <el-collapse v-for="(item,index) in info" :key="index" accordion>
           <el-collapse-item :title="item.name">
             <div>积分：{{item.point}}</div>
@@ -34,7 +13,8 @@
             <div>{{item.doneList[1].taskNum}}</div>
             <div>{{item.doneList[2].taskNum}}</div>
           </el-collapse-item>
-        </el-collapse>-->
+        </el-collapse>
+				</div>
       </div>
     </div>
   </div>
@@ -161,74 +141,25 @@ export default {
 </script>
 
 <style scoped>
-.el-collapse {
-  padding-left: 20px;
-}
 
-#newteam {
+
+.sss {
   position: fixed;
-  top: 244px;
+  top: 44px;
   overflow: scroll;
   width: 100%;
 }
 
-.lala img {
-  z-index: -1;
-  width: 100%;
-  height: 200px;
-}
-.great {
-  /* position: absolute; */
-  top: 70px;
-  left: 5vw;
-  right: 5vw;
-  width: 90vw;
-  background-color: #c0c0c0;
-  z-index: 11;
-  height: 80px;
+.lll{
+	padding-top: 200px;
+	padding-left: 6%;
+	padding-right: 6%;
 }
 
-.ki {
-  position: absolute;
-  left: 5vw;
-  font-size: 22px;
-  color: #55aa7f;
-  width: 45vw;
-  top: 43px;
+.heightlight{
+	color: #55AA7F;
+	font-size: 23px;
 }
 
-.ko {
-  position: absolute;
-  left: 40vw;
-  width: 50vw;
-  top: -5vw;
-}
 
-.account {
-  display: flex;
-}
-
-.account-item {
-  width: 100%;
-  background-color: #fff;
-  margin-right: 15px;
-  text-align: center;
-  border: #333333 1px solid;
-}
-
-.account-item {
-  color: #666;
-  font-size: 13px;
-  padding: 5px;
-}
-
-.account-item .balance {
-  font-size: 24px;
-  font-weight: 700;
-  color: #42b983;
-}
-
-.account-info {
-  margin-top: 6px;
-}
 </style>
