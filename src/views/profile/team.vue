@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     b2click() {
-      createteam(this.team)
+      createteam(this.team.substr(0,30))
         .then(res => {
           if (res.success) {
             Message({

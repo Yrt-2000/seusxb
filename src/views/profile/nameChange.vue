@@ -33,7 +33,7 @@ export default {
       this.$router.back();
     },
     b1click() {
-      changename(this.name)
+      changename(this.name.substr(0,30))
         .then(res => {
           if (res.success) {
             Message({
