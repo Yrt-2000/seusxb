@@ -19,7 +19,7 @@
 		},
 		methods:{
 			buttonClick(){
-				if (this.fill === 'seucse'){
+				if (this.fill === 'Sxb-2020'){
 				this.$store.state.isAdmin = true 
 				this.isshow = false
 				this.$router.push('/admin/check')
