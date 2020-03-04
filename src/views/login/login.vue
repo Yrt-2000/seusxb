@@ -1,17 +1,26 @@
 <template>
   <div>
     <div class="bg">
-      <img class="bg1" src="../../assets/img/newbg/b1.gif">
-      <img class="bg1" src="../../assets/img/newbg/b3.gif">
-      <img class="bg2" src="../../assets/img/newbg/b2.gif">
-      <img class="bg2" src="../../assets/img/newbg/b4.gif">
-      <img class="bd" src="../../assets/img/newbg/bd.gif">
-      <img class="bgs" src="../../assets/img/newbg/bg-.gif">
+      <img class="bg1" src="../../assets/img/newbg/b1.gif" />
+      <img class="bg1" src="../../assets/img/newbg/b3.gif" />
+      <img class="bg2" src="../../assets/img/newbg/b2.gif" />
+      <img class="bg2" src="../../assets/img/newbg/b4.gif" />
+      <img class="bd" src="../../assets/img/newbg/bd.gif" />
+      <img class="bgs" src="../../assets/img/newbg/bg-.gif" />
     </div>
     <div class="logos">
-      <img class="cse-logo" src="../../assets/img/logo/logo.gif">
+      <img class="cse-logo" src="../../assets/img/logo/logo.gif" />
       <div></div>
     </div>
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="80%">
+      <span>
+        同学，别忘了加入我们的活动QQ群哟~(群号：1071823613)，这是一个可以反馈问题、寻找队友、分享讨论的平台，让我们一起在这特殊的日子里
+        一起"播种"好习惯吧！
+      </span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click=" login2">我知道了</el-button>
+      </span>
+    </el-dialog>
     <div class="signin">
       <div class="box">
         <h2>欢迎登录</h2>
@@ -52,15 +61,20 @@ export default {
       },
       token: "",
       nowTime: new Date(),
-      startTime: new Date(2020, 3, 5)
+      startTime: new Date(2020, 3, 5),
+      dialogVisible: false
     };
   },
   methods: {
+    login() {
+      this.dialogVisible = true;
+    },
     isStarted() {
-      return this.startTime.getTime() <= this.nowTime.getTime()||true ; //调试请改这里
+      return this.startTime.getTime() <= this.nowTime.getTime() || true; //调试请改这里
     },
     ...mapMutations(["changeLogin"]),
-    login() {
+    login2() {
+      this.dialogVisible = false;
       let _this = this;
       if (this.loginForm.QQ === "" || this.loginForm.num === "") {
         Message({
