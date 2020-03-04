@@ -1,72 +1,70 @@
 <template>
-	<div>
-		<div class="bar">
-			<navbar>
-				<div slot="center">我的</div>
-			</navbar>
-		</div>
-		<div id="profile">
-			<div class="imgk">
-				<background></background>
-			</div>
-			<div class="qqq">
-				<div class="info2">
-					<div class="fff">{{name}}</div>
-					<div class="kkk">QQ:{{qq}}</div>
-				</div>
-				<div class="name" @click="buttonclick">
-					<span class="kk" >
-						<i class="el-icon-lollipop"></i>
-					</span>
-					<span class="tesm">昵称管理</span>
-					<span class="jj">
-						<i class="el-icon-arrow-right"></i>
-					</span>
-				</div>
-				<div class="team" @click="buttonclickx" v-if="teamname">
-					<span class="kk">
-						<i class="el-icon-news"></i>
-					</span>
-					<span class="tesm">团队信息</span>
-					<span class="jj">
-						<i class="el-icon-arrow-right"></i>
-					</span>
-				</div>
-				<div class="team" @click="buttonclick2" v-else>
-					<span class="kk">
-						<i class="el-icon-news"></i>
-					</span>
-					<span class="tesm">加入团队</span>
-					<span class="jj">
-						<i class="el-icon-arrow-right"></i>
-					</span>
-				</div>
-				<div class="record" @click="buttonclick3">
-					<span class="kk">
-						<i class="el-icon-document-checked"></i>
-					</span>
-					<span class="tesm">审核记录</span>
-					<span class="jj">
-						<i class="el-icon-arrow-right"></i>
-					</span>
-				</div>
-				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
-					<div class="kefu">
-						<span class="kk">
-							<i class="el-icon-user"></i>
-						</span>
-						<span class="tesm">联系客服</span>
-						<span class="jj">
-							<i class="el-icon-arrow-right"></i>
-						</span>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="bottomBar">
-			<maintabbar></maintabbar>
-		</div>
-	</div>
+  <div>
+    <navbar>
+      <div slot="center">我的</div>
+    </navbar>
+    <background></background>
+    <div id="profile">
+      <div class="qqq">
+        <div class="info2">
+          <div class="fff">{{name}}</div>
+          <div class="kkk">QQ:{{qq}}</div>
+        </div>
+        <div class="bt">
+          <div class="name" @click="buttonclick">
+            <span class="kk">
+              <i class="el-icon-lollipop"></i>
+            </span>
+            <span class="tesm">昵称管理</span>
+            <span class="jj">
+              <i class="el-icon-arrow-right"></i>
+            </span>
+          </div>
+          <div class="team" @click="buttonclickx" v-if="teamname">
+            <span class="kk">
+              <i class="el-icon-news"></i>
+            </span>
+            <span class="tesm">团队信息</span>
+            <span class="jj">
+              <i class="el-icon-arrow-right"></i>
+            </span>
+          </div>
+          <div class="team" @click="buttonclick2" v-else>
+            <span class="kk">
+              <i class="el-icon-news"></i>
+            </span>
+            <span class="tesm">加入团队</span>
+            <span class="jj">
+              <i class="el-icon-arrow-right"></i>
+            </span>
+          </div>
+          <div class="record" @click="buttonclick3">
+            <span class="kk">
+              <i class="el-icon-document-checked"></i>
+            </span>
+            <span class="tesm">审核记录</span>
+            <span class="jj">
+              <i class="el-icon-arrow-right"></i>
+            </span>
+          </div>
+          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2446078648&site=qq&menu=yes">
+            <div class="kefu">
+              <span class="kk">
+                <i class="el-icon-user"></i>
+              </span>
+              <span class="tesm">联系客服</span>
+              <span class="jj">
+                <i class="el-icon-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="bottomBar">
+      <maintabbar></maintabbar>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -74,7 +72,7 @@ import background from "../../components/background/background.vue";
 import { mapMutations } from "vuex";
 import navbar from "../../components/navbar/navbar.vue";
 import { getdata } from "../../network/profile.js";
-import { Message,Card,Divider } from "element-ui";
+import { Message, Card, Divider } from "element-ui";
 import maintabbar from "../../components/tab-bar/maintabbar.vue";
 export default {
   name: "profile",
@@ -98,9 +96,9 @@ export default {
   components: {
     navbar,
     maintabbar,
-	background,
-	"el-card":Card,
-	"ek-divider":Divider,
+    background,
+    "el-card": Card,
+    "ek-divider": Divider
   },
   methods: {
     buttonclick() {
@@ -153,7 +151,7 @@ export default {
             duration: 1500
           });
         });
-    },
+    }
     //控制页面刷新
     // shuaxin() {
     //   console.log(this.$store.state.isrefresh);
@@ -167,11 +165,7 @@ export default {
 };
 </script>
 
-<style scoped>
-.bar {
-	  position: relative;
-  z-index: 10;
-}
+<style scoped lang="less">
 .info2 {
   margin: 0;
   padding: 10px 5px;
@@ -183,16 +177,17 @@ export default {
 }
 
 .fff {
+  font-weight: 600;
   color: #55aa7f;
   font-size: 27px;
 }
 
 .kkk {
   padding-top: 5px;
-  color:gray;
+  color: gray;
 }
 
-#profile {	
+#profile {
   background-color: white;
   z-index: 1;
   position: relative;
@@ -200,14 +195,25 @@ export default {
   bottom: 49px;
   overflow: fixed;
   width: 100%;
+  animation: fadeIn 2.5s;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
 
 a {
   text-decoration: none;
 }
-.bottomBar{
-	z-index: 8;
-	position:absolute
+.bottomBar {
+  z-index: 8;
+  position: absolute;
 }
 .qqq {
   position: fixed;
@@ -221,7 +227,7 @@ a {
 
 .imgk {
   position: relative;
-	z-index: -1;
+  z-index: -1;
   top: 0;
   left: 0;
   right: 0;
@@ -230,8 +236,8 @@ a {
 .imgk img {
   width: 100%;
   height: calc(100vh -44px -49px);
-	position: absolute;
-	z-index: -1;
+  position: absolute;
+  z-index: -1;
 }
 
 .name,
@@ -266,7 +272,7 @@ a {
   right: 15px;
 }
 .tesm {
-  margin-left:5px;
+  margin-left: 5px;
   color: black;
 }
 </style>

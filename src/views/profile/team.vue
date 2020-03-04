@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="all">
     <newbar>加入团队</newbar>
-	<background></background>
+    <background></background>
     <div id="team">
       <input v-model="team" placeholder="请输入要加入或创建团队的名称" />
       <div class="b1" @click="b1click">加入团队</div>
@@ -26,8 +26,8 @@ import { Message } from "element-ui";
 export default {
   name: "team",
   components: {
-	newbar,
-	background
+    newbar,
+    background
   },
   data() {
     return {
@@ -107,6 +107,10 @@ export default {
   top: 244px;
   /* overflow: scroll; */
   width: 100%;
+}
+
+.all{
+  overflow: scroll;
 }
 
 input {

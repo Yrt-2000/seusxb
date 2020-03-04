@@ -1,20 +1,28 @@
 <template>
-  <div class="sss">
+  <div>
     <newbar>我的团队</newbar>
-    <background></background> 
-		<div class="lll">
-			<div class="heightlight">{{teamname}}</div>
-			<span class="jifen">团队积分:{{teampoint}}  </span>   <span class="paiming">团队排名:{{teamrank}}</span>
-        <el-collapse v-for="(item,index) in info" :key="index" accordion>
-          <el-collapse-item :title="item.name">
-            <div>积分：{{item.point}}</div>
-            <div>最近3条完成任务记录：</div>
-            <div>{{item.doneList[0].taskNum}}</div>
-            <div>{{item.doneList[1].taskNum}}</div>
-            <div>{{item.doneList[2].taskNum}}</div>
+    <background></background>
+    <div id="team">
+      <div class="heightlight">{{teamname}}</div>
+      <div class="title-decoration"></div>
+
+      <div class="light">排名:{{teamrank}} 积分:{{teampoint}}</div>
+
+      <div class="info">
+        <el-collapse v-model="activeName" accordion>
+          <el-collapse-item  v-for="(item,index) in info" :key="index" :name="item.name">
+            <template slot="title">
+              <div class="name">{{item.name}}</div>
+            </template>
+            <div class="text">
+              <div>积分：<strong>{{item.point}}</strong> </div>
+              <div class="tes">最近3条完成记录</div>
+              <div v-for="(task,index2) in item.doneList" :key="index2">
+                <span>{{task.time.substr(0,10)+" "+task.taskNum+ " 获得 "+task.v+"分"}}</span>
+              </div>
+            </div>
           </el-collapse-item>
         </el-collapse>
-				</div>
       </div>
     </div>
   </div>
@@ -22,8 +30,8 @@
 
 <script>
 import background from "../../components/background/background.vue";
-import { getteam } from "../../network/profile.js";
 import newbar from "../../components/navbar/newbar.vue";
+import { getteam } from "../../network/profile.js";
 export default {
   name: "newteam",
   created() {
@@ -33,13 +41,12 @@ export default {
     getTeamNow() {
       getteam()
         .then(res => {
-		  console.log(res);
-
           if (res.success) {
             this.info = res.result.users;
-            this.teampoint = res.result.teampoint
-            this.teamrank = res.result.teamrank
-            this.teamname = res.result.teamname 
+            this.teampoint = res.result.teampoint;
+            this.teamrank = res.result.teamrank;
+            this.teamname = res.result.teamname;
+
             for (let i = 0; i < this.info.length; i++) {
               for (let j = 0; j < this.info[i].doneList.length; j++) {
                 switch (this.info[i].doneList[j].taskNum) {
@@ -98,10 +105,11 @@ export default {
                     this.info[i].doneList[j].taskNum = "11点前睡觉";
                     break;
                 }
+                console.log(this.info[i].doneList[j]);
+                console.log(this.info[i].doneList[j].taskNum);
               }
-			}
-			console.log(this.teamname);
-
+            }
+            console.log(this.info);
           } else {
             Message({
               showClose: true,
@@ -140,26 +148,71 @@ export default {
 };
 </script>
 
-<style scoped>
-
-
-.sss {
+<style lang="less" scoped>
+#team {
   position: fixed;
-  top: 44px;
-  overflow: scroll;
+  top: 200px;
   width: 100%;
+  overflow: scroll;
+}
+.light {
+  text-align:center;
+  color:  #615e5e;
+  font-weight: 1000;
+  font-size: 26px;
+  animation:  fadeIn 1.5s;
+  margin-bottom: 2%
+}
+.tes{
+  font-weight: 800;
+}
+.heightlight {
+  text-align:center;
+  color: #55aa7f;
+  font-weight: 1000;
+  font-size: 26px;
+  animation:  fadeIn 1.5s;
+  margin-bottom: 2%
+}
+.name {
+  margin-left: 5%;
+  font-weight: 700;
+  color: #55aa7f;
+  font-size: 18px;
+}
+.text {
+  color: #615e5e;
+  margin-left: 6%;
+  font-size: 16px;
+}
+.all{
+  position: fixed;
+  overflow: scroll;
 }
 
-.lll{
-	padding-top: 200px;
-	padding-left: 6%;
-	padding-right: 6%;
+.title-decoration{
+  animation: line-extract 1s;
+  height: 2px; 
+  font-size:24px; 
+  width: 7em; 
+  background:rgb(16, 54, 45);
+  margin:0 auto;
 }
 
-.heightlight{
-	color: #55AA7F;
-	font-size: 23px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
-
-
+@keyframes line-extract {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7em;
+  }
+}
 </style>
