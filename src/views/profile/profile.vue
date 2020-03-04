@@ -8,7 +8,6 @@
 		<div id="profile">
 			<div class="imgk">
 				<background></background>
-				<!-- <img src="../../assets/img/bg/profile.gif" /> -->
 			</div>
 			<div class="qqq">
 				<div class="info2">
