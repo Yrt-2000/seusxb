@@ -1,5 +1,15 @@
 import axios from './axios'
 
+export function checkTasks(QQ,taskNums){
+	return axios({
+		method:'get',
+		url:'/admin/user/checkTasks',
+		params:{
+			QQ,taskNums
+		}
+	})
+}
+
 export function record(QQ,taskNum){
 	return axios({
 		method:'get',

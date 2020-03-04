@@ -9,6 +9,24 @@
       <button @click="click1">将该条数据录入数据库</button>
     </div>
 	<br>
+  <!-- <input v-model="QQ" placeholder="打卡人QQ号" />
+  <el-checkbox-group v-model="taskNums">
+      <el-checkbox label="3"></el-checkbox>
+      <el-checkbox label="4"></el-checkbox>
+      <el-checkbox label="5"></el-checkbox>
+      <el-checkbox label="7"></el-checkbox>
+      <el-checkbox label="8"></el-checkbox>
+      <el-checkbox label="9"></el-checkbox>
+      <el-checkbox label="10"></el-checkbox>
+      <el-checkbox label="11"></el-checkbox>
+      <el-checkbox label="12"></el-checkbox>
+      <el-checkbox label="13"></el-checkbox>
+      <el-checkbox label="14"></el-checkbox>
+      <el-checkbox label="15"></el-checkbox>
+      <el-checkbox label="16"></el-checkbox>
+      <el-checkbox label="17"></el-checkbox>
+    </el-checkbox-group>
+  <button @click="click10">将这些任务打卡</button> -->
 	<br>
     <div class="second">
       <h4>当日所有任务全部审核完成后，点击此按钮</h4>
@@ -23,15 +41,51 @@
 			<button @click="click7">今天完成过某任务的个人</button>
 			<button @click="click8">超过某积分的个人</button>
     </div>
+
+    
+
   </div>
 </template>
 
 <script>
-import { record, update, teamupdate} from "../../network/admin.js";
+const cityOptions = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"];
+import { checkTasks,record, update, teamupdate} from "../../network/admin.js";
 import { Message } from "element-ui";
 export default {
   name: "admin-check",
   methods: {
+    click10() {
+      // console.log("!1!!!!");
+      // console.log(this.taskNums);
+      checkTasks(this.QQ, this.taskNums)
+        .then(res => {
+          if (res.success) {
+            Message({
+              showClose: true,
+              message: "操作成功",
+              type: "success",
+              duration: 1500
+            }),
+              (this.task = "");
+              (this.QQ = "");
+          } else {
+            Message({
+              showClose: true,
+              message: res.reason,
+              type: "warning",
+              duration: 1500
+            });
+          }
+        })
+        .catch(err => {
+          Message({
+            showClose: true,
+            message: "后端链接失败",
+            type: "error",
+            duration: 1500
+          });
+        });
+    },
     click1() {
       record(this.QQ, this.task)
         .then(res => {
@@ -136,7 +190,8 @@ export default {
   data() {
     return {
       QQ: "",
-      task: ""
+      task: "",
+      taskNums:[],
     };
   }
 };
