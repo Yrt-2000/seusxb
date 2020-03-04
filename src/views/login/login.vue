@@ -12,6 +12,16 @@
       <img class="cse-logo" src="../../assets/img/logo/logo.gif">
       <div></div>
     </div>
+		<el-dialog
+		  title="提示"
+		 :visible.sync="dialogVisible" 
+		  width="80%">
+		  <span>同学，别忘了加入我们的活动QQ群哟~(群号：1071823613)，这是一个可以反馈问题、分享讨论的平台，让我们一起在这段特殊的时间里
+			相互促进，共同提高！</span>
+		  <span slot="footer" class="dialog-footer">
+		    <el-button type="primary" @click=" login2">我知道了</el-button>
+		  </span>
+		</el-dialog>
     <div class="signin">
       <div class="box">
         <h2>欢迎登录</h2>
@@ -52,15 +62,20 @@ export default {
       },
       token: "",
       nowTime: new Date(),
-      startTime: new Date(2020, 3, 5)
+      startTime: new Date(2020, 3, 5),
+			dialogVisible: false
     };
   },
   methods: {
+		login(){
+			this.dialogVisible = true
+		},
     isStarted() {
-      return this.startTime.getTime() <= this.nowTime.getTime()||true ; //调试请改这里
+      return this.startTime.getTime() <= this.nowTime.getTime()||false ; //调试请改这里
     },
     ...mapMutations(["changeLogin"]),
-    login() {
+    login2() {
+			this.dialogVisible = false;
       let _this = this;
       if (this.loginForm.QQ === "" || this.loginForm.num === "") {
         Message({
@@ -113,7 +128,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.bg {
+
+	
+ .bg {
   z-index: -10;
   position: fixed;
   width: 100%;

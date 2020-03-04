@@ -14,8 +14,7 @@
             <div>{{item.doneList[2].taskNum}}</div>
           </el-collapse-item>
         </el-collapse>
-				</div>
-      </div>
+      
     </div>
   </div>
 </template>
