@@ -6,7 +6,7 @@
         <span style="font-weight: bold;font-size: 16px;margin-left:5px">{{taskid}}</span>
       </div>
     </div>
-    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3266538246&site=qq&menu=yes">
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
       <div class="button">打卡</div>
     </a>
   </div>
