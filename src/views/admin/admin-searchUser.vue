@@ -3,6 +3,7 @@
 	<div>这里是SearchUser界面！</div>
 	<input placeholder="输入任务id" v-model="limit"/>
 	<button @click="go">获取</button>
+	<p>{{result.length}}</p>
 	<p>{{result}}</p>
 	</div>
 </template>

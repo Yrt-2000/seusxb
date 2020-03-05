@@ -3,6 +3,7 @@
 		<div>这里是searchUser2界面！</div>
 		<input placeholder="输入积分下限" v-model="limt"/>
 		<button @click="go">查找</button>
+		<p>{{result.length}}</p>
 		<p>{{result}}</p>
 	</div>
 </template>

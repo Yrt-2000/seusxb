@@ -68,13 +68,13 @@
 	<taskitem taskName="practice">
 		<div slot="imga"><img src="../../assets/img/树/11.jpg"/></div>
 		<div slot="large">每天练字</div>
-		<div slot="small">练字能陶冶情操,磨练人的意志，让你更加优秀</div>
+		<div slot="small">练字能陶冶情操，磨练人的意志，让你更加优秀</div>
 	</taskitem> 
 	<el-divider></el-divider>
 	<taskitem taskName="reading">
 		<div slot="imga"><img src="../../assets/img/树/12.jpg"/></div>
 		<div slot="large">阅读课外书籍</div>
-		<div slot="small">都更多的书，了解更多的知识</div>
+		<div slot="small">读更多的书，了解更多的知识</div>
 	</taskitem>
 	<el-divider></el-divider>
 	<taskitem taskName="readEnglish">
@@ -98,7 +98,7 @@
   	<taskitem taskName="extraLearning">
 		<div slot="imga"><img src="../../assets/img/树/16.jpg"/></div>
 		<div slot="large">额外专业知识学习</div>
-		<div slot="small">在课程之间，学有余力的你可以学西额外的专业知识</div>
+		<div slot="small">在课程之间，学有余力的你可以学习额外的专业知识</div>
 	</taskitem>
 	<el-divider></el-divider>
 	<taskitem taskName="program">
