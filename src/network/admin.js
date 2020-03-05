@@ -2,9 +2,9 @@ import axios from './axios'
 
 export function checkTasks(QQ,taskNums){
 	return axios({
-		method:'get',
+		method:'post',
 		url:'/admin/user/checkTasks',
-		params:{
+		data:{
 			QQ,taskNums
 		}
 	})
