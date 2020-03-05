@@ -115,9 +115,7 @@ export default {
       cb(results);
     },
     click10() {
-      // console.log("!1!!!!");
-      // console.log(this.taskNums);
-      var taskNums = this.taskNums.toList()
+      var taskNums = this.taskNums
       checkTasks(this.QQ, this.taskNums)
         .then(res => {
           if (res.success) {
