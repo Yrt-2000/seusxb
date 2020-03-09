@@ -12,7 +12,8 @@ export default new Vuex.Store({
 		// isrefresh: false,
 		teampoint:'',
 		teamrank:'',
-		teamname:''
+		teamname:'',
+		dialogVisible: false
 	},
 	mutations: {
 		//修改token,并存入本地

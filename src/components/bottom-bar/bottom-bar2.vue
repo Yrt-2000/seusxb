@@ -1,7 +1,7 @@
 <template>
 	<div class="bottom-bar">
 		 <div class="nonbutton"></div>
-		 <div class="button" @click="press">打卡</div>
+		 <div class="button" @click="press">打卡</div>		
 	</div>
 </template>
 
@@ -43,9 +43,11 @@
 			})
 				// console.log(this.taskNum)
 				if(this.taskNum == 2){
-					window.open('https://xgbxscwx.seu.edu.cn/#/')
+					this.$store.state.dialogVisible = true
+					
 				}
 		}
+
 	},
 	props:{
 		taskNum:String
@@ -63,7 +65,7 @@
 		position: fixed;
 		background-color: white;
 		display: flex;
-		text-align: center;
+		
 	}
 	.button{
 		width: 6.25rem;
@@ -72,6 +74,7 @@
 		color: white;
 		font-weight: 550;
 		height: 49px;
+		text-align: center;
 		}
 	.nonbutton{
 		flex: 1;
@@ -79,4 +82,5 @@
 	a{
 		text-decoration: none;
 	}
+
 </style>
