@@ -126,6 +126,7 @@ export default {
               duration: 1500
             }),
               (this.task = "");
+							(this.taskNums = []);
             this.QQ = "";
           } else {
             Message({
